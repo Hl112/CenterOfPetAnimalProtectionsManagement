@@ -29,6 +29,7 @@ namespace CenterOfPetAnimalProtectionsManagement
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -52,6 +53,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnClose = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,9 +70,10 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.PeachPuff;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.LemonChiffon;
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(350, 400);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(525, 615);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
             // bunifuCustomLabel4
@@ -78,9 +81,10 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(111, 9);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(166, 14);
+            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(121, 34);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(192, 53);
             this.bunifuCustomLabel4.TabIndex = 2;
             this.bunifuCustomLabel4.Text = "Manager Pet";
             this.bunifuCustomLabel4.Click += new System.EventHandler(this.bunifuCustomLabel4_Click);
@@ -93,19 +97,21 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(350, 0);
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(525, 0);
+            this.bunifuGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(350, 400);
+            this.bunifuGradientPanel2.Size = new System.Drawing.Size(525, 615);
             this.bunifuGradientPanel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-118, -71);
+            this.pictureBox1.Location = new System.Drawing.Point(-177, -109);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(570, 592);
+            this.pictureBox1.Size = new System.Drawing.Size(855, 911);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -114,9 +120,10 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(388, 48);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(582, 74);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(152, 33);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(231, 50);
             this.bunifuCustomLabel1.TabIndex = 1;
             this.bunifuCustomLabel1.Text = "Welcome!";
             // 
@@ -129,9 +136,9 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.txtUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
             this.txtUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUsername.BackgroundImage")));
-            this.txtUsername.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtUsername.BorderColorActive = System.Drawing.Color.DarkGreen;
             this.txtUsername.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtUsername.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtUsername.BorderColorHover = System.Drawing.Color.Green;
             this.txtUsername.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.txtUsername.BorderRadius = 1;
             this.txtUsername.BorderThickness = 2;
@@ -147,13 +154,14 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.txtUsername.IconRight = null;
             this.txtUsername.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.Lines = new string[0];
-            this.txtUsername.Location = new System.Drawing.Point(393, 130);
+            this.txtUsername.Location = new System.Drawing.Point(590, 200);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.MaxLength = 32767;
-            this.txtUsername.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txtUsername.MinimumSize = new System.Drawing.Size(150, 54);
             this.txtUsername.Modified = false;
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.BorderColor = System.Drawing.Color.DarkGreen;
             stateProperties1.FillColor = System.Drawing.Color.Empty;
             stateProperties1.ForeColor = System.Drawing.Color.Empty;
             stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
@@ -163,7 +171,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             stateProperties2.ForeColor = System.Drawing.Color.Empty;
             stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtUsername.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.BorderColor = System.Drawing.Color.Green;
             stateProperties3.FillColor = System.Drawing.Color.Empty;
             stateProperties3.ForeColor = System.Drawing.Color.Empty;
             stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
@@ -182,7 +190,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.txtUsername.SelectionLength = 0;
             this.txtUsername.SelectionStart = 0;
             this.txtUsername.ShortcutsEnabled = true;
-            this.txtUsername.Size = new System.Drawing.Size(266, 39);
+            this.txtUsername.Size = new System.Drawing.Size(399, 60);
             this.txtUsername.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtUsername.TabIndex = 3;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -202,9 +210,9 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.txtPassoword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtPassoword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
             this.txtPassoword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPassoword.BackgroundImage")));
-            this.txtPassoword.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtPassoword.BorderColorActive = System.Drawing.Color.DarkGreen;
             this.txtPassoword.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtPassoword.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtPassoword.BorderColorHover = System.Drawing.Color.Green;
             this.txtPassoword.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.txtPassoword.BorderRadius = 1;
             this.txtPassoword.BorderThickness = 2;
@@ -220,13 +228,14 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.txtPassoword.IconRight = null;
             this.txtPassoword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassoword.Lines = new string[0];
-            this.txtPassoword.Location = new System.Drawing.Point(393, 204);
+            this.txtPassoword.Location = new System.Drawing.Point(590, 314);
+            this.txtPassoword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassoword.MaxLength = 32767;
-            this.txtPassoword.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txtPassoword.MinimumSize = new System.Drawing.Size(150, 54);
             this.txtPassoword.Modified = false;
             this.txtPassoword.Multiline = false;
             this.txtPassoword.Name = "txtPassoword";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.BorderColor = System.Drawing.Color.DarkGreen;
             stateProperties5.FillColor = System.Drawing.Color.Empty;
             stateProperties5.ForeColor = System.Drawing.Color.Empty;
             stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
@@ -236,7 +245,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             stateProperties6.ForeColor = System.Drawing.Color.Empty;
             stateProperties6.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPassoword.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.BorderColor = System.Drawing.Color.Green;
             stateProperties7.FillColor = System.Drawing.Color.Empty;
             stateProperties7.ForeColor = System.Drawing.Color.Empty;
             stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
@@ -246,7 +255,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPassoword.OnIdleState = stateProperties8;
-            this.txtPassoword.PasswordChar = '\0';
+            this.txtPassoword.PasswordChar = '*';
             this.txtPassoword.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPassoword.PlaceholderText = "Password";
             this.txtPassoword.ReadOnly = false;
@@ -255,7 +264,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.txtPassoword.SelectionLength = 0;
             this.txtPassoword.SelectionStart = 0;
             this.txtPassoword.ShortcutsEnabled = true;
-            this.txtPassoword.Size = new System.Drawing.Size(266, 39);
+            this.txtPassoword.Size = new System.Drawing.Size(399, 60);
             this.txtPassoword.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtPassoword.TabIndex = 4;
             this.txtPassoword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -304,7 +313,8 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.btnLogin.IdleIconLeftImage = null;
             this.btnLogin.IdleIconRightImage = null;
             this.btnLogin.IndicateFocus = false;
-            this.btnLogin.Location = new System.Drawing.Point(393, 285);
+            this.btnLogin.Location = new System.Drawing.Point(590, 438);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
             stateProperties9.BorderColor = System.Drawing.Color.White;
             stateProperties9.BorderRadius = 3;
@@ -324,10 +334,11 @@ namespace CenterOfPetAnimalProtectionsManagement
             stateProperties10.IconLeftImage = null;
             stateProperties10.IconRightImage = null;
             this.btnLogin.OnPressedState = stateProperties10;
-            this.btnLogin.Size = new System.Drawing.Size(266, 40);
+            this.btnLogin.Size = new System.Drawing.Size(399, 62);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.TextMarginLeft = 0;
+            this.toolTip1.SetToolTip(this.btnLogin, "Nhan vao day de login");
             this.btnLogin.UseDefaultRadiusAndThickness = true;
             this.btnLogin.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
@@ -336,9 +347,10 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(496, 371);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(744, 571);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(56, 20);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(87, 27);
             this.bunifuCustomLabel3.TabIndex = 6;
             this.bunifuCustomLabel3.Text = "© 2021";
             // 
@@ -347,9 +359,10 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.btnClose.AutoSize = true;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(682, 0);
+            this.btnClose.Location = new System.Drawing.Point(1023, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(18, 20);
+            this.btnClose.Size = new System.Drawing.Size(26, 27);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -359,9 +372,10 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.btnMinimize.AutoSize = true;
             this.btnMinimize.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.Black;
-            this.btnMinimize.Location = new System.Drawing.Point(661, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(992, 0);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(17, 20);
+            this.btnMinimize.Size = new System.Drawing.Size(24, 27);
             this.btnMinimize.TabIndex = 8;
             this.btnMinimize.Text = "_";
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
@@ -369,11 +383,11 @@ namespace CenterOfPetAnimalProtectionsManagement
             // Login
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(700, 400);
+            this.ClientSize = new System.Drawing.Size(1050, 615);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.bunifuCustomLabel3);
@@ -383,6 +397,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.bunifuGradientPanel1.ResumeLayout(false);
@@ -406,5 +421,6 @@ namespace CenterOfPetAnimalProtectionsManagement
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel btnClose;
         private Bunifu.Framework.UI.BunifuCustomLabel btnMinimize;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
