@@ -34,8 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\Bunifu.Core.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -105,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
