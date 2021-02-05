@@ -97,6 +97,18 @@
     <Compile Include="GUI\NormalControlPanel.Designer.cs">
       <DependentUpon>NormalControlPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PetDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PetDetail.Designer.cs">
+      <DependentUpon>PetDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PetsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PetsManagement.Designer.cs">
+      <DependentUpon>PetsManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\AdminHome.resx">
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NormalControlPanel.resx">
       <DependentUpon>NormalControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PetDetail.resx">
+      <DependentUpon>PetDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PetsManagement.resx">
+      <DependentUpon>PetsManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

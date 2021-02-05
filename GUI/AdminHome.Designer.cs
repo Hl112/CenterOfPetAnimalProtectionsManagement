@@ -1,7 +1,7 @@
 ﻿
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
-    partial class AdminHome
+    partial class frmAdminHome
     {
         
         /// <summary>
@@ -30,7 +30,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHome));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminHome));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtWelcome = new System.Windows.Forms.Label();
             this.picPetsManagement = new System.Windows.Forms.PictureBox();
@@ -40,8 +40,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.picNotification = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.picNotification = new System.Windows.Forms.PictureBox();
+            this.frmNormalControlPanel2 = new CenterOfPetAnimalProtectionsManagement.GUI.frmNormalControlPanel();
             this.frmNormalControlPanel1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmNormalControlPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPetsManagement)).BeginInit();
@@ -151,16 +152,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel3.Size = new System.Drawing.Size(150, 165);
             this.panel3.TabIndex = 11;
             // 
-            // picNotification
-            // 
-            this.picNotification.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNotification.BackgroundImage")));
-            this.picNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picNotification.Location = new System.Drawing.Point(15, 3);
-            this.picNotification.Name = "picNotification";
-            this.picNotification.Size = new System.Drawing.Size(120, 120);
-            this.picNotification.TabIndex = 0;
-            this.picNotification.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -173,6 +164,25 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label3.Text = "Notification";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // picNotification
+            // 
+            this.picNotification.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picNotification.BackgroundImage")));
+            this.picNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picNotification.Location = new System.Drawing.Point(15, 3);
+            this.picNotification.Name = "picNotification";
+            this.picNotification.Size = new System.Drawing.Size(120, 120);
+            this.picNotification.TabIndex = 0;
+            this.picNotification.TabStop = false;
+            // 
+            // frmNormalControlPanel2
+            // 
+            this.frmNormalControlPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.frmNormalControlPanel2.ForeColor = System.Drawing.Color.Transparent;
+            this.frmNormalControlPanel2.Location = new System.Drawing.Point(-1, -2);
+            this.frmNormalControlPanel2.Name = "frmNormalControlPanel2";
+            this.frmNormalControlPanel2.Size = new System.Drawing.Size(1206, 50);
+            this.frmNormalControlPanel2.TabIndex = 12;
+            // 
             // frmNormalControlPanel1
             // 
             this.frmNormalControlPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
@@ -182,7 +192,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmNormalControlPanel1.Size = new System.Drawing.Size(1203, 50);
             this.frmNormalControlPanel1.TabIndex = 5;
             // 
-            // AdminHome
+            // frmAdminHome
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -190,15 +200,15 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.frmNormalControlPanel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtWelcome);
-            this.Controls.Add(this.frmNormalControlPanel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AdminHome";
+            this.Name = "frmAdminHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminHome";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -230,5 +240,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox picNotification;
+        private frmNormalControlPanel frmNormalControlPanel2;
     }
 }

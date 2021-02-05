@@ -34,12 +34,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnClose = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.petsManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adoptersManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.petsManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adoptersManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAppName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnClose.AutoSize = true;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(1160, 5);
+            this.btnClose.Location = new System.Drawing.Point(1160, 6);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(26, 27);
@@ -73,7 +73,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
@@ -98,6 +97,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(40, 28);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.White;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(326, 6);
+            // 
             // petsManagementToolStripMenuItem
             // 
             this.petsManagementToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
@@ -106,6 +112,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.petsManagementToolStripMenuItem.Name = "petsManagementToolStripMenuItem";
             this.petsManagementToolStripMenuItem.Size = new System.Drawing.Size(329, 36);
             this.petsManagementToolStripMenuItem.Text = "Pets Management";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.toolStripSeparator2.ForeColor = System.Drawing.Color.White;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(326, 6);
             // 
             // adoptersManagementToolStripMenuItem
             // 
@@ -116,19 +129,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.adoptersManagementToolStripMenuItem.Size = new System.Drawing.Size(329, 36);
             this.adoptersManagementToolStripMenuItem.Text = "Adopters Management";
             // 
-            // toolStripSeparator1
+            // toolStripSeparator3
             // 
-            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.toolStripSeparator1.ForeColor = System.Drawing.Color.White;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(326, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.toolStripSeparator2.ForeColor = System.Drawing.Color.White;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(326, 6);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(326, 6);
             // 
             // logoutToolStripMenuItem
             // 
@@ -138,11 +142,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(329, 36);
             this.logoutToolStripMenuItem.Text = "Logout";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(326, 6);
             // 
             // txtAppName
             // 
