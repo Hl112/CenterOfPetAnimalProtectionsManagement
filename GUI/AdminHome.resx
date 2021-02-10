@@ -1254,7 +1254,7 @@
         AooooAKKKKACiiigD//Z
 </value>
   </data>
-  <data name="picPetsManagement.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPetsManagement.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAEu1JREFUeF7t
         XQlUVNeWTc9r9bS6fw+r4/qdXt3J/z8qo4rI4GwEFBCZi0kQBBVQEWSIsybECT/OcYhaBRgTYzTiEI0m

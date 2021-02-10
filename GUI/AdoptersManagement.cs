@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
-    public partial class PetDetail : Form
+    public partial class AdoptersManagement : Form
     {
-        public PetDetail()
+        public AdoptersManagement()
         {
             InitializeComponent();
         }

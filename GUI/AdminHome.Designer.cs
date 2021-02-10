@@ -1,7 +1,7 @@
 ﻿
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
-    partial class frmAdminHome
+    partial class AdminHome
     {
         
         /// <summary>
@@ -30,10 +30,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminHome));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHome));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtWelcome = new System.Windows.Forms.Label();
-            this.picPetsManagement = new System.Windows.Forms.PictureBox();
+            this.btnPetsManagement = new System.Windows.Forms.PictureBox();
             this.picAdoptersManagement = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmNormalControlPanel2 = new CenterOfPetAnimalProtectionsManagement.GUI.frmNormalControlPanel();
             this.frmNormalControlPanel1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmNormalControlPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPetsManagement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPetsManagement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdoptersManagement)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,15 +76,16 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtWelcome.TabIndex = 6;
             this.txtWelcome.Text = "Welcome, ";
             // 
-            // picPetsManagement
+            // btnPetsManagement
             // 
-            this.picPetsManagement.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPetsManagement.BackgroundImage")));
-            this.picPetsManagement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPetsManagement.Location = new System.Drawing.Point(13, 3);
-            this.picPetsManagement.Name = "picPetsManagement";
-            this.picPetsManagement.Size = new System.Drawing.Size(120, 120);
-            this.picPetsManagement.TabIndex = 7;
-            this.picPetsManagement.TabStop = false;
+            this.btnPetsManagement.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPetsManagement.BackgroundImage")));
+            this.btnPetsManagement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPetsManagement.Location = new System.Drawing.Point(13, 3);
+            this.btnPetsManagement.Name = "btnPetsManagement";
+            this.btnPetsManagement.Size = new System.Drawing.Size(120, 120);
+            this.btnPetsManagement.TabIndex = 7;
+            this.btnPetsManagement.TabStop = false;
+            this.btnPetsManagement.Click += new System.EventHandler(this.btnPetsManagement_Click);
             // 
             // picAdoptersManagement
             // 
@@ -101,7 +102,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.picPetsManagement);
+            this.panel1.Controls.Add(this.btnPetsManagement);
             this.panel1.Location = new System.Drawing.Point(743, 390);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(151, 200);
@@ -192,7 +193,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmNormalControlPanel1.Size = new System.Drawing.Size(1203, 50);
             this.frmNormalControlPanel1.TabIndex = 5;
             // 
-            // frmAdminHome
+            // AdminHome
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -208,11 +209,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmAdminHome";
+            this.Name = "AdminHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminHome";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPetsManagement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPetsManagement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdoptersManagement)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -231,7 +232,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private frmNormalControlPanel frmNormalControlPanel1;
         private System.Windows.Forms.Label txtWelcome;
-        private System.Windows.Forms.PictureBox picPetsManagement;
+        private System.Windows.Forms.PictureBox btnPetsManagement;
         private System.Windows.Forms.PictureBox picAdoptersManagement;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
