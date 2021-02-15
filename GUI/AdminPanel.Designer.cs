@@ -41,6 +41,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAppName = new System.Windows.Forms.Label();
+            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,6 +92,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.toolStripSeparator2,
             this.adoptersManagementToolStripMenuItem,
             this.toolStripSeparator3,
+            this.logoutToolStripMenuItem1,
+            this.toolStripSeparator4,
             this.logoutToolStripMenuItem});
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -154,6 +158,20 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAppName.Text = "MANAGEMENT APPLICATION FOR CENTER OF PET ANIMAL PROTECTIONS";
             this.txtAppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // logoutToolStripMenuItem1
+            // 
+            this.logoutToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.logoutToolStripMenuItem1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(329, 36);
+            this.logoutToolStripMenuItem1.Text = "Notification";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(326, 6);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -185,5 +203,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label txtAppName;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

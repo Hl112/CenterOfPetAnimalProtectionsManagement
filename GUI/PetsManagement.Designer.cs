@@ -267,8 +267,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel4.Controls.Add(this.txtPetSearchFurcolor, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.rdgPetSearchAdopted, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 1);
@@ -293,7 +293,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.72549F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.72549F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.64706F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(450, 497);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
@@ -324,7 +323,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetSearchFurcolor.IconRight = null;
             this.txtPetSearchFurcolor.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPetSearchFurcolor.Lines = new string[0];
-            this.txtPetSearchFurcolor.Location = new System.Drawing.Point(161, 209);
+            this.txtPetSearchFurcolor.Location = new System.Drawing.Point(139, 209);
             this.txtPetSearchFurcolor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPetSearchFurcolor.MaxLength = 32767;
             this.txtPetSearchFurcolor.MinimumSize = new System.Drawing.Size(220, 28);
@@ -376,7 +375,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdgPetSearchAdopted.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdgPetSearchAdopted.Controls.Add(this.rdoAdoptedYes);
             this.rdgPetSearchAdopted.Controls.Add(this.rdoAdoptedNo);
-            this.rdgPetSearchAdopted.Location = new System.Drawing.Point(160, 344);
+            this.rdgPetSearchAdopted.Location = new System.Drawing.Point(138, 344);
             this.rdgPetSearchAdopted.Name = "rdgPetSearchAdopted";
             this.rdgPetSearchAdopted.Size = new System.Drawing.Size(108, 60);
             this.rdgPetSearchAdopted.TabIndex = 15;
@@ -446,7 +445,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetIdSearch.IconRight = null;
             this.txtPetIdSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPetIdSearch.Lines = new string[0];
-            this.txtPetIdSearch.Location = new System.Drawing.Point(161, 141);
+            this.txtPetIdSearch.Location = new System.Drawing.Point(139, 141);
             this.txtPetIdSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPetIdSearch.MaxLength = 32767;
             this.txtPetIdSearch.MinimumSize = new System.Drawing.Size(220, 28);
@@ -500,7 +499,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.cboPetSearchType.BorderRadius = 3;
             this.cboPetSearchType.ForeColor = System.Drawing.Color.White;
             this.cboPetSearchType.Items = new string[0];
-            this.cboPetSearchType.Location = new System.Drawing.Point(161, 88);
+            this.cboPetSearchType.Location = new System.Drawing.Point(139, 88);
             this.cboPetSearchType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboPetSearchType.Name = "cboPetSearchType";
             this.cboPetSearchType.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
@@ -575,9 +574,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(3, 440);
+            this.label8.Location = new System.Drawing.Point(3, 427);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(135, 25);
+            this.label8.Size = new System.Drawing.Size(91, 50);
             this.label8.TabIndex = 11;
             this.label8.Text = "Date adopted: ";
             // 
@@ -586,7 +585,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdgPetSearchSterilized.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdgPetSearchSterilized.Controls.Add(this.rdoSterilizedYes);
             this.rdgPetSearchSterilized.Controls.Add(this.rdoSterilizedNo);
-            this.rdgPetSearchSterilized.Location = new System.Drawing.Point(160, 275);
+            this.rdgPetSearchSterilized.Location = new System.Drawing.Point(138, 275);
             this.rdgPetSearchSterilized.Name = "rdgPetSearchSterilized";
             this.rdgPetSearchSterilized.Size = new System.Drawing.Size(108, 62);
             this.rdgPetSearchSterilized.TabIndex = 14;
@@ -635,10 +634,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.dtmPetSearchDateAdopted.Icon = ((System.Drawing.Image)(resources.GetObject("dtmPetSearchDateAdopted.Icon")));
             this.dtmPetSearchDateAdopted.IconColor = System.Drawing.Color.Maroon;
             this.dtmPetSearchDateAdopted.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.dtmPetSearchDateAdopted.Location = new System.Drawing.Point(160, 436);
+            this.dtmPetSearchDateAdopted.Location = new System.Drawing.Point(138, 436);
             this.dtmPetSearchDateAdopted.MinimumSize = new System.Drawing.Size(260, 32);
             this.dtmPetSearchDateAdopted.Name = "dtmPetSearchDateAdopted";
-            this.dtmPetSearchDateAdopted.Size = new System.Drawing.Size(260, 32);
+            this.dtmPetSearchDateAdopted.Size = new System.Drawing.Size(300, 32);
             this.dtmPetSearchDateAdopted.TabIndex = 16;
             // 
             // cboPetSearchCategory
@@ -648,7 +647,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.cboPetSearchCategory.BorderRadius = 3;
             this.cboPetSearchCategory.ForeColor = System.Drawing.Color.White;
             this.cboPetSearchCategory.Items = new string[0];
-            this.cboPetSearchCategory.Location = new System.Drawing.Point(161, 20);
+            this.cboPetSearchCategory.Location = new System.Drawing.Point(139, 20);
             this.cboPetSearchCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboPetSearchCategory.Name = "cboPetSearchCategory";
             this.cboPetSearchCategory.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));

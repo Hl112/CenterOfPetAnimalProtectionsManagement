@@ -52,6 +52,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
             this.Close();
+            
         }
     }
 }
