@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2ef8827370934efd9d20670e1ae533e8" Name="Diagram1">
+        <EntityTypeShape EntityType="MAFCOPAP_Model.tblAccount" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAFCOPAP_Model.tblPet" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAFCOPAP_Model.tblPetCategory" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAFCOPAP_Model.tblPetDiary" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAFCOPAP_Model.tblPetType" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAFCOPAP_Model.tblRole" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="MAFCOPAP_Model.FK_tblAccount_tblRole" ManuallyRouted="false" />
+        <AssociationConnector Association="MAFCOPAP_Model.FK_tblPet_tblAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="MAFCOPAP_Model.FK_tblPetDiary_tblAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="MAFCOPAP_Model.FK_tblPet_tblPetType" ManuallyRouted="false" />
+        <AssociationConnector Association="MAFCOPAP_Model.FK_tblPetDiary_tblPet" ManuallyRouted="false" />
+        <AssociationConnector Association="MAFCOPAP_Model.FK_tblPetType_tblPetCategory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

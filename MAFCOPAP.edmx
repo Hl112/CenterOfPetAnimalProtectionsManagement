@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MAFCOPAP_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAccount">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="100" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="phone" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="isInBlackList" Type="bit" Nullable="false" />
+          <Property Name="reasonBlackList" Type="nvarchar" MaxLength="100" />
+          <Property Name="roleID" Type="int" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="30" />
+          <Property Name="gender" Type="nvarchar" MaxLength="20" />
+          <Property Name="age" Type="nvarchar" MaxLength="20" />
+          <Property Name="furColor" Type="nvarchar" MaxLength="20" />
+          <Property Name="isSterilized" Type="bit" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="createdDate" Type="datetime" Nullable="false" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="adopter" Type="varchar" MaxLength="20" />
+          <Property Name="dateAdopted" Type="datetime" />
+          <Property Name="image" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tblPetCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPetDiary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adopter" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="petId" Type="int" Nullable="false" />
+          <Property Name="diaryDetail" Type="ntext" Nullable="false" />
+          <Property Name="diaryImages" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPetType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="categoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tblAccount_tblRole">
+          <End Role="tblRole" Type="Self.tblRole" Multiplicity="1" />
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRole">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblAccount">
+              <PropertyRef Name="roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPet_tblAccount">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="0..1" />
+          <End Role="tblPet" Type="Self.tblPet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="tblPet">
+              <PropertyRef Name="adopter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPet_tblPetType">
+          <End Role="tblPetType" Type="Self.tblPetType" Multiplicity="1" />
+          <End Role="tblPet" Type="Self.tblPet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPetType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPet">
+              <PropertyRef Name="typeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPetDiary_tblAccount">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="1" />
+          <End Role="tblPetDiary" Type="Self.tblPetDiary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="tblPetDiary">
+              <PropertyRef Name="adopter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPetDiary_tblPet">
+          <End Role="tblPet" Type="Self.tblPet" Multiplicity="1" />
+          <End Role="tblPetDiary" Type="Self.tblPetDiary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPetDiary">
+              <PropertyRef Name="petId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPetType_tblPetCategory">
+          <End Role="tblPetCategory" Type="Self.tblPetCategory" Multiplicity="1" />
+          <End Role="tblPetType" Type="Self.tblPetType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPetCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPetType">
+              <PropertyRef Name="categoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MAFCOPAP_ModelStoreContainer">
+          <EntitySet Name="tblAccount" EntityType="Self.tblAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPet" EntityType="Self.tblPet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPetCategory" EntityType="Self.tblPetCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPetDiary" EntityType="Self.tblPetDiary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPetType" EntityType="Self.tblPetType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRole" EntityType="Self.tblRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblAccount_tblRole" Association="Self.FK_tblAccount_tblRole">
+            <End Role="tblRole" EntitySet="tblRole" />
+            <End Role="tblAccount" EntitySet="tblAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPet_tblAccount" Association="Self.FK_tblPet_tblAccount">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblPet" EntitySet="tblPet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPet_tblPetType" Association="Self.FK_tblPet_tblPetType">
+            <End Role="tblPetType" EntitySet="tblPetType" />
+            <End Role="tblPet" EntitySet="tblPet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPetDiary_tblAccount" Association="Self.FK_tblPetDiary_tblAccount">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblPetDiary" EntitySet="tblPetDiary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPetDiary_tblPet" Association="Self.FK_tblPetDiary_tblPet">
+            <End Role="tblPet" EntitySet="tblPet" />
+            <End Role="tblPetDiary" EntitySet="tblPetDiary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPetType_tblPetCategory" Association="Self.FK_tblPetType_tblPetCategory">
+            <End Role="tblPetCategory" EntitySet="tblPetCategory" />
+            <End Role="tblPetType" EntitySet="tblPetType" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MAFCOPAP_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAccount">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isInBlackList" Type="Boolean" Nullable="false" />
+          <Property Name="reasonBlackList" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="roleID" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblRole" Relationship="Self.FK_tblAccount_tblRole" FromRole="tblAccount" ToRole="tblRole" />
+          <NavigationProperty Name="tblPet" Relationship="Self.FK_tblPet_tblAccount" FromRole="tblAccount" ToRole="tblPet" />
+          <NavigationProperty Name="tblPetDiary" Relationship="Self.FK_tblPetDiary_tblAccount" FromRole="tblAccount" ToRole="tblPetDiary" />
+        </EntityType>
+        <EntityType Name="tblPet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="age" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="furColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isSterilized" Type="Boolean" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="typeID" Type="Int32" Nullable="false" />
+          <Property Name="adopter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dateAdopted" Type="DateTime" Precision="3" />
+          <Property Name="image" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblAccount" Relationship="Self.FK_tblPet_tblAccount" FromRole="tblPet" ToRole="tblAccount" />
+          <NavigationProperty Name="tblPetType" Relationship="Self.FK_tblPet_tblPetType" FromRole="tblPet" ToRole="tblPetType" />
+          <NavigationProperty Name="tblPetDiary" Relationship="Self.FK_tblPetDiary_tblPet" FromRole="tblPet" ToRole="tblPetDiary" />
+        </EntityType>
+        <EntityType Name="tblPetCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblPetType" Relationship="Self.FK_tblPetType_tblPetCategory" FromRole="tblPetCategory" ToRole="tblPetType" />
+        </EntityType>
+        <EntityType Name="tblPetDiary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adopter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="petId" Type="Int32" Nullable="false" />
+          <Property Name="diaryDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="diaryImages" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tblAccount" Relationship="Self.FK_tblPetDiary_tblAccount" FromRole="tblPetDiary" ToRole="tblAccount" />
+          <NavigationProperty Name="tblPet" Relationship="Self.FK_tblPetDiary_tblPet" FromRole="tblPetDiary" ToRole="tblPet" />
+        </EntityType>
+        <EntityType Name="tblPetType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="categoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblPet" Relationship="Self.FK_tblPet_tblPetType" FromRole="tblPetType" ToRole="tblPet" />
+          <NavigationProperty Name="tblPetCategory" Relationship="Self.FK_tblPetType_tblPetCategory" FromRole="tblPetType" ToRole="tblPetCategory" />
+        </EntityType>
+        <EntityType Name="tblRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblAccount" Relationship="Self.FK_tblAccount_tblRole" FromRole="tblRole" ToRole="tblAccount" />
+        </EntityType>
+        <Association Name="FK_tblAccount_tblRole">
+          <End Role="tblRole" Type="Self.tblRole" Multiplicity="1" />
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRole">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblAccount">
+              <PropertyRef Name="roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPet_tblAccount">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="0..1" />
+          <End Role="tblPet" Type="Self.tblPet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="tblPet">
+              <PropertyRef Name="adopter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPetDiary_tblAccount">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="1" />
+          <End Role="tblPetDiary" Type="Self.tblPetDiary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="tblPetDiary">
+              <PropertyRef Name="adopter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPet_tblPetType">
+          <End Role="tblPetType" Type="Self.tblPetType" Multiplicity="1" />
+          <End Role="tblPet" Type="Self.tblPet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPetType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPet">
+              <PropertyRef Name="typeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPetDiary_tblPet">
+          <End Role="tblPet" Type="Self.tblPet" Multiplicity="1" />
+          <End Role="tblPetDiary" Type="Self.tblPetDiary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPet">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPetDiary">
+              <PropertyRef Name="petId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPetType_tblPetCategory">
+          <End Role="tblPetCategory" Type="Self.tblPetCategory" Multiplicity="1" />
+          <End Role="tblPetType" Type="Self.tblPetType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPetCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPetType">
+              <PropertyRef Name="categoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAccount" EntityType="Self.tblAccount" />
+          <EntitySet Name="tblPet" EntityType="Self.tblPet" />
+          <EntitySet Name="tblPetCategory" EntityType="Self.tblPetCategory" />
+          <EntitySet Name="tblPetDiary" EntityType="Self.tblPetDiary" />
+          <EntitySet Name="tblPetType" EntityType="Self.tblPetType" />
+          <EntitySet Name="tblRole" EntityType="Self.tblRole" />
+          <AssociationSet Name="FK_tblAccount_tblRole" Association="Self.FK_tblAccount_tblRole">
+            <End Role="tblRole" EntitySet="tblRole" />
+            <End Role="tblAccount" EntitySet="tblAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPet_tblAccount" Association="Self.FK_tblPet_tblAccount">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblPet" EntitySet="tblPet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPetDiary_tblAccount" Association="Self.FK_tblPetDiary_tblAccount">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblPetDiary" EntitySet="tblPetDiary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPet_tblPetType" Association="Self.FK_tblPet_tblPetType">
+            <End Role="tblPetType" EntitySet="tblPetType" />
+            <End Role="tblPet" EntitySet="tblPet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPetDiary_tblPet" Association="Self.FK_tblPetDiary_tblPet">
+            <End Role="tblPet" EntitySet="tblPet" />
+            <End Role="tblPetDiary" EntitySet="tblPetDiary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPetType_tblPetCategory" Association="Self.FK_tblPetType_tblPetCategory">
+            <End Role="tblPetCategory" EntitySet="tblPetCategory" />
+            <End Role="tblPetType" EntitySet="tblPetType" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MAFCOPAP_ModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="tblAccount">
+            <EntityTypeMapping TypeName="MAFCOPAP_Model.tblAccount">
+              <MappingFragment StoreEntitySet="tblAccount">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="isInBlackList" ColumnName="isInBlackList" />
+                <ScalarProperty Name="reasonBlackList" ColumnName="reasonBlackList" />
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPet">
+            <EntityTypeMapping TypeName="MAFCOPAP_Model.tblPet">
+              <MappingFragment StoreEntitySet="tblPet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="furColor" ColumnName="furColor" />
+                <ScalarProperty Name="isSterilized" ColumnName="isSterilized" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="adopter" ColumnName="adopter" />
+                <ScalarProperty Name="dateAdopted" ColumnName="dateAdopted" />
+                <ScalarProperty Name="image" ColumnName="image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPetCategory">
+            <EntityTypeMapping TypeName="MAFCOPAP_Model.tblPetCategory">
+              <MappingFragment StoreEntitySet="tblPetCategory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPetDiary">
+            <EntityTypeMapping TypeName="MAFCOPAP_Model.tblPetDiary">
+              <MappingFragment StoreEntitySet="tblPetDiary">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="adopter" ColumnName="adopter" />
+                <ScalarProperty Name="petId" ColumnName="petId" />
+                <ScalarProperty Name="diaryDetail" ColumnName="diaryDetail" />
+                <ScalarProperty Name="diaryImages" ColumnName="diaryImages" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPetType">
+            <EntityTypeMapping TypeName="MAFCOPAP_Model.tblPetType">
+              <MappingFragment StoreEntitySet="tblPetType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRole">
+            <EntityTypeMapping TypeName="MAFCOPAP_Model.tblRole">
+              <MappingFragment StoreEntitySet="tblRole">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
