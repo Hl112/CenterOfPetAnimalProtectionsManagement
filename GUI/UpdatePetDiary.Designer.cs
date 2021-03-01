@@ -39,12 +39,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnChooseImagePetDiary = new System.Windows.Forms.Button();
             this.txtPetDiaryDetail = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.cboPetSearchCategory = new Bunifu.Framework.UI.BunifuDropdown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.flpPetDiaryUpdateImage = new System.Windows.Forms.FlowLayoutPanel();
             label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -52,6 +52,18 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.ForeColor = System.Drawing.Color.Maroon;
+            label2.Location = new System.Drawing.Point(355, 2);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(489, 38);
+            label2.TabIndex = 0;
+            label2.Text = "U P D AT E   Y O U R   P E T  D I A R Y";
             // 
             // frmAdopterPanel1
             // 
@@ -74,18 +86,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 42);
             this.tableLayoutPanel1.TabIndex = 8;
-            // 
-            // label2
-            // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.ForeColor = System.Drawing.Color.Maroon;
-            label2.Location = new System.Drawing.Point(355, 2);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(489, 38);
-            label2.TabIndex = 0;
-            label2.Text = "U P D AT E   Y O U R   P E T  D I A R Y";
             // 
             // tableLayoutPanel3
             // 
@@ -123,18 +123,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.Size = new System.Drawing.Size(644, 589);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(3, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 25);
-            this.label3.TabIndex = 44;
-            this.label3.Text = "Name of pet:";
-            // 
             // btnChooseImagePetDiary
             // 
             this.btnChooseImagePetDiary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
@@ -148,6 +136,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnChooseImagePetDiary.TabIndex = 43;
             this.btnChooseImagePetDiary.Text = "Choose images";
             this.btnChooseImagePetDiary.UseVisualStyleBackColor = false;
+            this.btnChooseImagePetDiary.Click += new System.EventHandler(this.btnChooseImagePetDiary_Click);
             // 
             // txtPetDiaryDetail
             // 
@@ -235,15 +224,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label5.TabIndex = 9;
             this.label5.Text = "Diary detail:";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.flpPetDiaryUpdateImage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(439, 589);
-            this.panel1.TabIndex = 4;
-            // 
             // cboPetSearchCategory
             // 
             this.cboPetSearchCategory.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -259,6 +239,27 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.cboPetSearchCategory.selectedIndex = -1;
             this.cboPetSearchCategory.Size = new System.Drawing.Size(280, 28);
             this.cboPetSearchCategory.TabIndex = 46;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(3, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Name of pet:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.flpPetDiaryUpdateImage);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(439, 589);
+            this.panel1.TabIndex = 4;
             // 
             // flpPetDiaryUpdateImage
             // 

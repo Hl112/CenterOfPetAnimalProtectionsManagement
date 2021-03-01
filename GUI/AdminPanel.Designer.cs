@@ -39,10 +39,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.adoptersManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtAppName = new System.Windows.Forms.Label();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtAppName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
@@ -138,26 +139,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(326, 6);
             // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(329, 36);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            // 
-            // txtAppName
-            // 
-            this.txtAppName.AutoSize = true;
-            this.txtAppName.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAppName.Location = new System.Drawing.Point(54, 5);
-            this.txtAppName.Name = "txtAppName";
-            this.txtAppName.Size = new System.Drawing.Size(685, 28);
-            this.txtAppName.TabIndex = 12;
-            this.txtAppName.Text = "MANAGEMENT APPLICATION FOR CENTER OF PET ANIMAL PROTECTIONS";
-            this.txtAppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // logoutToolStripMenuItem1
             // 
             this.logoutToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
@@ -171,6 +152,27 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(326, 6);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(329, 36);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // txtAppName
+            // 
+            this.txtAppName.AutoSize = true;
+            this.txtAppName.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAppName.Location = new System.Drawing.Point(54, 5);
+            this.txtAppName.Name = "txtAppName";
+            this.txtAppName.Size = new System.Drawing.Size(685, 28);
+            this.txtAppName.TabIndex = 12;
+            this.txtAppName.Text = "MANAGEMENT APPLICATION FOR CENTER OF PET ANIMAL PROTECTIONS";
+            this.txtAppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAdmin
             // 

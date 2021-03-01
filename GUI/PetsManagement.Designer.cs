@@ -55,9 +55,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPetSearchFurcolor = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
-            this.rdgPetSearchAdopted = new System.Windows.Forms.FlowLayoutPanel();
-            this.rdoAdoptedYes = new System.Windows.Forms.RadioButton();
-            this.rdoAdoptedNo = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPetIdSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.cboPetSearchType = new Bunifu.Framework.UI.BunifuDropdown();
@@ -67,14 +64,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.rdgPetSearchSterilized = new System.Windows.Forms.FlowLayoutPanel();
-            this.rdoSterilizedYes = new System.Windows.Forms.RadioButton();
-            this.rdoSterilizedNo = new System.Windows.Forms.RadioButton();
             this.dtmPetSearchDateAdopted = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.cboPetSearchCategory = new Bunifu.Framework.UI.BunifuDropdown();
             this.btnSearchPet = new System.Windows.Forms.Button();
             this.tipButtonCreate = new System.Windows.Forms.ToolTip(this.components);
             this.frmAdmin1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmAdmin();
+            this.cbPetSterilized = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
@@ -85,8 +81,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             ((System.ComponentModel.ISupportInitialize)(this.btnCreatePet)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.rdgPetSearchAdopted.SuspendLayout();
-            this.rdgPetSearchSterilized.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -269,8 +263,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel4.Controls.Add(this.checkBox2, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.txtPetSearchFurcolor, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.rdgPetSearchAdopted, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtPetIdSearch, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.cboPetSearchType, 1, 1);
@@ -280,9 +274,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.Controls.Add(this.label7, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.label9, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.label8, 0, 6);
-            this.tableLayoutPanel4.Controls.Add(this.rdgPetSearchSterilized, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.dtmPetSearchDateAdopted, 1, 6);
             this.tableLayoutPanel4.Controls.Add(this.cboPetSearchCategory, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.cbPetSterilized, 1, 4);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(57, 93);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 7;
@@ -369,42 +363,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetSearchFurcolor.TextPlaceholder = "";
             this.txtPetSearchFurcolor.UseSystemPasswordChar = false;
             this.txtPetSearchFurcolor.WordWrap = true;
-            // 
-            // rdgPetSearchAdopted
-            // 
-            this.rdgPetSearchAdopted.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdgPetSearchAdopted.Controls.Add(this.rdoAdoptedYes);
-            this.rdgPetSearchAdopted.Controls.Add(this.rdoAdoptedNo);
-            this.rdgPetSearchAdopted.Location = new System.Drawing.Point(138, 344);
-            this.rdgPetSearchAdopted.Name = "rdgPetSearchAdopted";
-            this.rdgPetSearchAdopted.Size = new System.Drawing.Size(108, 60);
-            this.rdgPetSearchAdopted.TabIndex = 15;
-            // 
-            // rdoAdoptedYes
-            // 
-            this.rdoAdoptedYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoAdoptedYes.AutoSize = true;
-            this.rdoAdoptedYes.ForeColor = System.Drawing.Color.Maroon;
-            this.rdoAdoptedYes.Location = new System.Drawing.Point(3, 3);
-            this.rdoAdoptedYes.Name = "rdoAdoptedYes";
-            this.rdoAdoptedYes.Size = new System.Drawing.Size(62, 24);
-            this.rdoAdoptedYes.TabIndex = 1;
-            this.rdoAdoptedYes.TabStop = true;
-            this.rdoAdoptedYes.Text = "Yes";
-            this.rdoAdoptedYes.UseVisualStyleBackColor = true;
-            // 
-            // rdoAdoptedNo
-            // 
-            this.rdoAdoptedNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoAdoptedNo.AutoSize = true;
-            this.rdoAdoptedNo.ForeColor = System.Drawing.Color.Maroon;
-            this.rdoAdoptedNo.Location = new System.Drawing.Point(3, 33);
-            this.rdoAdoptedNo.Name = "rdoAdoptedNo";
-            this.rdoAdoptedNo.Size = new System.Drawing.Size(54, 24);
-            this.rdoAdoptedNo.TabIndex = 0;
-            this.rdoAdoptedNo.TabStop = true;
-            this.rdoAdoptedNo.Text = "No";
-            this.rdoAdoptedNo.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -580,42 +538,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label8.TabIndex = 11;
             this.label8.Text = "Date adopted: ";
             // 
-            // rdgPetSearchSterilized
-            // 
-            this.rdgPetSearchSterilized.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdgPetSearchSterilized.Controls.Add(this.rdoSterilizedYes);
-            this.rdgPetSearchSterilized.Controls.Add(this.rdoSterilizedNo);
-            this.rdgPetSearchSterilized.Location = new System.Drawing.Point(138, 275);
-            this.rdgPetSearchSterilized.Name = "rdgPetSearchSterilized";
-            this.rdgPetSearchSterilized.Size = new System.Drawing.Size(108, 62);
-            this.rdgPetSearchSterilized.TabIndex = 14;
-            // 
-            // rdoSterilizedYes
-            // 
-            this.rdoSterilizedYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoSterilizedYes.AutoSize = true;
-            this.rdoSterilizedYes.ForeColor = System.Drawing.Color.Maroon;
-            this.rdoSterilizedYes.Location = new System.Drawing.Point(3, 3);
-            this.rdoSterilizedYes.Name = "rdoSterilizedYes";
-            this.rdoSterilizedYes.Size = new System.Drawing.Size(62, 24);
-            this.rdoSterilizedYes.TabIndex = 1;
-            this.rdoSterilizedYes.TabStop = true;
-            this.rdoSterilizedYes.Text = "Yes";
-            this.rdoSterilizedYes.UseVisualStyleBackColor = true;
-            // 
-            // rdoSterilizedNo
-            // 
-            this.rdoSterilizedNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoSterilizedNo.AutoSize = true;
-            this.rdoSterilizedNo.ForeColor = System.Drawing.Color.Maroon;
-            this.rdoSterilizedNo.Location = new System.Drawing.Point(3, 33);
-            this.rdoSterilizedNo.Name = "rdoSterilizedNo";
-            this.rdoSterilizedNo.Size = new System.Drawing.Size(54, 24);
-            this.rdoSterilizedNo.TabIndex = 0;
-            this.rdoSterilizedNo.TabStop = true;
-            this.rdoSterilizedNo.Text = "No";
-            this.rdoSterilizedNo.UseVisualStyleBackColor = true;
-            // 
             // dtmPetSearchDateAdopted
             // 
             this.dtmPetSearchDateAdopted.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -682,6 +604,26 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmAdmin1.Size = new System.Drawing.Size(1204, 42);
             this.frmAdmin1.TabIndex = 0;
             // 
+            // cbPetSterilized
+            // 
+            this.cbPetSterilized.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbPetSterilized.AutoSize = true;
+            this.cbPetSterilized.Location = new System.Drawing.Point(138, 295);
+            this.cbPetSterilized.Name = "cbPetSterilized";
+            this.cbPetSterilized.Size = new System.Drawing.Size(22, 21);
+            this.cbPetSterilized.TabIndex = 20;
+            this.cbPetSterilized.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(138, 363);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(22, 21);
+            this.checkBox2.TabIndex = 21;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // PetsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -711,10 +653,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel1.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.rdgPetSearchAdopted.ResumeLayout(false);
-            this.rdgPetSearchAdopted.PerformLayout();
-            this.rdgPetSearchSterilized.ResumeLayout(false);
-            this.rdgPetSearchSterilized.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -743,12 +681,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ToolTip tipButtonCreate;
-        private System.Windows.Forms.FlowLayoutPanel rdgPetSearchSterilized;
-        private System.Windows.Forms.RadioButton rdoSterilizedYes;
-        private System.Windows.Forms.RadioButton rdoSterilizedNo;
-        private System.Windows.Forms.FlowLayoutPanel rdgPetSearchAdopted;
-        private System.Windows.Forms.RadioButton rdoAdoptedYes;
-        private System.Windows.Forms.RadioButton rdoAdoptedNo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label11;
         private Bunifu.Framework.UI.BunifuDropdown cboPetSearchType;
@@ -756,5 +688,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private Bunifu.Framework.UI.BunifuDropdown cboPetSearchCategory;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtPetIdSearch;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtPetSearchFurcolor;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox cbPetSterilized;
     }
 }

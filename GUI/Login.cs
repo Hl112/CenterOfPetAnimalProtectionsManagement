@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CenterOfPetAnimalProtectionsManagement.DAO;
+using CenterOfPetAnimalProtectionsManagement.GUI;
 
 namespace CenterOfPetAnimalProtectionsManagement
 {
@@ -34,20 +36,48 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.WindowState = FormWindowState.Minimized;
         }
 
+        public void ShowAdminHome(tblAccount user)
+        {
+            AdminHome NewForm = new AdminHome(user);
+            Application.Run(NewForm);
+        }
+
+        public void ShowAdopterHome(tblAccount user)
+        {
+            UpdatePetDiary NewForm = new UpdatePetDiary(user);
+            Application.Run(NewForm);
+        }
+
+        readonly TblAccountDao DAO = new TblAccountDao();
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassoword.Text;
-            bool result = TblAccountDao.Instance.CheckLogin(username, password);
-            if (result)
+
+            tblAccount user = DAO.CheckLogin(username,password);
+            if (user != null)
             {
-                MessageBox.Show("Login Success");
+                this.Hide();
+                if (user.roleID == 1)
+                {
+                    Thread t = new Thread(() => ShowAdminHome(user));
+                    t.SetApartmentState(ApartmentState.STA);
+                    t.Start();
+                } 
+                else if (user.roleID == 0)
+                {
+                    Thread t = new Thread(() => ShowAdopterHome(user));
+                    t.SetApartmentState(ApartmentState.STA);
+                    t.Start();
+                }
+
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Username or password is incorrect");
             }
-
         }
     }
 }

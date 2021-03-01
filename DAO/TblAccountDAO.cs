@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CenterOfPetAnimalProtectionsManagement.DAO
 {
-    class TblAccountDao
+    public class TblAccountDao
     {
         private static TblAccountDao _instance;
         private DBEntities _db;
@@ -17,26 +17,35 @@ namespace CenterOfPetAnimalProtectionsManagement.DAO
             get { return _instance ?? (_instance = new TblAccountDao()); }
         }
 
-        private TblAccountDao()
+        public TblAccountDao()
         {
-            _db = new DBEntities();
+            _db = DataProvider.Instance.Db;
+            
         }
 
         public tblAccount Acc => acc;
 
 
-        public bool CheckLogin(string username, string password)
+        //public bool CheckLogin(string username, string password)
+        //{
+        //    var result = _db.tblAccount.Find(username);
+        //    if (result != null)
+        //    {
+        //        if (result.password.Equals(password))
+        //        {
+        //            acc = result;
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+
+        public tblAccount CheckLogin(string Username, string Password)
         {
-            var result = DataProvider.Instance.Db.tblAccount.Find(username);
-            if (result != null)
-            {
-                if (result.password.Equals(password))
-                {
-                    acc = result;
-                    return true;
-                }
-            }
-            return false;
+            var user = (from u in _db.tblAccount
+                        where u.username == Username && u.password == Password
+                        select u).SingleOrDefault();
+            return user;
         }
     }
 }
