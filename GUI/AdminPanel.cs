@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
@@ -18,6 +19,14 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Hide();
+            Login form = new Login();
+            form.ShowDialog();
+            this.ParentForm.Close();
         }
     }
 }

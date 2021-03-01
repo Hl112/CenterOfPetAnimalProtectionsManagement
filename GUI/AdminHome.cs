@@ -6,14 +6,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
     public partial class AdminHome : Form
     {
-        public AdminHome()
+        tblAccount admin;
+        public AdminHome(tblAccount user)
         {
             InitializeComponent();
+            txtWelcome.Text = "Welcome " + user.fullname;
+            this.admin = user;
         }
 
         public void ShowPetManagement()
         {
-            PetsManagement newForm = new PetsManagement();
+            PetsManagement newForm = new PetsManagement(admin);
             Application.Run(newForm);
         }
 
@@ -21,6 +24,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             this.Hide();
             Thread t = new Thread(new ThreadStart(ShowPetManagement));
+            t.SetApartmentState(ApartmentState.STA);
             t.Start();
             this.Close();
         }

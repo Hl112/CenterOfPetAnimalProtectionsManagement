@@ -13,7 +13,8 @@ namespace CenterOfPetAnimalProtectionsManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new GUI.PetsManagement());
+            // Application.Run(new GUI.PetsManagement());
+            //Application.Run(new GUI.AdminHome());
             Application.Run(new Login());
         }
     }

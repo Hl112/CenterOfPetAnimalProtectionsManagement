@@ -7,9 +7,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
     public partial class PetsManagement : Form
     {
-        public PetsManagement()
+        tblAccount admin;
+        public PetsManagement(tblAccount user)
         {
             InitializeComponent();
+            this.admin = user;
         }
 
         public void ShowCreatePet()
@@ -26,7 +28,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         public void ShowAdminHome()
         {
-            AdminHome newForm = new AdminHome();
+            AdminHome newForm = new AdminHome(admin);
             Application.Run(newForm);
         }
 
