@@ -107,6 +107,9 @@
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\TblAccountDAO.cs" />
+    <Compile Include="DAO\TblPetCategoryDAO.cs" />
+    <Compile Include="DAO\TblPetDAO.cs" />
+    <Compile Include="DAO\TblPetTypeDAO.cs" />
     <Compile Include="GUI\AdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
