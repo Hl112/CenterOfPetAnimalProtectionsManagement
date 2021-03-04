@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CenterOfPetAnimalProtectionsManagement.DAO;
+using BussinessObject.DataAccess;
+using DataProvider;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
@@ -38,7 +39,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             ComboBox cbPetCategory = sender as ComboBox;
 
-            if (cbPetCategory.SelectedItem != null)
+            if (cbPetCategory != null && cbPetCategory.SelectedItem != null)
             {
                 tblPetCategory selectedCategory = cbPetCategory.SelectedItem as tblPetCategory;
                 var listType = TblPetTypeDAO.Instance.GetTypesById(selectedCategory.id);
@@ -48,12 +49,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     cboPetType.DisplayMember = "name";
                 }
             }
-            
+
         }
 
         private tblPet GetData()
         {
-            tblPet pet = null;
+            tblPet pet;
             string error = "";
             int categoryId = (cboPetCategory.SelectedItem as tblPetCategory).id;
             int typeId = (cboPetType.SelectedItem as tblPetType).id;
@@ -107,8 +108,15 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
             pet = new tblPet()
             {
-                name = name, gender = gender, age = age, furColor = furColor, isSterilized = isSterilized,
-                adopter = adopter, dateAdopted = dateAdopted, typeID = typeId, createdDate = dateCreate
+                name = name,
+                gender = gender,
+                age = age,
+                furColor = furColor,
+                isSterilized = isSterilized,
+                adopter = adopter,
+                dateAdopted = dateAdopted,
+                typeID = typeId,
+                createdDate = dateCreate
             };
 
             return pet;
@@ -118,8 +126,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             tblPet pet = GetData();
             bool result = false;
-            if(pet == null) return;
-            
+            if (pet == null) return;
+
             if (isCreate)
             {
                 result = TblPetDAO.Instance.CreatePet(pet);
@@ -159,7 +167,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

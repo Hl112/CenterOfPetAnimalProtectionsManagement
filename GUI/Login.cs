@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using CenterOfPetAnimalProtectionsManagement.GUI;
+using System;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CenterOfPetAnimalProtectionsManagement.DAO;
-using CenterOfPetAnimalProtectionsManagement.GUI;
+using BussinessObject.DataAccess;
+using DataProvider;
 
 namespace CenterOfPetAnimalProtectionsManagement
 {
@@ -55,7 +49,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             string username = txtUsername.Text;
             string password = txtPassoword.Text;
 
-            tblAccount user = DAO.CheckLogin(username,password);
+            tblAccount user = DAO.CheckLogin(username, password);
             if (user != null)
             {
                 this.Hide();
@@ -64,7 +58,7 @@ namespace CenterOfPetAnimalProtectionsManagement
                     Thread t = new Thread(() => ShowAdminHome(user));
                     t.SetApartmentState(ApartmentState.STA);
                     t.Start();
-                } 
+                }
                 else if (user.roleID == 0)
                 {
                     Thread t = new Thread(() => ShowAdopterHome(user));
