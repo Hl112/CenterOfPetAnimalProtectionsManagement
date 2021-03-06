@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Windows.Forms;
 using DataProvider;
 
@@ -23,11 +22,49 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnPetsManagement_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Thread t = new Thread(new ThreadStart(ShowPetManagement));
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
-            this.Close();
+            try
+            {
+                this.Hide();
+                // Thread t = new Thread(new ThreadStart(ShowPetManagement));
+                // t.SetApartmentState(ApartmentState.STA);
+                // t.Start();
+                PetsManagement newForm = new PetsManagement(admin);
+                newForm.ShowDialog();
+                this.Show();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+        }
+
+        private void picNotification_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                ViewNotification newForm = new ViewNotification();
+                newForm.ShowDialog();
+                this.Show();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+        }
+
+        private void picAdoptersManagement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                AdoptersManagement newForm = new AdoptersManagement();
+                newForm.ShowDialog();
+                this.Show();
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

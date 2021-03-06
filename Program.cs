@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CenterOfPetAnimalProtectionsManagement.GUI;
+using System;
 using System.Windows.Forms;
 
 namespace CenterOfPetAnimalProtectionsManagement
@@ -16,6 +17,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             // Application.Run(new GUI.PetsManagement());
             //Application.Run(new GUI.AdminHome());
             Application.Run(new Login());
+           
         }
     }
 }

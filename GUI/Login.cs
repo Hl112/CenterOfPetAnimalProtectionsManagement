@@ -49,28 +49,37 @@ namespace CenterOfPetAnimalProtectionsManagement
             string username = txtUsername.Text;
             string password = txtPassoword.Text;
 
-            tblAccount user = DAO.CheckLogin(username, password);
-            if (user != null)
+            try
             {
-                this.Hide();
-                if (user.roleID == 1)
+                tblAccount user = DAO.CheckLogin(username, password);
+                if (user != null)
                 {
-                    Thread t = new Thread(() => ShowAdminHome(user));
-                    t.SetApartmentState(ApartmentState.STA);
-                    t.Start();
-                }
-                else if (user.roleID == 0)
-                {
-                    Thread t = new Thread(() => ShowAdopterHome(user));
-                    t.SetApartmentState(ApartmentState.STA);
-                    t.Start();
-                }
+                    this.Hide();
+                    if (user.roleID == 1)
+                    {
+                        Thread t = new Thread(() => ShowAdminHome(user));
+                        t.SetApartmentState(ApartmentState.STA);
+                        t.Start();
+                    }
+                    else if (user.roleID == 0)
+                    {
+                        Thread t = new Thread(() => ShowAdopterHome(user));
+                        t.SetApartmentState(ApartmentState.STA);
+                        t.Start();
+                    }
 
-                this.Close();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Username or password is incorrect");
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Username or password is incorrect");
+                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
         }
     }

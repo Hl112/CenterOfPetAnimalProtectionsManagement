@@ -8,5 +8,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

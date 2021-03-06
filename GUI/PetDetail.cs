@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using BussinessObject.DataAccess;
 using DataProvider;
@@ -12,17 +14,38 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public PetDetail()
         {
             InitializeComponent();
-            MyInit();
+            try
+            {
+                MyInit();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Connection Error!", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
-        public PetDetail(bool isCreate)
+        public PetDetail(bool isCreate, tblPet pet)
         {
             InitializeComponent();
             this.isCreate = isCreate;
-            MyInit();
+            try
+            {
+                MyInit();
+                if (pet != null)
+                {
+                    SetData(pet);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Connection Error!", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
         }
 
+        #region Function
         private void MyInit()
         {
             //Init Category
@@ -65,8 +88,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             bool isSterilized = rdoPetSterilizedYes.Checked;
             bool isAdopter = rdoPetAdoptedYes.Checked;
             string adopter = txtPetAdopter.Text;
+            string description = txtPetDescription.Text;
             DateTime dateCreate = dtmPetCreateDate.Value;
             DateTime? dateAdopted = dtmPetDateAdopted.Value;
+            string image = openFileImage.SafeFileName;
             if (name.Trim().Length == 0)
             {
                 error += "Name is not empty!\n";
@@ -116,14 +141,48 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 adopter = adopter,
                 dateAdopted = dateAdopted,
                 typeID = typeId,
-                createdDate = dateCreate
+                createdDate = dateCreate,
+                description = description,
+                image = image
             };
 
             return pet;
         }
 
+        public void SetData(tblPet pet)
+        {
+            cboPetType.SelectedItem = pet.tblPetType;
+            cboPetCategory.SelectedItem = pet.tblPetType.tblPetCategory;
+            txtPetId.Text = pet.id + "";
+            txtPetName.Text = pet.name;
+            txtPetGender.Text = pet.gender;
+            txtPetAge.Text = pet.age;
+            txtPetFurcolor.Text = pet.furColor;
+            dtmPetCreateDate.Value = pet.createdDate;
+            rdoPetSterilizedYes.Checked = (bool)pet.isSterilized;
+            rdoPetAdoptedYes.Checked = pet.adopter == null ? false : true;
+            if (rdoPetAdoptedYes.Checked)
+            {
+                txtPetAdopter.Text = pet.adopter;
+                dtmPetDateAdopted.Value = (DateTime)pet.dateAdopted;
+            }
+
+            txtPetDescription.Text = pet.description;
+            if (pet.image != null)
+            {
+                string pathImage = FileDAO.Folder + "/" + pet.image;
+                if (File.Exists(pathImage))
+                    picPetAva.Image = new Bitmap(pathImage);
+            }
+        }
+
         private void btnUpdatePet_Click(object sender, EventArgs e)
         {
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show("Fix Loi");
+                return;
+            }
             tblPet pet = GetData();
             bool result = false;
             if (pet == null) return;
@@ -131,6 +190,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             if (isCreate)
             {
                 result = TblPetDAO.Instance.CreatePet(pet);
+
             }
             else
             {
@@ -139,6 +199,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
             if (result)
             {
+                FileDAO.CopyImage(openFileImage.FileName, openFileImage.SafeFileName);
                 MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             else
@@ -154,8 +215,14 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             txtPetAdopter.Enabled = adopted;
             dtmPetDateAdopted.Enabled = adopted;
         }
+        #endregion
+        #region Event
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        private void btnSelectImage_Click(object sender, EventArgs e)
+        private void picPetAva_Click(object sender, EventArgs e)
         {
             if (openFileImage.ShowDialog() == DialogResult.OK)
             {
@@ -165,9 +232,29 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void ValidEmpty(Control c, CancelEventArgs e, string message)
         {
-
+            if (string.IsNullOrWhiteSpace(c.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(c, message);
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(c, "");
+            }
         }
+        private void txtPetName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidEmpty(txtPetName, e, "Name is not empty!");
+        }
+
+        private void txtPetGender_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidEmpty(txtPetGender, e, "Gender is not empty");
+        }
+        #endregion
+
     }
 }

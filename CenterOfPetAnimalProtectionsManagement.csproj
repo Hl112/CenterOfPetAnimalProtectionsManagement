@@ -256,11 +256,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinessObject\BussinessObject.csproj">
-      <Project>{d5380505-7eb7-4af5-b6c4-50df3beaf745}</Project>
+    <ProjectReference Include="BussinessObject\BussinessObject.csproj">
+      <Project>{D5380505-7EB7-4AF5-B6C4-50DF3BEAF745}</Project>
       <Name>BussinessObject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider\DataProvider.csproj">
+    <ProjectReference Include="DataProvider\DataProvider.csproj">
       <Project>{DFD3DC25-C9B3-473A-823D-7931360D1D28}</Project>
       <Name>DataProvider</Name>
     </ProjectReference>

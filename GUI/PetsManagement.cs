@@ -35,18 +35,27 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnCreatePet_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Thread t = new Thread(new ThreadStart(ShowCreatePet));
-            t.Start();
-            this.Close();
+            try
+            {
+                this.Hide();
+                PetDetail newForm = new PetDetail();
+                newForm.ShowDialog();
+                this.Show();
+            }
+            catch (Exception exception)
+            {
+            }
+            // Thread t = new Thread(new ThreadStart(ShowCreatePet));
+            // t.Start();
+            // this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Thread t = new Thread(new ThreadStart(ShowAdminHome));
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
+            //this.Hide();
+            // Thread t = new Thread(new ThreadStart(ShowAdminHome));
+            // t.SetApartmentState(ApartmentState.STA);
+            // t.Start();
             this.Close();
 
         }
