@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms.BunifuTextbox;
 using BussinessObject.DataAccess;
 using DataProvider;
 
@@ -17,11 +18,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 MyInit();
+                errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Connection Error!", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }
         }
 
@@ -37,7 +39,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     SetData(pet);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Connection Error!", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -176,21 +178,16 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
+        #endregion
+        #region Event
         private void btnUpdatePet_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show("Fix Loi");
-                return;
-            }
             tblPet pet = GetData();
             bool result = false;
             if (pet == null) return;
-
             if (isCreate)
             {
                 result = TblPetDAO.Instance.CreatePet(pet);
-
             }
             else
             {
@@ -215,8 +212,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             txtPetAdopter.Enabled = adopted;
             dtmPetDateAdopted.Enabled = adopted;
         }
-        #endregion
-        #region Event
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -232,29 +227,30 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         }
 
-        private void ValidEmpty(Control c, CancelEventArgs e, string message)
+        private void ValidEmpty(Control c, string message)
         {
-            if (string.IsNullOrWhiteSpace(c.Text))
-            {
-                e.Cancel = true;
-                errorProvider.SetError(c, message);
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider.SetError(c, "");
-            }
+            errorProvider.SetError(c, (c as BunifuTextBox)?.Text == String.Empty ? message : null);
         }
         private void txtPetName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidEmpty(txtPetName, e, "Name is not empty!");
+            ValidEmpty(txtPetName,"Name is not empty!");
         }
 
         private void txtPetGender_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidEmpty(txtPetGender, e, "Gender is not empty");
+            ValidEmpty(txtPetGender,"Gender is not empty");
+        }
+        private void txtPetAge_Validating(object sender, CancelEventArgs e)
+        {
+            ValidEmpty(txtPetAge,"Age is not empty");
+        }
+
+        private void txtPetFurcolor_Validating(object sender, CancelEventArgs e)
+        {
+            ValidEmpty(txtPetFurcolor,"Furcolor is not empty");
         }
         #endregion
 
+       
     }
 }

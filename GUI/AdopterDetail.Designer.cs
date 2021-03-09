@@ -51,7 +51,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            this.frmAdmin1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmAdmin();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -77,8 +76,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.rdgPetSterilized = new System.Windows.Forms.FlowLayoutPanel();
-            this.rdoPetSterilizedYes = new System.Windows.Forms.RadioButton();
-            this.rdoPetSterilizedNo = new System.Windows.Forms.RadioButton();
+            this.rdoBlackListYes = new System.Windows.Forms.RadioButton();
+            this.rdoBlackListNo = new System.Windows.Forms.RadioButton();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.frmAdmin1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmAdmin();
             label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -106,16 +107,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             label1.TabIndex = 0;
             label1.Text = "A D O P T E R S   D E T A I L";
             // 
-            // frmAdmin1
-            // 
-            this.frmAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.frmAdmin1.ForeColor = System.Drawing.Color.Transparent;
-            this.frmAdmin1.Location = new System.Drawing.Point(0, -1);
-            this.frmAdmin1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.frmAdmin1.Name = "frmAdmin1";
-            this.frmAdmin1.Size = new System.Drawing.Size(800, 27);
-            this.frmAdmin1.TabIndex = 0;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -123,7 +114,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel1.Controls.Add(label1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 30);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -139,11 +130,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 62);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 365F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 418F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(784, 418);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
@@ -153,7 +144,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel1.Controls.Add(this.picAdopterAva);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 414);
             this.panel1.TabIndex = 4;
@@ -168,7 +159,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.Controls.Add(this.btnDeletePet, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnUpdatePet, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(25, 333);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -182,7 +173,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(24, 2);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(40, 39);
             this.btnBack.TabIndex = 6;
@@ -194,7 +185,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnDeletePet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeletePet.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePet.Image")));
             this.btnDeletePet.Location = new System.Drawing.Point(201, 2);
-            this.btnDeletePet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeletePet.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletePet.Name = "btnDeletePet";
             this.btnDeletePet.Size = new System.Drawing.Size(40, 39);
             this.btnDeletePet.TabIndex = 2;
@@ -206,11 +197,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnUpdatePet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdatePet.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdatePet.Image")));
             this.btnUpdatePet.Location = new System.Drawing.Point(112, 2);
-            this.btnUpdatePet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdatePet.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdatePet.Name = "btnUpdatePet";
             this.btnUpdatePet.Size = new System.Drawing.Size(40, 39);
             this.btnUpdatePet.TabIndex = 1;
             this.btnUpdatePet.TabStop = false;
+            this.btnUpdatePet.Click += new System.EventHandler(this.btnUpdatePet_Click);
             // 
             // picAdopterAva
             // 
@@ -218,11 +210,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.picAdopterAva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picAdopterAva.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.picAdopterAva.Location = new System.Drawing.Point(25, 9);
-            this.picAdopterAva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAdopterAva.Margin = new System.Windows.Forms.Padding(2);
             this.picAdopterAva.Name = "picAdopterAva";
             this.picAdopterAva.Size = new System.Drawing.Size(267, 260);
+            this.picAdopterAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAdopterAva.TabIndex = 0;
             this.picAdopterAva.TabStop = false;
+            this.picAdopterAva.Click += new System.EventHandler(this.picAdopterAva_Click);
             // 
             // panel2
             // 
@@ -232,7 +226,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(315, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(467, 414);
             this.panel2.TabIndex = 5;
@@ -243,7 +237,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.lvListPetsOfAdopter.ForeColor = System.Drawing.Color.Maroon;
             this.lvListPetsOfAdopter.HideSelection = false;
             this.lvListPetsOfAdopter.Location = new System.Drawing.Point(5, 281);
-            this.lvListPetsOfAdopter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvListPetsOfAdopter.Margin = new System.Windows.Forms.Padding(2);
             this.lvListPetsOfAdopter.Name = "lvListPetsOfAdopter";
             this.lvListPetsOfAdopter.Size = new System.Drawing.Size(450, 113);
             this.lvListPetsOfAdopter.TabIndex = 40;
@@ -294,7 +288,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.rdgPetSterilized, 1, 4);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 38);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -758,41 +752,51 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // rdgPetSterilized
             // 
             this.rdgPetSterilized.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdgPetSterilized.Controls.Add(this.rdoPetSterilizedYes);
-            this.rdgPetSterilized.Controls.Add(this.rdoPetSterilizedNo);
+            this.rdgPetSterilized.Controls.Add(this.rdoBlackListYes);
+            this.rdgPetSterilized.Controls.Add(this.rdoBlackListNo);
             this.rdgPetSterilized.Location = new System.Drawing.Point(159, 132);
-            this.rdgPetSterilized.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdgPetSterilized.Margin = new System.Windows.Forms.Padding(2);
             this.rdgPetSterilized.Name = "rdgPetSterilized";
             this.rdgPetSterilized.Size = new System.Drawing.Size(112, 23);
             this.rdgPetSterilized.TabIndex = 21;
             // 
-            // rdoPetSterilizedYes
+            // rdoBlackListYes
             // 
-            this.rdoPetSterilizedYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoPetSterilizedYes.AutoSize = true;
-            this.rdoPetSterilizedYes.ForeColor = System.Drawing.Color.Maroon;
-            this.rdoPetSterilizedYes.Location = new System.Drawing.Point(2, 2);
-            this.rdoPetSterilizedYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdoPetSterilizedYes.Name = "rdoPetSterilizedYes";
-            this.rdoPetSterilizedYes.Size = new System.Drawing.Size(43, 17);
-            this.rdoPetSterilizedYes.TabIndex = 1;
-            this.rdoPetSterilizedYes.TabStop = true;
-            this.rdoPetSterilizedYes.Text = "Yes";
-            this.rdoPetSterilizedYes.UseVisualStyleBackColor = true;
+            this.rdoBlackListYes.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rdoBlackListYes.AutoSize = true;
+            this.rdoBlackListYes.ForeColor = System.Drawing.Color.Maroon;
+            this.rdoBlackListYes.Location = new System.Drawing.Point(2, 2);
+            this.rdoBlackListYes.Margin = new System.Windows.Forms.Padding(2);
+            this.rdoBlackListYes.Name = "rdoBlackListYes";
+            this.rdoBlackListYes.Size = new System.Drawing.Size(43, 17);
+            this.rdoBlackListYes.TabIndex = 1;
+            this.rdoBlackListYes.Text = "Yes";
+            this.rdoBlackListYes.UseVisualStyleBackColor = true;
             // 
-            // rdoPetSterilizedNo
+            // rdoBlackListNo
             // 
-            this.rdoPetSterilizedNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoPetSterilizedNo.AutoSize = true;
-            this.rdoPetSterilizedNo.ForeColor = System.Drawing.Color.Maroon;
-            this.rdoPetSterilizedNo.Location = new System.Drawing.Point(49, 2);
-            this.rdoPetSterilizedNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdoPetSterilizedNo.Name = "rdoPetSterilizedNo";
-            this.rdoPetSterilizedNo.Size = new System.Drawing.Size(39, 17);
-            this.rdoPetSterilizedNo.TabIndex = 0;
-            this.rdoPetSterilizedNo.TabStop = true;
-            this.rdoPetSterilizedNo.Text = "No";
-            this.rdoPetSterilizedNo.UseVisualStyleBackColor = true;
+            this.rdoBlackListNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rdoBlackListNo.AutoSize = true;
+            this.rdoBlackListNo.Checked = true;
+            this.rdoBlackListNo.ForeColor = System.Drawing.Color.Maroon;
+            this.rdoBlackListNo.Location = new System.Drawing.Point(49, 2);
+            this.rdoBlackListNo.Margin = new System.Windows.Forms.Padding(2);
+            this.rdoBlackListNo.Name = "rdoBlackListNo";
+            this.rdoBlackListNo.Size = new System.Drawing.Size(39, 17);
+            this.rdoBlackListNo.TabIndex = 0;
+            this.rdoBlackListNo.TabStop = true;
+            this.rdoBlackListNo.Text = "No";
+            this.rdoBlackListNo.UseVisualStyleBackColor = true;
+            // 
+            // frmAdmin1
+            // 
+            this.frmAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.frmAdmin1.ForeColor = System.Drawing.Color.Transparent;
+            this.frmAdmin1.Location = new System.Drawing.Point(0, -1);
+            this.frmAdmin1.Margin = new System.Windows.Forms.Padding(1);
+            this.frmAdmin1.Name = "frmAdmin1";
+            this.frmAdmin1.Size = new System.Drawing.Size(800, 27);
+            this.frmAdmin1.TabIndex = 0;
             // 
             // AdopterDetail
             // 
@@ -804,8 +808,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.frmAdmin1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdopterDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdopterDetail";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -847,8 +852,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel rdgPetSterilized;
-        private System.Windows.Forms.RadioButton rdoPetSterilizedYes;
-        private System.Windows.Forms.RadioButton rdoPetSterilizedNo;
+        private System.Windows.Forms.RadioButton rdoBlackListYes;
+        private System.Windows.Forms.RadioButton rdoBlackListNo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView lvListPetsOfAdopter;
@@ -856,5 +861,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox btnUpdatePet;
         private System.Windows.Forms.PictureBox btnDeletePet;
+        private System.Windows.Forms.OpenFileDialog openFile;
     }
 }

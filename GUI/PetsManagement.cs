@@ -1,7 +1,6 @@
-﻿using System;
-using System.Threading;
+﻿using DataProvider;
+using System;
 using System.Windows.Forms;
-using DataProvider;
 
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI

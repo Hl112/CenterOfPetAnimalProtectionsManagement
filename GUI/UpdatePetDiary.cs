@@ -1,5 +1,5 @@
-﻿using System.Windows.Forms;
-using DataProvider;
+﻿using DataProvider;
+using System.Windows.Forms;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
