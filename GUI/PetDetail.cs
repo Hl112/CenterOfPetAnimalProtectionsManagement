@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Data.Entity.Core;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -25,10 +26,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
+        private tblPet p;
         public PetDetail(bool isCreate, tblPet pet)
         {
             InitializeComponent();
             this.isCreate = isCreate;
+            p = pet;
             try
             {
                 MyInit();
@@ -56,6 +59,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             bool adopted = rdoPetAdoptedYes.Checked;
             txtPetAdopter.Enabled = adopted;
             dtmPetDateAdopted.Enabled = adopted;
+            if (isCreate) btnDeletePet.Enabled = false;
         }
 
         private void cboPetCategory_SelectedValueChanged(object sender, EventArgs e)
@@ -256,5 +260,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
         #endregion
 
+        private void btnDeletePet_Click(object sender, EventArgs e) {
+            DialogResult r = MessageBox.Show("Do you want to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            try {
+                if (r == DialogResult.Yes && p != null) {
+                    TblPetDAO.Instance.DeletePet(p.id);
+                    this.Close();
+                }
+            } catch (EntityException) {
+                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }

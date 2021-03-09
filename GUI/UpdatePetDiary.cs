@@ -10,6 +10,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             InitializeComponent();
         }
 
+        public UpdatePetDiary() {
+            InitializeComponent();
+        }
+
         private void btnChooseImagePetDiary_Click(object sender, System.EventArgs e)
         {
 
