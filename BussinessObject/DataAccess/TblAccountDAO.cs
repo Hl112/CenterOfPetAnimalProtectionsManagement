@@ -43,5 +43,13 @@ namespace BussinessObject.DataAccess
                         select u).SingleOrDefault();
             return user;
         }
+
+        public bool CreateAdopter(tblAccount adopter)
+        {
+            adopter.tblRole = TblRoleDAO.Instance.GetRoleById(adopter.roleID);
+            tblAccount result = DBProvider.Instance.Db.tblAccount.Add(adopter);
+            if (result != null) DBProvider.Instance.Db.SaveChanges();
+            return result != null;
+        }
     }
 }

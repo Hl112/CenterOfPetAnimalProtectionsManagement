@@ -30,6 +30,7 @@ namespace DataProvider
         public string reasonBlackList { get; set; }
         public int roleID { get; set; }
         public bool status { get; set; }
+        public string image { get; set; }
     
         public virtual tblRole tblRole { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
