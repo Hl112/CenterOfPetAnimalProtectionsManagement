@@ -1,5 +1,5 @@
-﻿using DataProvider;
-using System.Linq;
+﻿using System.Linq;
+using DataProvider;
 
 namespace BussinessObject.DataAccess
 {
