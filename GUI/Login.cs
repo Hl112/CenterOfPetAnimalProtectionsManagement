@@ -30,7 +30,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.WindowState = FormWindowState.Minimized;
         }
 
-        readonly TblAccountDao DAO = new TblAccountDao();
+        readonly TblAccountDAO DAO = new TblAccountDAO();
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

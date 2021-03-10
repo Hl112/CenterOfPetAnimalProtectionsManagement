@@ -191,7 +191,7 @@
         iHRN94au61/irz06DFcj4xjHOMYxRpgw4R/IHvwSc8JcpgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnUpdatePet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUpdateAdopter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABw9JREFUaEPt
         melTU1cYxu3eP6CdkfZTt5nO9EtntB/q0modBK3jvrBoQYYCLogiisCgiDUxIhAQQUBBdg0YUCAJyGZR
@@ -253,9 +253,10 @@
   </data>
   <data name="txtAdopterReasonBlacklist.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAOkAAAAVCAYAAACjZ8mBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABGSURBVHhe7dMxEQAhDADBSEUKGkj3iAQHYIDvU+zOnIQL
-        AAAAAAAAAAAAAAAAAAAAAP6sb7Q1s0uqWeyZR1Ld4nWupCplv2rWl3cdkD32AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAOkAAAAbCAYAAACZbajxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVHhe7dNBDQAhDADBSkUKGq4/EMk5AAMIaMhMshI2
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAA4CVrfG3N7JJqFv/MLalucTtXUpWyH4C0l3f46NDCAAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <data name="txtAdopterId.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

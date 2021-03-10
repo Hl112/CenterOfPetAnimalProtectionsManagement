@@ -4,17 +4,17 @@ using DataProvider;
 
 namespace BussinessObject.DataAccess
 {
-    public class TblAccountDao
+    public class TblAccountDAO
     {
-        private static TblAccountDao _instance;
+        private static TblAccountDAO _instance;
         private DBEntities _db;
         private tblAccount acc = null;
-        public static TblAccountDao Instance
+        public static TblAccountDAO Instance
         {
-            get { return _instance ?? (_instance = new TblAccountDao()); }
+            get { return _instance ?? (_instance = new TblAccountDAO()); }
         }
 
-        public TblAccountDao()
+        public TblAccountDAO()
         {
             _db = DBProvider.Instance.Db;
 

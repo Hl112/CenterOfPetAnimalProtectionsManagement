@@ -41,7 +41,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             try
             {
-                var listAdopters = TblAccountDao.Instance.GetAllAdopters();
+                var listAdopters = TblAccountDAO.Instance.GetAllAdopters();
                 LoadAdoptersListView(listAdopters);
             }
             catch (EntityException)

@@ -1,5 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using BussinessObject.DataAccess;
 using DataProvider;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
@@ -12,6 +15,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public AdopterDetail()
         {
             InitializeComponent();
+            if (rdoBlackListYes.Checked)
+            {
+                txtAdopterReasonBlacklist.Enabled = true;
+            }
+            else txtAdopterReasonBlacklist.Enabled = false;
         }
 
         public AdopterDetail(bool isCreate, tblAccount adopter)
@@ -36,6 +44,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             if (string.IsNullOrWhiteSpace(id)) valid += "ID is not empty\n";
             if (string.IsNullOrWhiteSpace(fullname)) valid += "Fullname is not empty\n";
             if (string.IsNullOrWhiteSpace(phone)) valid += "Phone is not empty\n";
+            //if (!Regex.IsMatch(phone,"\\d")) valid += "Phone is number\n";
             if (string.IsNullOrWhiteSpace(address)) valid += "Address is not empty\n";
             if (isBlack)
                 if (string.IsNullOrWhiteSpace(reason))
@@ -58,6 +67,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 reasonBlackList = reason,
                 roleID = roleID,
                 image = image
+                
             };
             return account;
         }
@@ -72,7 +82,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             txtAdopterReasonBlacklist.Text = account.reasonBlackList;
             if (account.tblPet.Count != 0)
             {
-                 //lvListPetsOfAdopter.Items = listPet;
+                 //lvListPetsOfAdopter.Items = ;
             }
         }
 
@@ -84,14 +94,54 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
-        private void btnUpdatePet_Click(object sender, System.EventArgs e)
+        private void btnUpdateAdopter_Click(object sender, System.EventArgs e)
         {
+            try{
             tblAccount account = GetData();
+            bool result = false;
             if(account == null) return;
             if (isCreate)
             {
-
+               result = TblAccountDAO.Instance.CreateAdopter(account);
             }
+            else
+            {
+               // result = TblAccountDAO.Instance.UpdateAdopter(account);
+            }
+
+            if (result)
+            {
+                if (openFile.FileName != "")
+                {
+                    FileDAO.CopyImage(openFile.FileName, openFile.SafeFileName);
+                }
+                MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception.Message);
+            throw;
+        }
+
+        }
+
+        private void rdoBlackListYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtAdopterReasonBlacklist.Enabled == false)
+                txtAdopterReasonBlacklist.Enabled = true;
+            else txtAdopterReasonBlacklist.Enabled = false;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+            
         }
     }
 }

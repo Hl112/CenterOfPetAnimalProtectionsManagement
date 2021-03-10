@@ -134,7 +134,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel1.Controls.Add(label1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 31);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -173,7 +173,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.Controls.Add(this.cboPetCategory, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.cboPetType, 1, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(344, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 12;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.968127F));
@@ -283,7 +283,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.dtmPetDateAdopted.IconColor = System.Drawing.Color.Maroon;
             this.dtmPetDateAdopted.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtmPetDateAdopted.Location = new System.Drawing.Point(144, 317);
-            this.dtmPetDateAdopted.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtmPetDateAdopted.Margin = new System.Windows.Forms.Padding(2);
             this.dtmPetDateAdopted.MinimumSize = new System.Drawing.Size(201, 32);
             this.dtmPetDateAdopted.Name = "dtmPetDateAdopted";
             this.dtmPetDateAdopted.Size = new System.Drawing.Size(201, 32);
@@ -309,7 +309,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.dtmPetCreateDate.IconColor = System.Drawing.Color.Maroon;
             this.dtmPetCreateDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtmPetCreateDate.Location = new System.Drawing.Point(144, 198);
-            this.dtmPetCreateDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtmPetCreateDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtmPetCreateDate.MinimumSize = new System.Drawing.Size(175, 32);
             this.dtmPetCreateDate.Name = "dtmPetCreateDate";
             this.dtmPetCreateDate.Size = new System.Drawing.Size(201, 32);
@@ -833,7 +833,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdgPetAdopted.Controls.Add(this.rdoPetAdoptedYes);
             this.rdgPetAdopted.Controls.Add(this.rdoPetAdoptedNo);
             this.rdgPetAdopted.Location = new System.Drawing.Point(144, 260);
-            this.rdgPetAdopted.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdgPetAdopted.Margin = new System.Windows.Forms.Padding(2);
             this.rdgPetAdopted.Name = "rdgPetAdopted";
             this.rdgPetAdopted.Size = new System.Drawing.Size(110, 20);
             this.rdgPetAdopted.TabIndex = 23;
@@ -844,7 +844,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdoPetAdoptedYes.AutoSize = true;
             this.rdoPetAdoptedYes.ForeColor = System.Drawing.Color.Maroon;
             this.rdoPetAdoptedYes.Location = new System.Drawing.Point(2, 2);
-            this.rdoPetAdoptedYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoPetAdoptedYes.Margin = new System.Windows.Forms.Padding(2);
             this.rdoPetAdoptedYes.Name = "rdoPetAdoptedYes";
             this.rdoPetAdoptedYes.Size = new System.Drawing.Size(43, 17);
             this.rdoPetAdoptedYes.TabIndex = 1;
@@ -859,7 +859,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdoPetAdoptedNo.Checked = true;
             this.rdoPetAdoptedNo.ForeColor = System.Drawing.Color.Maroon;
             this.rdoPetAdoptedNo.Location = new System.Drawing.Point(49, 2);
-            this.rdoPetAdoptedNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoPetAdoptedNo.Margin = new System.Windows.Forms.Padding(2);
             this.rdoPetAdoptedNo.Name = "rdoPetAdoptedNo";
             this.rdoPetAdoptedNo.Size = new System.Drawing.Size(39, 17);
             this.rdoPetAdoptedNo.TabIndex = 0;
@@ -886,7 +886,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdgPetSterilized.Controls.Add(this.rdoPetSterilizedYes);
             this.rdgPetSterilized.Controls.Add(this.rdoPetSterilizedNo);
             this.rdgPetSterilized.Location = new System.Drawing.Point(144, 230);
-            this.rdgPetSterilized.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdgPetSterilized.Margin = new System.Windows.Forms.Padding(2);
             this.rdgPetSterilized.Name = "rdgPetSterilized";
             this.rdgPetSterilized.Size = new System.Drawing.Size(112, 23);
             this.rdgPetSterilized.TabIndex = 21;
@@ -897,7 +897,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdoPetSterilizedYes.AutoSize = true;
             this.rdoPetSterilizedYes.ForeColor = System.Drawing.Color.Maroon;
             this.rdoPetSterilizedYes.Location = new System.Drawing.Point(2, 2);
-            this.rdoPetSterilizedYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoPetSterilizedYes.Margin = new System.Windows.Forms.Padding(2);
             this.rdoPetSterilizedYes.Name = "rdoPetSterilizedYes";
             this.rdoPetSterilizedYes.Size = new System.Drawing.Size(43, 17);
             this.rdoPetSterilizedYes.TabIndex = 1;
@@ -911,7 +911,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdoPetSterilizedNo.Checked = true;
             this.rdoPetSterilizedNo.ForeColor = System.Drawing.Color.Maroon;
             this.rdoPetSterilizedNo.Location = new System.Drawing.Point(49, 2);
-            this.rdoPetSterilizedNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoPetSterilizedNo.Margin = new System.Windows.Forms.Padding(2);
             this.rdoPetSterilizedNo.Name = "rdoPetSterilizedNo";
             this.rdoPetSterilizedNo.Size = new System.Drawing.Size(39, 17);
             this.rdoPetSterilizedNo.TabIndex = 0;
@@ -946,7 +946,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 66);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -960,7 +960,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel1.Controls.Add(this.picPetAva);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 361);
             this.panel1.TabIndex = 4;
@@ -979,7 +979,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.txtPetDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
             this.txtPetDescription.Location = new System.Drawing.Point(5, 18);
-            this.txtPetDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPetDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtPetDescription.Multiline = true;
             this.txtPetDescription.Name = "txtPetDescription";
             this.txtPetDescription.Size = new System.Drawing.Size(293, 69);
@@ -991,7 +991,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.picPetAva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPetAva.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.picPetAva.Location = new System.Drawing.Point(25, 2);
-            this.picPetAva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picPetAva.Margin = new System.Windows.Forms.Padding(2);
             this.picPetAva.Name = "picPetAva";
             this.picPetAva.Size = new System.Drawing.Size(267, 260);
             this.picPetAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1007,7 +1007,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.Controls.Add(this.btnUpdatePet, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnDeletePet, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(646, 434);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1021,7 +1021,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnUpdatePet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdatePet.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdatePet.Image")));
             this.btnUpdatePet.Location = new System.Drawing.Point(18, 2);
-            this.btnUpdatePet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdatePet.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdatePet.Name = "btnUpdatePet";
             this.btnUpdatePet.Size = new System.Drawing.Size(40, 39);
             this.btnUpdatePet.TabIndex = 1;
@@ -1034,7 +1034,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnDeletePet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeletePet.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePet.Image")));
             this.btnDeletePet.Location = new System.Drawing.Point(94, 2);
-            this.btnDeletePet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeletePet.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletePet.Name = "btnDeletePet";
             this.btnDeletePet.Size = new System.Drawing.Size(40, 39);
             this.btnDeletePet.TabIndex = 2;
@@ -1047,7 +1047,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(-1, 434);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(47, 45);
             this.btnBack.TabIndex = 5;
@@ -1085,7 +1085,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Controls.Add(this.frmAdmin1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PetDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PetDetail";
