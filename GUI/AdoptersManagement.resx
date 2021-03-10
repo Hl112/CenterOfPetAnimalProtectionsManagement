@@ -120,10 +120,23 @@
   <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtAdopterID.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjV+FoZPauk88XsuSTdKf4ulHSirBu4dSsM
+        U5YQkAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txtPetIdSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjV+FoZPauk88XsuSTdKf4ulHSirBu4dSsM
+        U5YQkAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABl1JREFUaEPt
@@ -155,22 +168,6 @@
         T1uS8tNFpWCr6//+ENsfgtMxRXDZL3LEhESqwQu8fyuMCcT0uxwWEnJNLiwIdnhcNlPYWqwS8A63GZgI
         ylAsm9sk6hZHrJw36b7tbNsxpgH4ID/cHgxwN7zKRLJsed32hYzsb1G4y/6KdNu/h8EyEkEEEUQwRhg3
         7h+iFACVDNa+2gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtPetIdSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjV+FoZPauk88XsuSTdKf4ulHSirBu4dSsM
-        U5YQkAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtAdopterID.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjV+FoZPauk88XsuSTdKf4ulHSirBu4dSsM
-        U5YQkAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnCreateAdopter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

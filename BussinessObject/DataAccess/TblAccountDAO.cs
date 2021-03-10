@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using DataProvider;
 
 namespace BussinessObject.DataAccess
@@ -21,21 +22,6 @@ namespace BussinessObject.DataAccess
 
         public tblAccount Acc => acc;
 
-
-        //public bool CheckLogin(string username, string password)
-        //{
-        //    var result = _db.tblAccount.Find(username);
-        //    if (result != null)
-        //    {
-        //        if (result.password.Equals(password))
-        //        {
-        //            acc = result;
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
-
         public tblAccount CheckLogin(string Username, string Password)
         {
             var user = (from u in _db.tblAccount
@@ -50,6 +36,14 @@ namespace BussinessObject.DataAccess
             tblAccount result = DBProvider.Instance.Db.tblAccount.Add(adopter);
             if (result != null) DBProvider.Instance.Db.SaveChanges();
             return result != null;
+        }
+
+        public List<tblAccount> GetAllAdopters()
+        {
+            var listAdopters = (from a in _db.tblAccount
+                where a.roleID == 2 && a.status == true
+                select a).ToList();
+            return listAdopters;
         }
     }
 }

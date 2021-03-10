@@ -43,5 +43,38 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 this.ParentForm.Top += e.Y - _pos.Y;
             }
         }
+
+        private void petsManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(this.ParentForm is PetsManagement))
+            {
+                this.ParentForm.Hide();
+                PetsManagement form = new PetsManagement();
+                form.ShowDialog();
+                this.ParentForm.Close();
+            }
+        }
+
+        private void adoptersManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(this.ParentForm is AdoptersManagement))
+            {
+                this.ParentForm.Hide();
+                AdoptersManagement form = new AdoptersManagement();
+                form.ShowDialog();
+                this.ParentForm.Close();
+            }
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (!(this.ParentForm is ViewNotification))
+            {
+                this.ParentForm.Hide();
+                ViewNotification form = new ViewNotification();
+                form.ShowDialog();
+                this.ParentForm.Close();
+            }
+        }
     }
 }
