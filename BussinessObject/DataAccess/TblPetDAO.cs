@@ -54,6 +54,7 @@ namespace BussinessObject.DataAccess
         //this function will get all pet in tblPet
         public List<tblPet> GetAllPets() {
             var pets = (from x in DBProvider.Instance.Db.tblPet
+                        where x.status == true
                         select x).ToList();
             return pets;
         }
@@ -94,8 +95,10 @@ namespace BussinessObject.DataAccess
                         && DbFunctions.Like(p.furColor.ToString(), $"%" + searchFurColor + "%")
                         && DbFunctions.Like(p.status.ToString(), $"%" + searchStatus + "%")
                         && (isAdopted ? p.adopter != null : p.adopter == null)
-                        && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) >= DbFunctions.TruncateTime(searchAdoptedDateFrom) && DbFunctions.TruncateTime(p.dateAdopted) <= DbFunctions.TruncateTime(searchAdoptedDateTo) : true)
-                       /* && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) <= DbFunctions.TruncateTime(searchAdoptedDateTo) : true)*/
+                        && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) >= 
+                            DbFunctions.TruncateTime(searchAdoptedDateFrom) && 
+                            DbFunctions.TruncateTime(p.dateAdopted) <= 
+                            DbFunctions.TruncateTime(searchAdoptedDateTo) : true)
                         select p).ToList();
             return pets;
         }

@@ -27,6 +27,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         private void InitializeData() {
+            cbPetStatus.Checked = true;
             //set enable = false
             cboPetSearchType.Enabled = false;
             dtmPetSearchDateAdoptedFrom.Enabled = false;
