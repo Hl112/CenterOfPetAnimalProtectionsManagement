@@ -28,6 +28,8 @@ namespace BussinessObject.DataAccess
 
         }
 
+        #region HL
+        // HL - This function will create pet
         public bool CreatePet(tblPet pet)
         {
             pet.tblPetType = TblPetTypeDAO.Instance.GetType(pet.typeID);
@@ -35,22 +37,31 @@ namespace BussinessObject.DataAccess
             if (result != null) DBProvider.Instance.Db.SaveChanges();
             return result != null;
         }
-
+        // HL - This function will update pet
         public bool UpdatePet(tblPet pet)
         {
-            tblPet update = DBProvider.Instance.Db.tblPet.Find(pet.id);
-            
+            var update = (from tblPet in DBProvider.Instance.Db.tblPet where tblPet.id == pet.id select tblPet)
+                .SingleOrDefault();
             if (update != null)
             {
-                pet.createdDate = update.createdDate;
-                update = pet;
+                update.name = pet.name;
+                update.age = pet.age;
+                update.image = pet.image;
+                update.gender = pet.gender;
+                update.description = pet.description;
+                update.isSterilized = pet.isSterilized;
+                update.adopter = pet.adopter;
+                update.furColor = pet.furColor;
+                update.typeID = pet.typeID;
+                update.dateAdopted = pet.dateAdopted;
                 DBProvider.Instance.Db.SaveChangesAsync();
                 return true;
             }
-
             return false;
         }
+        #endregion
 
+        #region Diep
         //this function will get all pet in tblPet
         public List<tblPet> GetAllPets() {
             var pets = (from x in DBProvider.Instance.Db.tblPet
@@ -99,5 +110,6 @@ namespace BussinessObject.DataAccess
                         select p).ToList();
             return pets;
         }
+        #endregion
     }
 }
