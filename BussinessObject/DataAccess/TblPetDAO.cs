@@ -5,6 +5,7 @@ using System.Data.Entity.SqlServer;
 using System.Globalization;
 using System;
 using System.Data.Entity;
+using System.Net.Http;
 
 namespace BussinessObject.DataAccess
 {
@@ -38,11 +39,12 @@ namespace BussinessObject.DataAccess
         public bool UpdatePet(tblPet pet)
         {
             tblPet update = DBProvider.Instance.Db.tblPet.Find(pet.id);
+            
             if (update != null)
             {
                 pet.createdDate = update.createdDate;
                 update = pet;
-                DBProvider.Instance.Db.SaveChanges();
+                DBProvider.Instance.Db.SaveChangesAsync();
                 return true;
             }
 

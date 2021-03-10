@@ -81,9 +81,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1200, 32);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
+            this.menuStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseMove);
             // 
             // menuToolStripMenuItem
             // 
@@ -117,6 +120,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.petsManagementToolStripMenuItem.Name = "petsManagementToolStripMenuItem";
             this.petsManagementToolStripMenuItem.Size = new System.Drawing.Size(329, 36);
             this.petsManagementToolStripMenuItem.Text = "Pets Management";
+            this.petsManagementToolStripMenuItem.Click += new System.EventHandler(this.petsManagementToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -133,6 +137,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.adoptersManagementToolStripMenuItem.Name = "adoptersManagementToolStripMenuItem";
             this.adoptersManagementToolStripMenuItem.Size = new System.Drawing.Size(329, 36);
             this.adoptersManagementToolStripMenuItem.Text = "Adopters Management";
+            this.adoptersManagementToolStripMenuItem.Click += new System.EventHandler(this.adoptersManagementToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -147,6 +152,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
             this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(329, 36);
             this.logoutToolStripMenuItem1.Text = "Notification";
+            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
             // toolStripSeparator4
             // 

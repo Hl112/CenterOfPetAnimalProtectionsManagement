@@ -1,4 +1,9 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity.Core;
+using System.Windows.Forms;
+using BussinessObject.DataAccess;
+using DataProvider;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
@@ -7,6 +12,43 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public AdoptersManagement()
         {
             InitializeComponent();
+        }
+
+        private void LoadAdoptersListView(List<tblAccount> listAdopters)
+        {
+            lvListAdopters.Clear();
+            lvListAdopters.Columns.Add("Full name");
+            lvListAdopters.Columns.Add("Address");
+            lvListAdopters.Columns.Add("Phone");
+
+            if (lvListAdopters != null)
+            {
+                foreach (var adopter in listAdopters)
+                {
+                    ListViewItem item = new ListViewItem(adopter.fullname);
+                    item.SubItems.Add(adopter.address);
+                    item.SubItems.Add(adopter.phone);
+                    lvListAdopters.Items.Add(item);
+
+                }
+                lvListAdopters.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListAdopters.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListAdopters.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+        }
+
+        private void btnShowAllAdopters_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                var listAdopters = TblAccountDao.Instance.GetAllAdopters();
+                LoadAdoptersListView(listAdopters);
+            }
+            catch (EntityException)
+            {
+                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

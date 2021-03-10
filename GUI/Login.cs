@@ -30,18 +30,6 @@ namespace CenterOfPetAnimalProtectionsManagement
             this.WindowState = FormWindowState.Minimized;
         }
 
-        public void ShowAdminHome(tblAccount user)
-        {
-            AdminHome NewForm = new AdminHome(user);
-            Application.Run(NewForm);
-        }
-
-        public void ShowAdopterHome(tblAccount user)
-        {
-            UpdatePetDiary NewForm = new UpdatePetDiary(user);
-            Application.Run(NewForm);
-        }
-
         readonly TblAccountDao DAO = new TblAccountDao();
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -54,21 +42,20 @@ namespace CenterOfPetAnimalProtectionsManagement
                 tblAccount user = DAO.CheckLogin(username, password);
                 if (user != null)
                 {
-                    this.Hide();
                     if (user.roleID == 1)
                     {
-                        Thread t = new Thread(() => ShowAdminHome(user));
-                        t.SetApartmentState(ApartmentState.STA);
-                        t.Start();
+                        this.Hide();
+                        AdminHome newForm = new AdminHome(user);
+                        newForm.ShowDialog();
+                        this.Close();
                     }
-                    else if (user.roleID == 0)
+                    else if (user.roleID == 2)
                     {
-                        Thread t = new Thread(() => ShowAdopterHome(user));
-                        t.SetApartmentState(ApartmentState.STA);
-                        t.Start();
+                        this.Hide();
+                        UpdatePetDiary newForm = new UpdatePetDiary(user);
+                        newForm.ShowDialog();
+                        this.Close();
                     }
-
-                    this.Close();
                 }
                 else
                 {

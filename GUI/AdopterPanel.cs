@@ -8,5 +8,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, System.EventArgs e)
+        {
+            this.ParentForm.Hide();
+            Login form = new Login();
+            form.ShowDialog();
+            this.ParentForm.Close();
+        }
     }
 }

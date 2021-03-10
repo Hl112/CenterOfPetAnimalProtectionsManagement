@@ -4,6 +4,7 @@ using System.Data.Entity.Core;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms.BunifuTextbox;
 using BussinessObject.DataAccess;
 using DataProvider;
 
@@ -18,11 +19,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 MyInit();
+                errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Connection Error!", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }
         }
 
@@ -85,6 +87,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             string error = "";
             int categoryId = (cboPetCategory.SelectedItem as tblPetCategory).id;
             int typeId = (cboPetType.SelectedItem as tblPetType).id;
+            int petId;
             string name = txtPetName.Text;
             string gender = txtPetGender.Text;
             string age = txtPetAge.Text;
@@ -149,7 +152,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 description = description,
                 image = image
             };
-
+            if (!string.IsNullOrWhiteSpace(txtPetId.Text))
+            {
+                petId = int.Parse(txtPetId.Text);
+                pet.id = petId;
+            }
             return pet;
         }
 
@@ -182,33 +189,37 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnUpdatePet_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            try
             {
-                MessageBox.Show("Fix Loi");
-                return;
-            }
-            tblPet pet = GetData();
-            bool result = false;
-            if (pet == null) return;
+                tblPet pet = GetData();
+                bool result = false;
+                if (pet == null) return;
+                if (isCreate)
+                {
+                    result = TblPetDAO.Instance.CreatePet(pet);
+                }
+                else
+                {
+                    result = TblPetDAO.Instance.UpdatePet(pet);
+                }
 
-            if (isCreate)
-            {
-                result = TblPetDAO.Instance.CreatePet(pet);
-
+                if (result)
+                {
+                    if (openFileImage.FileName != "")
+                    {
+                        FileDAO.CopyImage(openFileImage.FileName, openFileImage.SafeFileName);
+                    }
+                    MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+                else
+                {
+                    MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception exception)
             {
-                result = TblPetDAO.Instance.UpdatePet(pet);
-            }
-
-            if (result)
-            {
-                FileDAO.CopyImage(openFileImage.FileName, openFileImage.SafeFileName);
-                MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
-            else
-            {
-                MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(exception.Message);
+                throw;
             }
 
         }
@@ -236,27 +247,27 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         }
 
-        private void ValidEmpty(Control c, CancelEventArgs e, string message)
+        private void ValidEmpty(Control c, string message)
         {
-            if (string.IsNullOrWhiteSpace(c.Text))
-            {
-                e.Cancel = true;
-                errorProvider.SetError(c, message);
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider.SetError(c, "");
-            }
+            errorProvider.SetError(c, (c as BunifuTextBox)?.Text == String.Empty ? message : null);
         }
         private void txtPetName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidEmpty(txtPetName, e, "Name is not empty!");
+            ValidEmpty(txtPetName,"Name is not empty!");
         }
 
         private void txtPetGender_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidEmpty(txtPetGender, e, "Gender is not empty");
+            ValidEmpty(txtPetGender,"Gender is not empty");
+        }
+        private void txtPetAge_Validating(object sender, CancelEventArgs e)
+        {
+            ValidEmpty(txtPetAge,"Age is not empty");
+        }
+
+        private void txtPetFurcolor_Validating(object sender, CancelEventArgs e)
+        {
+            ValidEmpty(txtPetFurcolor,"Furcolor is not empty");
         }
         #endregion
 
@@ -272,5 +283,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 return;
             }
         }
+
     }
 }
