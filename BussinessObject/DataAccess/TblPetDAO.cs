@@ -92,8 +92,8 @@ namespace BussinessObject.DataAccess
                         && DbFunctions.Like(p.furColor.ToString(), $"%" + searchFurColor + "%")
                         && DbFunctions.Like(p.status.ToString(), $"%" + searchStatus + "%")
                         && (isAdopted ? p.adopter != null : p.adopter == null)
-                        && DbFunctions.TruncateTime(p.dateAdopted) >= DbFunctions.TruncateTime(searchAdoptedDateFrom)
-                        && DbFunctions.TruncateTime(p.dateAdopted) <= DbFunctions.TruncateTime(searchAdoptedDateTo)
+                        && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) >= DbFunctions.TruncateTime(searchAdoptedDateFrom) && DbFunctions.TruncateTime(p.dateAdopted) <= DbFunctions.TruncateTime(searchAdoptedDateTo) : true)
+                       /* && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) <= DbFunctions.TruncateTime(searchAdoptedDateTo) : true)*/
                         select p).ToList();
             return pets;
         }
