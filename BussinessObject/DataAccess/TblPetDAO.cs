@@ -1,11 +1,8 @@
 ﻿using DataProvider;
 using System.Linq;
 using System.Collections.Generic;
-using System.Data.Entity.SqlServer;
-using System.Globalization;
 using System;
 using System.Data.Entity;
-using System.Net.Http;
 
 namespace BussinessObject.DataAccess
 {
