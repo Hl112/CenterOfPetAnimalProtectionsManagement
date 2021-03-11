@@ -45,5 +45,10 @@ namespace BussinessObject.DataAccess
                 select a).ToList();
             return listAdopters;
         }
+
+        public tblAccount GetAccountByUsername(string username)
+        {
+            return _db.tblAccount.Find(username);
+        }
     }
 }

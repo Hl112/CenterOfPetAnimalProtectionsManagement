@@ -19,5 +19,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             Application.Exit();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Hide();
+            Login form = new Login();
+            form.ShowDialog();
+            this.ParentForm.Close();
+        }
     }
 }

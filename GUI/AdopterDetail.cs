@@ -12,25 +12,24 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private const string password = "123";
         private const int roleID = 2;//Adopter
         private bool isCreate = true;
+        private tblAccount adopter;
         public AdopterDetail()
         {
             InitializeComponent();
-            if (rdoBlackListYes.Checked)
-            {
-                txtAdopterReasonBlacklist.Enabled = true;
-            }
-            else txtAdopterReasonBlacklist.Enabled = false;
         }
 
         public AdopterDetail(bool isCreate, tblAccount adopter)
         {
-
+            InitializeComponent();
+            this.adopter = adopter;
+            LoadData(adopter);
+           
         }
 
         private tblAccount GetData()
         {
             tblAccount account = null;
-            string id = txtAdopterId.Text;
+            string id = txtAdopterUsername.Text;
             string fullname = txtAdopterFullname.Text;
             string phone = txtAdopterPhone.Text;
             string address = txtAdopterAddress.Text;
@@ -74,7 +73,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void SetData(tblAccount account)
         {
-            txtAdopterId.Text = account.username;
+            txtAdopterUsername.Text = account.username;
             txtAdopterFullname.Text = account.fullname;
             txtAdopterPhone.Text = account.phone;
             txtAdopterAddress.Text = account.address;
@@ -130,18 +129,54 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         }
 
-        private void rdoBlackListYes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (txtAdopterReasonBlacklist.Enabled == false)
-                txtAdopterReasonBlacklist.Enabled = true;
-            else txtAdopterReasonBlacklist.Enabled = false;
-        }
+    
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LoadData(tblAccount adopter)
+        {
+            txtAdopterUsername.Text = adopter.username;
+            txtAdopterFullname.Text = adopter.fullname;
+            txtAdopterPhone.Text = adopter.phone;
+            txtAdopterAddress.Text = adopter.address;
+            if (adopter.isInBlackList)
+            {
+                rdoBlackListYes.Checked = true;
+                lbReason.Visible = true;
+                txtAdopterReasonBlacklist.Visible = true;
+                txtAdopterReasonBlacklist.Text = adopter.reasonBlackList;
+            }
+            else
+            {
+                rdoBlackListNo.Checked = true;
+                lbReason.Visible = false;
+                txtAdopterReasonBlacklist.Visible = false;
+            }
+
+            if (adopter.image != null)
+            {
+                if (adopter.image.Trim() != String.Empty)
+                {
+                    picAdopterAva.ImageLocation = @"..\..\..\images\" + adopter.image;
+                    picAdopterAva.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+            }
             
-            
+        }
+
+        private void rdoBlackListYes_Click(object sender, EventArgs e)
+        {
+            lbReason.Visible = true;
+            txtAdopterReasonBlacklist.Visible = true;
+        }
+
+        private void rdoBlackListNo_Click(object sender, EventArgs e)
+        {
+            lbReason.Visible = false;
+            txtAdopterReasonBlacklist.Visible = false;
         }
     }
 }
