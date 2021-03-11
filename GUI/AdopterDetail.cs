@@ -21,9 +21,15 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public AdopterDetail(bool isCreate, tblAccount adopter)
         {
             InitializeComponent();
-            this.adopter = adopter;
-            LoadData(adopter);
-           
+            if (isCreate)
+            {
+
+            }
+            else
+            {
+                this.adopter = adopter;
+                LoadData(adopter);
+            }
         }
 
         private tblAccount GetData()
