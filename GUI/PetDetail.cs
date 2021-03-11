@@ -150,7 +150,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 typeID = typeId,
                 createdDate = dateCreate,
                 description = description,
-                image = image
+                image = image,
+                status = true
             };
             if (!string.IsNullOrWhiteSpace(txtPetId.Text))
             {

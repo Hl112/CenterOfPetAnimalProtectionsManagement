@@ -151,6 +151,22 @@
         DmQAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="txtUsername.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjV+FoZPauk88XsuSTdKf4ulHSirBu4dSsM
+        U5YQkAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txtPetIdSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjV+FoZPauk88XsuSTdKf4ulHSirBu4dSsM
+        U5YQkAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABl1JREFUaEPt
@@ -184,15 +200,7 @@
         7h+iFACVDNa+2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="txtAdopterID.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjV+FoZPauk88XsuSTdKf4ulHSirBu4dSsM
-        U5YQkAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtPetIdSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtAdopterSearchName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANwAAAArCAYAAAATzeYgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABZSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcgIFvIRQzyUrY

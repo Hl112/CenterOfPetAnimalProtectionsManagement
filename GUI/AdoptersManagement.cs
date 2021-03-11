@@ -17,6 +17,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private void LoadAdoptersListView(List<tblAccount> listAdopters)
         {
             lvListAdopters.Clear();
+            lvListAdopters.Columns.Add("Username");
             lvListAdopters.Columns.Add("Full name");
             lvListAdopters.Columns.Add("Address");
             lvListAdopters.Columns.Add("Phone");
@@ -25,7 +26,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             {
                 foreach (var adopter in listAdopters)
                 {
-                    ListViewItem item = new ListViewItem(adopter.fullname);
+                    ListViewItem item = new ListViewItem(adopter.username);
+                    item.SubItems.Add(adopter.fullname);
                     item.SubItems.Add(adopter.address);
                     item.SubItems.Add(adopter.phone);
                     lvListAdopters.Items.Add(item);
@@ -34,6 +36,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 lvListAdopters.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
                 lvListAdopters.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
                 lvListAdopters.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListAdopters.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
 
@@ -41,7 +44,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             try
             {
-                var listAdopters = TblAccountDao.Instance.GetAllAdopters();
+                var listAdopters = TblAccountDAO.Instance.GetAllAdopters();
                 LoadAdoptersListView(listAdopters);
             }
             catch (EntityException)
@@ -49,6 +52,32 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        private void btnSearchAdopter_Click(object sender, EventArgs e)
+        {
+            String usernameSearch = txtUsername.Text;
+            String nameSearch = txtUsername.Text;
+            String phoneSearch = txtUsername.Text;
+            bool isInBlacklist = cbIsInBlacklist.Checked;
+
+        }
+
+        private void lvListAdopters_DoubleClick(object sender, EventArgs e)
+        {
+            String username = lvListAdopters.SelectedItems[0].SubItems[0].Text;
+            tblAccount adopter = TblAccountDAO.Instance.GetAccountByUsername(username);
+            this.Hide();
+            AdopterDetail form = new AdopterDetail(false,adopter);
+            form.ShowDialog();
+            this.Show();
         }
     }
 }
