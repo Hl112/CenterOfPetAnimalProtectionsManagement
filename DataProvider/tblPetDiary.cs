@@ -20,6 +20,7 @@ namespace DataProvider
         public string diaryDetail { get; set; }
         public string diaryImages { get; set; }
         public System.DateTime createDate { get; set; }
+        public bool isRead { get; set; }
     
         public virtual tblAccount tblAccount { get; set; }
         public virtual tblPet tblPet { get; set; }

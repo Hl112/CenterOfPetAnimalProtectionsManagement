@@ -56,6 +56,7 @@
           <Property Name="diaryDetail" Type="ntext" Nullable="false" />
           <Property Name="diaryImages" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="createDate" Type="datetime" Nullable="false" />
+          <Property Name="isRead" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblPetType">
           <Key>
@@ -241,6 +242,7 @@
           <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="tblAccount" Relationship="Self.FK_tblPetDiary_tblAccount" FromRole="tblPetDiary" ToRole="tblAccount" />
           <NavigationProperty Name="tblPet" Relationship="Self.FK_tblPetDiary_tblPet" FromRole="tblPetDiary" ToRole="tblPet" />
+          <Property Name="isRead" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="tblPetType">
           <Key>
@@ -418,6 +420,7 @@
           <EntitySetMapping Name="tblPetDiary">
             <EntityTypeMapping TypeName="PRN_ASMModel.tblPetDiary">
               <MappingFragment StoreEntitySet="tblPetDiary">
+                <ScalarProperty Name="isRead" ColumnName="isRead" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="adopter" ColumnName="adopter" />
                 <ScalarProperty Name="petId" ColumnName="petId" />

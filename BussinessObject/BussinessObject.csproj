@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\FileDAO.cs" />
+    <Compile Include="DataAccess\NotificationDAO.cs" />
     <Compile Include="DataAccess\TblAccountDAO.cs" />
     <Compile Include="DataAccess\TblPetCategoryDAO.cs" />
     <Compile Include="DataAccess\TblPetDAO.cs" />

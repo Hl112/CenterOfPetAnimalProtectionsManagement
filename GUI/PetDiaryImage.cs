@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
@@ -7,6 +8,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public PetDiaryImage()
         {
             InitializeComponent();
+        }
+
+        public PetDiaryImage(string path)
+        {
+            InitializeComponent();
+            picPetImage.Image = new Bitmap(path);
         }
     }
 }
