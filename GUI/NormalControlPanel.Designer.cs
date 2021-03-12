@@ -29,9 +29,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNormalControlPanel));
             this.txtAppName = new System.Windows.Forms.Label();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnClose = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnLogout = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAppName
@@ -71,17 +74,30 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Location = new System.Drawing.Point(1091, 15);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(28, 26);
+            this.btnLogout.TabIndex = 16;
+            this.btnLogout.TabStop = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // frmNormalControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtAppName);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Name = "frmNormalControlPanel";
             this.Size = new System.Drawing.Size(1200, 50);
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +108,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.Label txtAppName;
         private Bunifu.Framework.UI.BunifuCustomLabel btnMinimize;
         private Bunifu.Framework.UI.BunifuCustomLabel btnClose;
+        private System.Windows.Forms.PictureBox btnLogout;
     }
 }

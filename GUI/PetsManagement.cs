@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity.Core;
 using System.Threading;
 using System.Windows.Forms;
@@ -28,12 +29,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void InitializeData() {
             cbPetStatus.Checked = true;
-            //set enable = false
             cboPetSearchType.Enabled = false;
             dtmPetSearchDateAdoptedFrom.Enabled = false;
             dtmPetSearchDateAdoptedTo.Enabled = false;
-            dtmPetSearchDateAdoptedTo.Value = DateTime.Today;
             dtmPetSearchDateAdoptedFrom.Value = new DateTime(2020, 1, 1);
+            dtmPetSearchDateAdoptedTo.Value = DateTime.Today;
 
             //load Pet Category
             try {
@@ -45,9 +45,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-
-            
+            }  
         }
 
         public void ShowCreatePet()
@@ -103,14 +101,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 } catch (FormatException) {
 
                 }
-                if(cateID != 0) {
-                    var petTypes = TblPetTypeDAO.Instance.GetTypesById(cateID);
-                    cboPetSearchType.DataSource = petTypes;
-                    cboPetSearchType.DisplayMember = "name";
-                    cboPetSearchType.ValueMember = "id";
-                    cboPetSearchType.Enabled = true;
-                    cboPetSearchType.SelectedIndex = -1;
-                }
+                var petTypes = TblPetTypeDAO.Instance.GetTypesById(cateID);
+                cboPetSearchType.DataSource = petTypes;
+                cboPetSearchType.DisplayMember = "name";
+                cboPetSearchType.ValueMember = "id";
+                cboPetSearchType.Enabled = true;
+                cboPetSearchType.SelectedIndex = -1;
             } else {
                 cboPetSearchType.SelectedIndex = -1;
                 cboPetSearchType.Enabled = false;
@@ -139,28 +135,29 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
-        //This function will load data from list to ListView
-        private void LoadListView(List<tblPet> l) {
-            lvListPetsManagement.Clear();
-            lvListPetsManagement.Columns.Add("Pet ID");
-            lvListPetsManagement.Columns.Add("Pet Name");
-            if (lvListPetsManagement != null) {
-                foreach (var pet in l) {
-                    lvListPetsManagement.Items.Add(new ListViewItem(new String[] { pet.id.ToString(), pet.name }));
-                }
-                lvListPetsManagement.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
-                lvListPetsManagement.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
-            }
-        }
-
-        private void lvListPetsManagement_DoubleClick(object sender, EventArgs e) {
-            int pID = int.Parse(lvListPetsManagement.SelectedItems[0].SubItems[0].Text);
+        private void dgvPets_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            int pID = (int)dgvPets.CurrentRow.Cells[0].Value;
             tblPet pet = TblPetDAO.Instance.GetPetByID(pID);
             this.Hide();
             PetDetail frm = new PetDetail(false, pet);
             frm.ShowDialog();
             this.Show();
         }
+
+        //This function will load data from list to ListView
+        private void LoadListView(List<tblPet> listPet) {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Pet ID", typeof(int));
+            dt.Columns.Add("Pet Name", typeof(string));
+            dt.Columns.Add("Adopted", typeof(bool));
+            if (listPet.Count != 0) {
+                foreach (var pet in listPet) {
+                    dt.Rows.Add(pet.id, pet.name, pet.status);
+                }
+            }
+            dgvPets.DataSource = dt;
+        }
+
 
         private void btnClearFilter_Click(object sender, EventArgs e) {
             cboPetSearchCategory.SelectedIndex = -1;

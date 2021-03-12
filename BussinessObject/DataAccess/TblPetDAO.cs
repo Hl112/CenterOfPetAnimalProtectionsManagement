@@ -1,17 +1,16 @@
 ﻿using DataProvider;
 using System.Linq;
 using System.Collections.Generic;
-using System.Data.Entity.SqlServer;
-using System.Globalization;
 using System;
 using System.Data.Entity;
-using System.Net.Http;
+using System.Net.Sockets;
 
 namespace BussinessObject.DataAccess
 {
     public class TblPetDAO
     {
         private static TblPetDAO _instance;
+        private DBEntities _db;
 
         public static TblPetDAO Instance
         {
@@ -25,7 +24,7 @@ namespace BussinessObject.DataAccess
 
         private TblPetDAO()
         {
-
+            _db = DBProvider.Instance.Db;
         }
 
         #region HL
@@ -93,8 +92,10 @@ namespace BussinessObject.DataAccess
                 DateTime searchAdoptedDateTo) {
             int cateID = 0;
             int typeID = 0;
+            int id = 0;
             if (!string.IsNullOrEmpty(searchCate)) cateID = int.Parse(searchCate);
             if (!string.IsNullOrEmpty(searchType)) typeID = int.Parse(searchType);
+            if (!string.IsNullOrEmpty(searchID)) id = int.Parse(searchID);
             var pets = (from p in DBProvider.Instance.Db.tblPet
                         where (string.IsNullOrEmpty(searchCate) ? 
                             DbFunctions.Like(p.tblPetType.tblPetCategory.id.ToString(), "%%") :
@@ -102,17 +103,33 @@ namespace BussinessObject.DataAccess
                         && (string.IsNullOrEmpty(searchType) ?
                             DbFunctions.Like(p.tblPetType.id.ToString(), "%%") :
                             p.tblPetType.id == typeID)
-                        && DbFunctions.Like(p.id.ToString(), $"%" + searchID + "%")
+                        && (string.IsNullOrEmpty(searchID) ?
+                            DbFunctions.Like(p.tblPetType.id.ToString(), "%%") :
+                            p.id == id)
                         && DbFunctions.Like(p.furColor.ToString(), $"%" + searchFurColor + "%")
                         && DbFunctions.Like(p.status.ToString(), $"%" + searchStatus + "%")
                         && (isAdopted ? p.adopter != null : p.adopter == null)
-                        && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) >= 
-                            DbFunctions.TruncateTime(searchAdoptedDateFrom) && 
-                            DbFunctions.TruncateTime(p.dateAdopted) <= 
+                        && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) >=
+                            DbFunctions.TruncateTime(searchAdoptedDateFrom) &&
+                            DbFunctions.TruncateTime(p.dateAdopted) <=
                             DbFunctions.TruncateTime(searchAdoptedDateTo) : true)
                         select p).ToList();
             return pets;
         }
+        #endregion
+
+
+        #region Thu
+
+        public List<tblPet> GetPetsByAdopterUsername(string username)
+        {
+            var result = (from p in _db.tblPet
+                    where  p.adopter == username
+                    select p).ToList();
+
+            return result;
+        }
+
         #endregion
     }
 }

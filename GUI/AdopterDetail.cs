@@ -12,25 +12,30 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private const string password = "123";
         private const int roleID = 2;//Adopter
         private bool isCreate = true;
+        private tblAccount adopter;
         public AdopterDetail()
         {
             InitializeComponent();
-            if (rdoBlackListYes.Checked)
-            {
-                txtAdopterReasonBlacklist.Enabled = true;
-            }
-            else txtAdopterReasonBlacklist.Enabled = false;
         }
 
         public AdopterDetail(bool isCreate, tblAccount adopter)
         {
+            InitializeComponent();
+            if (isCreate)
+            {
 
+            }
+            else
+            {
+                this.adopter = adopter;
+                LoadData(adopter);
+            }
         }
 
         private tblAccount GetData()
         {
             tblAccount account = null;
-            string id = txtAdopterId.Text;
+            string id = txtAdopterUsername.Text;
             string fullname = txtAdopterFullname.Text;
             string phone = txtAdopterPhone.Text;
             string address = txtAdopterAddress.Text;
@@ -74,7 +79,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void SetData(tblAccount account)
         {
-            txtAdopterId.Text = account.username;
+            txtAdopterUsername.Text = account.username;
             txtAdopterFullname.Text = account.fullname;
             txtAdopterPhone.Text = account.phone;
             txtAdopterAddress.Text = account.address;
@@ -106,7 +111,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
             else
             {
-               // result = TblAccountDAO.Instance.UpdateAdopter(account);
+               //result = TblAccountDAO.Instance.UpdateAdopter(account);
             }
 
             if (result)
@@ -130,18 +135,83 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         }
 
-        private void rdoBlackListYes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (txtAdopterReasonBlacklist.Enabled == false)
-                txtAdopterReasonBlacklist.Enabled = true;
-            else txtAdopterReasonBlacklist.Enabled = false;
-        }
+    
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            
-            
+        }
+
+        private void LoadData(tblAccount adopter)
+        {
+            txtAdopterUsername.Text = adopter.username;
+            txtAdopterFullname.Text = adopter.fullname;
+            txtAdopterPhone.Text = adopter.phone;
+            txtAdopterAddress.Text = adopter.address;
+            if (adopter.isInBlackList)
+            {
+                rdoBlackListYes.Checked = true;
+                lbReason.Visible = true;
+                txtAdopterReasonBlacklist.Visible = true;
+                txtAdopterReasonBlacklist.Text = adopter.reasonBlackList;
+            }
+            else
+            {
+                rdoBlackListNo.Checked = true;
+                lbReason.Visible = false;
+                txtAdopterReasonBlacklist.Visible = false;
+            }
+
+            if (adopter.image != null)
+            {
+                if (adopter.image.Trim() != String.Empty)
+                {
+                    picAdopterAva.ImageLocation = @"..\..\..\images\" + adopter.image;
+                    picAdopterAva.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+            }
+
+            LoadLvListPets(adopter.username);
+
+        }
+
+        private void LoadLvListPets(string username)
+        {
+            var listPets = TblPetDAO.Instance.GetPetsByAdopterUsername(username);
+            if (listPets != null)
+            {
+                lvListPetsOfAdopter.Clear();
+                lvListPetsOfAdopter.Columns.Add("Id");
+                lvListPetsOfAdopter.Columns.Add("Name");
+                lvListPetsOfAdopter.Columns.Add("Age");
+                lvListPetsOfAdopter.Columns.Add("Date Adopted");
+
+                foreach (var pet in listPets)
+                {
+                    ListViewItem item = new ListViewItem(pet.id.ToString());
+                    item.SubItems.Add(pet.name);
+                    item.SubItems.Add(pet.age);
+                    item.SubItems.Add(pet.dateAdopted.ToString());
+                    lvListPetsOfAdopter.Items.Add(item);
+
+                }
+                lvListPetsOfAdopter.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListPetsOfAdopter.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListPetsOfAdopter.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListPetsOfAdopter.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+        }
+
+        private void rdoBlackListYes_Click(object sender, EventArgs e)
+        {
+            lbReason.Visible = true;
+            txtAdopterReasonBlacklist.Visible = true;
+        }
+
+        private void rdoBlackListNo_Click(object sender, EventArgs e)
+        {
+            lbReason.Visible = false;
+            txtAdopterReasonBlacklist.Visible = false;
         }
     }
 }
