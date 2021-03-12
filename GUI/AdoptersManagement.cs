@@ -80,5 +80,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             form.ShowDialog();
             this.Show();
         }
+
+        private void btnCreateAdopter_Click(object sender, EventArgs e)
+        {
+            AdopterDetail newF = new AdopterDetail(true,null);
+            this.Hide();
+            newF.ShowDialog();
+            this.Show();
+        }
     }
 }
