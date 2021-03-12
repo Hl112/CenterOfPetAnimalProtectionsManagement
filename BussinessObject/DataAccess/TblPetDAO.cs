@@ -90,8 +90,10 @@ namespace BussinessObject.DataAccess
                 DateTime searchAdoptedDateTo) {
             int cateID = 0;
             int typeID = 0;
+            int id = 0;
             if (!string.IsNullOrEmpty(searchCate)) cateID = int.Parse(searchCate);
             if (!string.IsNullOrEmpty(searchType)) typeID = int.Parse(searchType);
+            if (!string.IsNullOrEmpty(searchID)) id = int.Parse(searchID);
             var pets = (from p in DBProvider.Instance.Db.tblPet
                         where (string.IsNullOrEmpty(searchCate) ? 
                             DbFunctions.Like(p.tblPetType.tblPetCategory.id.ToString(), "%%") :
@@ -99,13 +101,15 @@ namespace BussinessObject.DataAccess
                         && (string.IsNullOrEmpty(searchType) ?
                             DbFunctions.Like(p.tblPetType.id.ToString(), "%%") :
                             p.tblPetType.id == typeID)
-                        && DbFunctions.Like(p.id.ToString(), $"%" + searchID + "%")
+                        && (string.IsNullOrEmpty(searchID) ?
+                            DbFunctions.Like(p.tblPetType.id.ToString(), "%%") :
+                            p.id == id)
                         && DbFunctions.Like(p.furColor.ToString(), $"%" + searchFurColor + "%")
                         && DbFunctions.Like(p.status.ToString(), $"%" + searchStatus + "%")
                         && (isAdopted ? p.adopter != null : p.adopter == null)
-                        && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) >= 
-                            DbFunctions.TruncateTime(searchAdoptedDateFrom) && 
-                            DbFunctions.TruncateTime(p.dateAdopted) <= 
+                        && (isAdopted ? DbFunctions.TruncateTime(p.dateAdopted) >=
+                            DbFunctions.TruncateTime(searchAdoptedDateFrom) &&
+                            DbFunctions.TruncateTime(p.dateAdopted) <=
                             DbFunctions.TruncateTime(searchAdoptedDateTo) : true)
                         select p).ToList();
             return pets;

@@ -28,6 +28,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         private void InitializeData() {
+            cbPetStatus.Checked = true;
+            cboPetSearchType.Enabled = false;
+            dtmPetSearchDateAdoptedFrom.Enabled = false;
+            dtmPetSearchDateAdoptedTo.Enabled = false;
+            dtmPetSearchDateAdoptedFrom.Value = new DateTime(2020, 1, 1);
+            dtmPetSearchDateAdoptedTo.Value = DateTime.Today;
+
             //load Pet Category
             try {
                 List<tblPetCategory> petCate = TblPetCategoryDAO.Instance.GetAllCategories();
@@ -88,7 +95,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void cboPetSearchCategory_SelectedIndexChanged(object sender, EventArgs e) {
             if (cboPetSearchCategory.SelectedIndex != -1) {
-                int cateID = int.Parse(cboPetSearchCategory.SelectedValue.ToString());
+                int cateID = 0;
+                try {
+                    cateID = int.Parse(cboPetSearchCategory.SelectedValue.ToString());
+                } catch (FormatException) {
+
+                }
                 var petTypes = TblPetTypeDAO.Instance.GetTypesById(cateID);
                 cboPetSearchType.DataSource = petTypes;
                 cboPetSearchType.DisplayMember = "name";
@@ -133,13 +145,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         //This function will load data from list to ListView
-        private void LoadListView(List<tblPet> l) {
+        private void LoadListView(List<tblPet> listPet) {
             DataTable dt = new DataTable();
             dt.Columns.Add("Pet ID", typeof(int));
             dt.Columns.Add("Pet Name", typeof(string));
             dt.Columns.Add("Adopted", typeof(bool));
-            if (l.Count != 0) {
-                foreach (var pet in l) {
+            if (listPet.Count != 0) {
+                foreach (var pet in listPet) {
                     dt.Rows.Add(pet.id, pet.name, pet.status);
                 }
             }
@@ -165,7 +177,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             bool isAdopted = cbAdopted.Checked;
             DateTime searchAdoptedDateFrom = dtmPetSearchDateAdoptedFrom.Value;
             DateTime searchAdoptedDateTo = dtmPetSearchDateAdoptedTo.Value;
-            MessageBox.Show(searchID);
             try {
                 var list = TblPetDAO.Instance.SearchPets(searchCate, searchType, searchID,
                 searchFurColor, searchStatus, isAdopted, searchAdoptedDateFrom, searchAdoptedDateTo);
