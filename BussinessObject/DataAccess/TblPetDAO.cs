@@ -3,12 +3,14 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using System.Data.Entity;
+using System.Net.Sockets;
 
 namespace BussinessObject.DataAccess
 {
     public class TblPetDAO
     {
         private static TblPetDAO _instance;
+        private DBEntities _db;
 
         public static TblPetDAO Instance
         {
@@ -22,7 +24,7 @@ namespace BussinessObject.DataAccess
 
         private TblPetDAO()
         {
-
+            _db = DBProvider.Instance.Db;
         }
 
         #region HL
@@ -114,6 +116,20 @@ namespace BussinessObject.DataAccess
                         select p).ToList();
             return pets;
         }
+        #endregion
+
+
+        #region Thu
+
+        public List<tblPet> GetPetsByAdopterUsername(string username)
+        {
+            var result = (from p in _db.tblPet
+                    where  p.adopter == username
+                    select p).ToList();
+
+            return result;
+        }
+
         #endregion
     }
 }

@@ -67,6 +67,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             String nameSearch = txtUsername.Text;
             String phoneSearch = txtUsername.Text;
             bool isInBlacklist = cbIsInBlacklist.Checked;
+            bool status = cbAdopterStatus.Checked;
 
         }
 

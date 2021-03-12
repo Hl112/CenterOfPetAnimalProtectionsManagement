@@ -111,7 +111,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
             else
             {
-               // result = TblAccountDAO.Instance.UpdateAdopter(account);
+               //result = TblAccountDAO.Instance.UpdateAdopter(account);
             }
 
             if (result)
@@ -170,7 +170,36 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     picAdopterAva.BackgroundImageLayout = ImageLayout.Stretch;
                 }
             }
-            
+
+            LoadLvListPets(adopter.username);
+
+        }
+
+        private void LoadLvListPets(string username)
+        {
+            var listPets = TblPetDAO.Instance.GetPetsByAdopterUsername(username);
+            if (listPets != null)
+            {
+                lvListPetsOfAdopter.Clear();
+                lvListPetsOfAdopter.Columns.Add("Id");
+                lvListPetsOfAdopter.Columns.Add("Name");
+                lvListPetsOfAdopter.Columns.Add("Age");
+                lvListPetsOfAdopter.Columns.Add("Date Adopted");
+
+                foreach (var pet in listPets)
+                {
+                    ListViewItem item = new ListViewItem(pet.id.ToString());
+                    item.SubItems.Add(pet.name);
+                    item.SubItems.Add(pet.age);
+                    item.SubItems.Add(pet.dateAdopted.ToString());
+                    lvListPetsOfAdopter.Items.Add(item);
+
+                }
+                lvListPetsOfAdopter.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListPetsOfAdopter.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListPetsOfAdopter.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
+                lvListPetsOfAdopter.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
         }
 
         private void rdoBlackListYes_Click(object sender, EventArgs e)

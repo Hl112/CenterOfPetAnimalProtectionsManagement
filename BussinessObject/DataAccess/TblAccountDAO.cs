@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DataProvider;
+using System.Data.Entity;
 
 namespace BussinessObject.DataAccess
 {
@@ -22,22 +23,18 @@ namespace BussinessObject.DataAccess
 
         public tblAccount Acc => acc;
 
-        public tblAccount CheckLogin(string Username, string Password)
+        #region Thu
+
+        //NBT -  This function will check login
+        public tblAccount CheckLogin(string username, string password)
         {
             var user = (from u in _db.tblAccount
-                        where u.username == Username && u.password == Password
+                        where u.username == username && u.password == password
                         select u).SingleOrDefault();
             return user;
         }
 
-        public bool CreateAdopter(tblAccount adopter)
-        {
-            adopter.tblRole = TblRoleDAO.Instance.GetRoleById(adopter.roleID);
-            tblAccount result = DBProvider.Instance.Db.tblAccount.Add(adopter);
-            if (result != null) DBProvider.Instance.Db.SaveChanges();
-            return result != null;
-        }
-
+        //NBT -  This function will get all accounts have role adopter
         public List<tblAccount> GetAllAdopters()
         {
             var listAdopters = (from a in _db.tblAccount
@@ -50,5 +47,72 @@ namespace BussinessObject.DataAccess
         {
             return _db.tblAccount.Find(username);
         }
+
+        public bool UpdateAdopter(tblAccount adopter)
+        {
+            var update = (from tblAccount in _db.tblAccount 
+                    where tblAccount.username == adopter.username 
+                    select tblAccount)
+                .SingleOrDefault();
+            if (update != null)
+            {
+                update.username = adopter.username;
+                update.password = adopter.password;
+                update.fullname = adopter.fullname;
+                update.address = adopter.address;
+                update.phone = adopter.phone;
+                update.isInBlackList = adopter.isInBlackList;
+                update.reasonBlackList = adopter.reasonBlackList;
+                update.roleID = adopter.roleID;
+                update.status = adopter.status;
+                update.image = adopter.image;
+                _db.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
+        public bool DeleteAdopter(string username)
+        {
+            tblAccount adopter = _db.tblAccount.Find(username);
+            if (username != null)
+            {
+                adopter.status = false;
+                _db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public List<tblAccount> SearchAdopters(string username, string fullname, string phone, bool isInBlacklist, bool status)
+        {
+            var result = (from a in _db.tblAccount
+                where DbFunctions.Like(a.username, $"%" + username + "%") 
+
+                      && DbFunctions.Like(a.fullname, $"%" + fullname + "%")
+
+                      && DbFunctions.Like(a.phone.ToString(), $"%" + phone + "%")
+
+                      && DbFunctions.Like(a.isInBlackList.ToString(), $"%" + isInBlacklist + "%")
+
+                      && DbFunctions.Like(a.status.ToString(), $"%" + status + "%")
+                      
+                select a).ToList();
+            return result;
+        }
+
+        #endregion
+
+        #region Lam
+
+        public bool CreateAdopter(tblAccount adopter)
+        {
+            adopter.tblRole = TblRoleDAO.Instance.GetRoleById(adopter.roleID);
+            tblAccount result = DBProvider.Instance.Db.tblAccount.Add(adopter);
+            if (result != null) DBProvider.Instance.Db.SaveChanges();
+            return result != null;
+        }
+
+        #endregion
     }
 }
