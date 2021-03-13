@@ -285,5 +285,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
+        private void btnViewPetDiary_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewNotification newForm = new ViewNotification();
+            newForm.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -11,12 +11,46 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
     public partial class ViewNotification : Form
     {
         private string imgPath = "";
+
+        private bool isForAdopter = false;
+        //For admin
         public ViewNotification()
         {
             InitializeComponent();
             try
             {
                 LoadNoti();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Conection Error.");
+                this.Close();
+            }
+        }
+
+        //For Admin, in Adopterdetail, when click one row of listview Pets
+        public ViewNotification(int petID)
+        {
+            InitializeComponent();
+            try
+            {
+                //Load list pet diary
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Conection Error.");
+                this.Close();
+            }
+        }
+
+        //For Adopter
+        public ViewNotification(tblAccount adopter)
+        {
+            InitializeComponent();
+            try
+            {
+                isForAdopter = true;
+                //Load list pet diary
             }
             catch (Exception e)
             {
@@ -79,6 +113,20 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             else
             {
                 MessageBox.Show("No Image");
+            }
+        }
+
+        private void ViewNotification_Load(object sender, EventArgs e)
+        {
+            if (isForAdopter)
+            {
+                frmAdmin1.Visible = false;
+                frmAdopterPanel1.Visible = true;
+            }
+            else
+            {
+                frmAdmin1.Visible = true;
+                frmAdopterPanel1.Visible = false;
             }
         }
     }

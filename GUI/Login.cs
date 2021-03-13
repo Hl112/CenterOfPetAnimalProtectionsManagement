@@ -1,6 +1,5 @@
 ﻿using CenterOfPetAnimalProtectionsManagement.GUI;
 using System;
-using System.Threading;
 using System.Windows.Forms;
 using BussinessObject.DataAccess;
 using DataProvider;
@@ -52,7 +51,7 @@ namespace CenterOfPetAnimalProtectionsManagement
                     else if (user.roleID == 2)
                     {
                         this.Hide();
-                        UpdatePetDiary newForm = new UpdatePetDiary(user);
+                        AdopterHome newForm = new AdopterHome(user);
                         newForm.ShowDialog();
                         this.Close();
                     }

@@ -129,6 +129,12 @@
     <Compile Include="GUI\AdopterDetail.Designer.cs">
       <DependentUpon>AdopterDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AdopterHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdopterHome.Designer.cs">
+      <DependentUpon>AdopterHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\AdopterPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AdopterDetail.resx">
       <DependentUpon>AdopterDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdopterHome.resx">
+      <DependentUpon>AdopterHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AdopterPanel.resx">
       <DependentUpon>AdopterPanel.cs</DependentUpon>

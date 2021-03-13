@@ -69,6 +69,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             bool isInBlacklist = cbIsInBlacklist.Checked;
             bool status = cbAdopterStatus.Checked;
 
+            try
+            {
+                var listSearchResult = TblAccountDAO.Instance.SearchAdopters(usernameSearch, nameSearch, phoneSearch, isInBlacklist, status);
+                LoadAdoptersListView(listSearchResult);
+            }
+            catch (EntityException)
+            {
+                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
 
         private void lvListAdopters_DoubleClick(object sender, EventArgs e)

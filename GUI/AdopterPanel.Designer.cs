@@ -44,24 +44,26 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnMinimize.AutoSize = true;
             this.btnMinimize.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Location = new System.Drawing.Point(1136, 2);
+            this.btnMinimize.Location = new System.Drawing.Point(1107, 3);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(24, 27);
             this.btnMinimize.TabIndex = 12;
             this.btnMinimize.Text = "_";
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnClose
             // 
             this.btnClose.AutoSize = true;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(1167, 2);
+            this.btnClose.Location = new System.Drawing.Point(1138, 3);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(26, 27);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "X";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtAppName
             // 
@@ -79,12 +81,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(1100, 3);
+            this.btnLogout.Location = new System.Drawing.Point(1071, 4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(28, 26);
             this.btnLogout.TabIndex = 15;
             this.btnLogout.TabStop = false;
-            this.btnLogout.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // toolTip1
             // 

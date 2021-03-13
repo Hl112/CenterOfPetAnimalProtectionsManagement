@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity.Core;
-using System.Threading;
 using System.Windows.Forms;
 using BussinessObject.DataAccess;
 using DataProvider;

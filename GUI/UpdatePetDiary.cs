@@ -1,8 +1,5 @@
 ﻿using DataProvider;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CenterOfPetAnimalProtectionsManagement.GUI
@@ -72,5 +69,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             return "";
         }
         #endregion
+
+        private void btnBack_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

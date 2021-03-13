@@ -25,9 +25,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 this.Hide();
-                // Thread t = new Thread(new ThreadStart(ShowPetManagement));
-                // t.SetApartmentState(ApartmentState.STA);
-                // t.Start();
                 PetsManagement newForm = new PetsManagement(admin);
                 newForm.ShowDialog();
                 this.Show();
