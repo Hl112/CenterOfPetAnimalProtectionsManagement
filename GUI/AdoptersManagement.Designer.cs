@@ -31,22 +31,21 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdoptersManagement));
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBack = new System.Windows.Forms.PictureBox();
-            this.frmAdmin1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmAdmin();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -72,10 +71,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnCreateAdopter = new System.Windows.Forms.PictureBox();
             this.btnShowAllAdopters = new System.Windows.Forms.Button();
             this.lvListAdopters = new System.Windows.Forms.ListView();
+            this.frmAdmin1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmAdmin();
             label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,6 +114,18 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 55);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(3, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(71, 69);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -129,28 +141,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1187, 646);
             this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(3, 2);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(71, 69);
-            this.btnBack.TabIndex = 6;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // frmAdmin1
-            // 
-            this.frmAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.frmAdmin1.ForeColor = System.Drawing.Color.Transparent;
-            this.frmAdmin1.Location = new System.Drawing.Point(-1, 0);
-            this.frmAdmin1.Margin = new System.Windows.Forms.Padding(1);
-            this.frmAdmin1.Name = "frmAdmin1";
-            this.frmAdmin1.Size = new System.Drawing.Size(1203, 41);
-            this.frmAdmin1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -285,26 +275,26 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtUsername.Modified = false;
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
-            stateProperties13.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.Empty;
-            stateProperties14.FillColor = System.Drawing.Color.White;
-            stateProperties14.ForeColor = System.Drawing.Color.Empty;
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtUsername.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            stateProperties16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnIdleState = stateProperties16;
+            stateProperties1.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.Empty;
+            stateProperties2.FillColor = System.Drawing.Color.White;
+            stateProperties2.ForeColor = System.Drawing.Color.Empty;
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtUsername.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnIdleState = stateProperties4;
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtUsername.PlaceholderText = "";
@@ -383,26 +373,26 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;
             this.txtPhone.Name = "txtPhone";
-            stateProperties17.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPhone.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.Empty;
-            stateProperties18.FillColor = System.Drawing.Color.White;
-            stateProperties18.ForeColor = System.Drawing.Color.Empty;
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPhone.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPhone.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            stateProperties20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            stateProperties20.ForeColor = System.Drawing.Color.Empty;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPhone.OnIdleState = stateProperties20;
+            stateProperties5.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhone.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.Empty;
+            stateProperties6.FillColor = System.Drawing.Color.White;
+            stateProperties6.ForeColor = System.Drawing.Color.Empty;
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtPhone.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhone.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhone.OnIdleState = stateProperties8;
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPhone.PlaceholderText = "";
@@ -457,26 +447,26 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterSearchName.Modified = false;
             this.txtAdopterSearchName.Multiline = false;
             this.txtAdopterSearchName.Name = "txtAdopterSearchName";
-            stateProperties21.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtAdopterSearchName.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.Empty;
-            stateProperties22.FillColor = System.Drawing.Color.White;
-            stateProperties22.ForeColor = System.Drawing.Color.Empty;
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtAdopterSearchName.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtAdopterSearchName.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            stateProperties24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            stateProperties24.ForeColor = System.Drawing.Color.Empty;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtAdopterSearchName.OnIdleState = stateProperties24;
+            stateProperties9.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAdopterSearchName.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.Empty;
+            stateProperties10.FillColor = System.Drawing.Color.White;
+            stateProperties10.ForeColor = System.Drawing.Color.Empty;
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtAdopterSearchName.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAdopterSearchName.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAdopterSearchName.OnIdleState = stateProperties12;
             this.txtAdopterSearchName.PasswordChar = '\0';
             this.txtAdopterSearchName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAdopterSearchName.PlaceholderText = "";
@@ -534,6 +524,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnSearchAdopter.TabIndex = 2;
             this.btnSearchAdopter.Text = "Search";
             this.btnSearchAdopter.UseVisualStyleBackColor = false;
+            this.btnSearchAdopter.Click += new System.EventHandler(this.btnSearchAdopter_Click);
             // 
             // label10
             // 
@@ -631,6 +622,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnCreateAdopter.TabIndex = 5;
             this.btnCreateAdopter.TabStop = false;
             this.btnCreateAdopter.Tag = "";
+            this.btnCreateAdopter.Click += new System.EventHandler(this.btnCreateAdopter_Click);
             // 
             // btnShowAllAdopters
             // 
@@ -645,6 +637,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnShowAllAdopters.TabIndex = 1;
             this.btnShowAllAdopters.Text = "Show all";
             this.btnShowAllAdopters.UseVisualStyleBackColor = false;
+            this.btnShowAllAdopters.Click += new System.EventHandler(this.btnShowAllAdopters_Click);
             // 
             // lvListAdopters
             // 
@@ -660,6 +653,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.lvListAdopters.TabIndex = 0;
             this.lvListAdopters.UseCompatibleStateImageBehavior = false;
             this.lvListAdopters.View = System.Windows.Forms.View.Details;
+            this.lvListAdopters.DoubleClick += new System.EventHandler(this.lvListAdopters_DoubleClick);
+            // 
+            // frmAdmin1
+            // 
+            this.frmAdmin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.frmAdmin1.ForeColor = System.Drawing.Color.Transparent;
+            this.frmAdmin1.Location = new System.Drawing.Point(-1, 0);
+            this.frmAdmin1.Margin = new System.Windows.Forms.Padding(1);
+            this.frmAdmin1.Name = "frmAdmin1";
+            this.frmAdmin1.Size = new System.Drawing.Size(1203, 41);
+            this.frmAdmin1.TabIndex = 0;
             // 
             // AdoptersManagement
             // 
@@ -678,8 +682,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Text = "AdoptersManagement";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
