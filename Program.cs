@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CenterOfPetAnimalProtectionsManagement.GUI;
 
 namespace CenterOfPetAnimalProtectionsManagement
 {
@@ -13,7 +14,8 @@ namespace CenterOfPetAnimalProtectionsManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login()); 
+            //Application.Run(new Login());
+            Application.Run(new AdoptersManagement()); 
         }
     }
 }

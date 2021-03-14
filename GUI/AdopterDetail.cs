@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data.Entity.Core;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using BussinessObject.DataAccess;
 using DataProvider;
@@ -8,10 +10,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
     public partial class AdopterDetail : Form
     {
-        private const string password = "123";
-        private const int roleID = 2;//Adopter
-        private bool isCreate = true;
-        private tblAccount adopter;
+        private const string Password = "123";
+        private const int RoleId = 2;//Adopter
+        private bool _isCreate = true;
+        private tblAccount _adopter;
         public AdopterDetail()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
             else
             {
-                this.adopter = adopter;
+                this._adopter = adopter;
                 LoadData(adopter);
             }
         }
@@ -67,9 +69,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 address = address,
                 isInBlackList = isBlack,
                 status = true,
-                password = password,
+                password = Password,
                 reasonBlackList = reason,
-                roleID = roleID,
+                roleID = RoleId,
                 image = image
                 
             };
@@ -104,13 +106,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             tblAccount account = GetData();
             bool result = false;
             if(account == null) return;
-            if (isCreate)
+            if (_isCreate)
             {
                result = TblAccountDAO.Instance.CreateAdopter(account);
             }
             else
             {
-               //result = TblAccountDAO.Instance.UpdateAdopter(account);
+               result = TblAccountDAO.Instance.UpdateAdopter(account);
             }
 
             if (result)
@@ -163,11 +165,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
             if (adopter.image != null)
             {
-                if (adopter.image.Trim() != String.Empty)
-                {
-                    picAdopterAva.ImageLocation = @"..\..\..\images\" + adopter.image;
-                    picAdopterAva.BackgroundImageLayout = ImageLayout.Stretch;
-                }
+                    string pathImage = FileDAO.Folder + "/" + adopter.image;
+                    if (File.Exists(pathImage))
+                    {
+                        picAdopterAva.Image = new Bitmap(pathImage);
+                    }
             }
 
             LoadLvListPets(adopter.username);
@@ -211,6 +213,33 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             lbReason.Visible = false;
             txtAdopterReasonBlacklist.Visible = false;
+        }
+
+        private void btnDeletePet_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Do you want to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            try
+            {
+                if (r == DialogResult.Yes && this._adopter != null)
+                {
+                    bool result = TblAccountDAO.Instance.DeleteAdopter(this._adopter.username);
+                    if (result)
+                    {
+                        MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                }
+            }
+            catch (EntityException)
+            {
+                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

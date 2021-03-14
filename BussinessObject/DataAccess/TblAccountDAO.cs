@@ -2,6 +2,7 @@
 using System.Linq;
 using DataProvider;
 using System.Data.Entity;
+using System.Data.Entity.Core.Common.CommandTrees;
 
 namespace BussinessObject.DataAccess
 {
@@ -50,9 +51,9 @@ namespace BussinessObject.DataAccess
 
         public bool UpdateAdopter(tblAccount adopter)
         {
-            var update = (from tblAccount in _db.tblAccount 
-                    where tblAccount.username == adopter.username 
-                    select tblAccount)
+            var update = (from a in _db.tblAccount 
+                    where a.username == adopter.username 
+                    select a)
                 .SingleOrDefault();
             if (update != null)
             {
@@ -66,7 +67,7 @@ namespace BussinessObject.DataAccess
                 update.roleID = adopter.roleID;
                 update.status = adopter.status;
                 update.image = adopter.image;
-                _db.SaveChangesAsync();
+                _db.SaveChanges();
                 return true;
             }
             return false;
@@ -87,17 +88,17 @@ namespace BussinessObject.DataAccess
         public List<tblAccount> SearchAdopters(string username, string fullname, string phone, bool isInBlacklist, bool status)
         {
             var result = (from a in _db.tblAccount
-                where DbFunctions.Like(a.username, $"%" + username + "%") 
+                          where DbFunctions.Like(a.username.ToString(), $"%" + username + "%")
 
-                      && DbFunctions.Like(a.fullname, $"%" + fullname + "%")
+                                && DbFunctions.Like(a.fullname.ToString(), $"%" + fullname + "%")
 
-                      && DbFunctions.Like(a.phone.ToString(), $"%" + phone + "%")
+                                && DbFunctions.Like(a.phone.ToString(), $"%" + phone + "%")
 
-                      && DbFunctions.Like(a.isInBlackList.ToString(), $"%" + isInBlacklist + "%")
+                                && DbFunctions.Like(a.isInBlackList.ToString(), $"%" + isInBlacklist + "%")
 
-                      && DbFunctions.Like(a.status.ToString(), $"%" + status + "%")
-                      
-                select a).ToList();
+                                && DbFunctions.Like(a.status.ToString(), $"%" + status + "%")
+
+                          select a).ToList();
             return result;
         }
 

@@ -63,9 +63,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnSearchAdopter_Click(object sender, EventArgs e)
         {
-            String usernameSearch = txtUsername.Text;
-            String nameSearch = txtUsername.Text;
-            String phoneSearch = txtUsername.Text;
+            String usernameSearch = txtUsername.Text.Trim();
+            String nameSearch = txtAdopterSearchName.Text.Trim();
+            String phoneSearch = txtPhone.Text.Trim();
             bool isInBlacklist = cbIsInBlacklist.Checked;
             bool status = cbAdopterStatus.Checked;
 

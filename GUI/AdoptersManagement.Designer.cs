@@ -31,18 +31,18 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdoptersManagement));
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,7 +62,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtUsername = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPetIdSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.txtPhone = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.txtAdopterSearchName = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.cbIsInBlacklist = new System.Windows.Forms.CheckBox();
             this.cbAdopterStatus = new System.Windows.Forms.CheckBox();
@@ -89,9 +89,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.Color.Maroon;
-            label1.Location = new System.Drawing.Point(317, 0);
+            label1.Location = new System.Drawing.Point(348, 1);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(432, 32);
+            label1.Size = new System.Drawing.Size(504, 38);
             label1.TabIndex = 0;
             label1.Text = "A D O P T E R S   M A N A G E M E N T";
             // 
@@ -99,15 +99,15 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
             this.tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 28);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 35);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 33);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 41);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -118,12 +118,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(11, 66);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 82);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1055, 521);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1187, 651);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // tableLayoutPanel3
@@ -134,14 +134,14 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel3.Controls.Add(this.lvListAdopters, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(530, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(596, 2);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(522, 517);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(588, 647);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // btnShowAllAdopters
@@ -150,10 +150,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnShowAllAdopters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.btnShowAllAdopters.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAllAdopters.ForeColor = System.Drawing.Color.White;
-            this.btnShowAllAdopters.Location = new System.Drawing.Point(205, 474);
+            this.btnShowAllAdopters.Location = new System.Drawing.Point(230, 593);
             this.btnShowAllAdopters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowAllAdopters.Name = "btnShowAllAdopters";
-            this.btnShowAllAdopters.Size = new System.Drawing.Size(113, 33);
+            this.btnShowAllAdopters.Size = new System.Drawing.Size(127, 41);
             this.btnShowAllAdopters.TabIndex = 1;
             this.btnShowAllAdopters.Text = "Show all";
             this.btnShowAllAdopters.UseVisualStyleBackColor = false;
@@ -166,10 +166,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.lvListAdopters.ForeColor = System.Drawing.Color.Maroon;
             this.lvListAdopters.FullRowSelect = true;
             this.lvListAdopters.HideSelection = false;
-            this.lvListAdopters.Location = new System.Drawing.Point(69, 78);
+            this.lvListAdopters.Location = new System.Drawing.Point(78, 100);
             this.lvListAdopters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvListAdopters.Name = "lvListAdopters";
-            this.lvListAdopters.Size = new System.Drawing.Size(384, 384);
+            this.lvListAdopters.Size = new System.Drawing.Size(432, 479);
             this.lvListAdopters.TabIndex = 0;
             this.lvListAdopters.UseCompatibleStateImageBehavior = false;
             this.lvListAdopters.View = System.Windows.Forms.View.Details;
@@ -183,7 +183,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel3.Location = new System.Drawing.Point(3, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(517, 68);
+            this.panel3.Size = new System.Drawing.Size(582, 86);
             this.panel3.TabIndex = 2;
             // 
             // label11
@@ -192,9 +192,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Maroon;
-            this.label11.Location = new System.Drawing.Point(196, 16);
+            this.label11.Location = new System.Drawing.Point(220, 21);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(164, 32);
+            this.label11.Size = new System.Drawing.Size(192, 38);
             this.label11.TabIndex = 7;
             this.label11.Text = "List Adopters:";
             // 
@@ -203,10 +203,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnCreateAdopter);
-            this.panel2.Location = new System.Drawing.Point(396, 0);
+            this.panel2.Location = new System.Drawing.Point(446, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(119, 63);
+            this.panel2.Size = new System.Drawing.Size(134, 79);
             this.panel2.TabIndex = 7;
             // 
             // label2
@@ -214,9 +214,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(11, 47);
+            this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Create Adopter";
             // 
@@ -225,10 +225,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnCreateAdopter.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCreateAdopter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCreateAdopter.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateAdopter.Image")));
-            this.btnCreateAdopter.Location = new System.Drawing.Point(31, 2);
+            this.btnCreateAdopter.Location = new System.Drawing.Point(35, 2);
             this.btnCreateAdopter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateAdopter.Name = "btnCreateAdopter";
-            this.btnCreateAdopter.Size = new System.Drawing.Size(59, 55);
+            this.btnCreateAdopter.Size = new System.Drawing.Size(66, 69);
             this.btnCreateAdopter.TabIndex = 5;
             this.btnCreateAdopter.TabStop = false;
             this.btnCreateAdopter.Tag = "";
@@ -243,7 +243,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(521, 517);
+            this.panel1.Size = new System.Drawing.Size(587, 647);
             this.panel1.TabIndex = 6;
             // 
             // groupBox1
@@ -252,11 +252,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.groupBox1.Controls.Add(this.btnSearchAdopter);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Maroon;
-            this.groupBox1.Location = new System.Drawing.Point(40, 74);
+            this.groupBox1.Location = new System.Drawing.Point(45, 92);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(433, 388);
+            this.groupBox1.Size = new System.Drawing.Size(487, 485);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information";
@@ -273,11 +273,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.Controls.Add(this.txtUsername, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtPetIdSearch, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtPhone, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtAdopterSearchName, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.cbIsInBlacklist, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.cbAdopterStatus, 1, 4);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(19, 32);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(21, 40);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
@@ -286,7 +286,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(400, 287);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(450, 359);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // label6
@@ -295,9 +295,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(3, 247);
+            this.label6.Location = new System.Drawing.Point(3, 309);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 20);
+            this.label6.Size = new System.Drawing.Size(68, 25);
             this.label6.TabIndex = 24;
             this.label6.Text = "Status:";
             // 
@@ -307,9 +307,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(3, 75);
+            this.label4.Location = new System.Drawing.Point(3, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.Size = new System.Drawing.Size(65, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "Name:";
             // 
@@ -319,9 +319,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(3, 18);
+            this.label3.Location = new System.Drawing.Point(3, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Username:";
             // 
@@ -352,33 +352,33 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtUsername.IconRight = null;
             this.txtUsername.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.Lines = new string[0];
-            this.txtUsername.Location = new System.Drawing.Point(144, 4);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Location = new System.Drawing.Point(161, 5);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.MaxLength = 32767;
-            this.txtUsername.MinimumSize = new System.Drawing.Size(196, 22);
+            this.txtUsername.MinimumSize = new System.Drawing.Size(220, 28);
             this.txtUsername.Modified = false;
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
-            stateProperties1.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.Empty;
-            stateProperties2.FillColor = System.Drawing.Color.White;
-            stateProperties2.ForeColor = System.Drawing.Color.Empty;
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtUsername.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnIdleState = stateProperties4;
+            stateProperties13.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.Empty;
+            stateProperties14.FillColor = System.Drawing.Color.White;
+            stateProperties14.ForeColor = System.Drawing.Color.Empty;
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtUsername.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            stateProperties16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnIdleState = stateProperties16;
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtUsername.PlaceholderText = "";
@@ -388,7 +388,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtUsername.SelectionLength = 0;
             this.txtUsername.SelectionStart = 0;
             this.txtUsername.ShortcutsEnabled = true;
-            this.txtUsername.Size = new System.Drawing.Size(196, 48);
+            this.txtUsername.Size = new System.Drawing.Size(220, 54);
             this.txtUsername.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtUsername.TabIndex = 20;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -405,9 +405,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(3, 189);
+            this.label7.Location = new System.Drawing.Point(3, 236);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 20);
+            this.label7.Size = new System.Drawing.Size(104, 25);
             this.label7.TabIndex = 9;
             this.label7.Text = "In Blacklist:";
             // 
@@ -417,85 +417,85 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(3, 132);
+            this.label5.Location = new System.Drawing.Point(3, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.Size = new System.Drawing.Size(74, 25);
             this.label5.TabIndex = 7;
             this.label5.Text = "Phone: ";
             // 
-            // txtPetIdSearch
+            // txtPhone
             // 
-            this.txtPetIdSearch.AcceptsReturn = false;
-            this.txtPetIdSearch.AcceptsTab = false;
-            this.txtPetIdSearch.AnimationSpeed = 200;
-            this.txtPetIdSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtPetIdSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtPetIdSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            this.txtPetIdSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPetIdSearch.BackgroundImage")));
-            this.txtPetIdSearch.BorderColorActive = System.Drawing.Color.DarkGreen;
-            this.txtPetIdSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtPetIdSearch.BorderColorHover = System.Drawing.Color.Green;
-            this.txtPetIdSearch.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.txtPetIdSearch.BorderRadius = 1;
-            this.txtPetIdSearch.BorderThickness = 2;
-            this.txtPetIdSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtPetIdSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPetIdSearch.DefaultFont = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPetIdSearch.DefaultText = "";
-            this.txtPetIdSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            this.txtPetIdSearch.HideSelection = true;
-            this.txtPetIdSearch.IconLeft = null;
-            this.txtPetIdSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPetIdSearch.IconPadding = 10;
-            this.txtPetIdSearch.IconRight = null;
-            this.txtPetIdSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPetIdSearch.Lines = new string[0];
-            this.txtPetIdSearch.Location = new System.Drawing.Point(144, 118);
-            this.txtPetIdSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPetIdSearch.MaxLength = 32767;
-            this.txtPetIdSearch.MinimumSize = new System.Drawing.Size(196, 22);
-            this.txtPetIdSearch.Modified = false;
-            this.txtPetIdSearch.Multiline = false;
-            this.txtPetIdSearch.Name = "txtPetIdSearch";
-            stateProperties5.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPetIdSearch.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.Empty;
-            stateProperties6.FillColor = System.Drawing.Color.White;
-            stateProperties6.ForeColor = System.Drawing.Color.Empty;
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPetIdSearch.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPetIdSearch.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPetIdSearch.OnIdleState = stateProperties8;
-            this.txtPetIdSearch.PasswordChar = '\0';
-            this.txtPetIdSearch.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtPetIdSearch.PlaceholderText = "";
-            this.txtPetIdSearch.ReadOnly = false;
-            this.txtPetIdSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPetIdSearch.SelectedText = "";
-            this.txtPetIdSearch.SelectionLength = 0;
-            this.txtPetIdSearch.SelectionStart = 0;
-            this.txtPetIdSearch.ShortcutsEnabled = true;
-            this.txtPetIdSearch.Size = new System.Drawing.Size(196, 48);
-            this.txtPetIdSearch.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtPetIdSearch.TabIndex = 4;
-            this.txtPetIdSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPetIdSearch.TextMarginBottom = 0;
-            this.txtPetIdSearch.TextMarginLeft = 5;
-            this.txtPetIdSearch.TextMarginTop = 0;
-            this.txtPetIdSearch.TextPlaceholder = "";
-            this.txtPetIdSearch.UseSystemPasswordChar = false;
-            this.txtPetIdSearch.WordWrap = true;
+            this.txtPhone.AcceptsReturn = false;
+            this.txtPhone.AcceptsTab = false;
+            this.txtPhone.AnimationSpeed = 200;
+            this.txtPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            this.txtPhone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPhone.BackgroundImage")));
+            this.txtPhone.BorderColorActive = System.Drawing.Color.DarkGreen;
+            this.txtPhone.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.txtPhone.BorderColorHover = System.Drawing.Color.Green;
+            this.txtPhone.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.txtPhone.BorderRadius = 1;
+            this.txtPhone.BorderThickness = 2;
+            this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhone.DefaultFont = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.DefaultText = "";
+            this.txtPhone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            this.txtPhone.HideSelection = true;
+            this.txtPhone.IconLeft = null;
+            this.txtPhone.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhone.IconPadding = 10;
+            this.txtPhone.IconRight = null;
+            this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhone.Lines = new string[0];
+            this.txtPhone.Location = new System.Drawing.Point(161, 147);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPhone.MaxLength = 32767;
+            this.txtPhone.MinimumSize = new System.Drawing.Size(220, 28);
+            this.txtPhone.Modified = false;
+            this.txtPhone.Multiline = false;
+            this.txtPhone.Name = "txtPhone";
+            stateProperties17.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties17.FillColor = System.Drawing.Color.Empty;
+            stateProperties17.ForeColor = System.Drawing.Color.Empty;
+            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhone.OnActiveState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.Empty;
+            stateProperties18.FillColor = System.Drawing.Color.White;
+            stateProperties18.ForeColor = System.Drawing.Color.Empty;
+            stateProperties18.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtPhone.OnDisabledState = stateProperties18;
+            stateProperties19.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties19.FillColor = System.Drawing.Color.Empty;
+            stateProperties19.ForeColor = System.Drawing.Color.Empty;
+            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhone.OnHoverState = stateProperties19;
+            stateProperties20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            stateProperties20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            stateProperties20.ForeColor = System.Drawing.Color.Empty;
+            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhone.OnIdleState = stateProperties20;
+            this.txtPhone.PasswordChar = '\0';
+            this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtPhone.PlaceholderText = "";
+            this.txtPhone.ReadOnly = false;
+            this.txtPhone.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPhone.SelectedText = "";
+            this.txtPhone.SelectionLength = 0;
+            this.txtPhone.SelectionStart = 0;
+            this.txtPhone.ShortcutsEnabled = true;
+            this.txtPhone.Size = new System.Drawing.Size(220, 54);
+            this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
+            this.txtPhone.TabIndex = 4;
+            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPhone.TextMarginBottom = 0;
+            this.txtPhone.TextMarginLeft = 5;
+            this.txtPhone.TextMarginTop = 0;
+            this.txtPhone.TextPlaceholder = "";
+            this.txtPhone.UseSystemPasswordChar = false;
+            this.txtPhone.WordWrap = true;
             // 
             // txtAdopterSearchName
             // 
@@ -524,33 +524,33 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterSearchName.IconRight = null;
             this.txtAdopterSearchName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAdopterSearchName.Lines = new string[0];
-            this.txtAdopterSearchName.Location = new System.Drawing.Point(144, 61);
-            this.txtAdopterSearchName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdopterSearchName.Location = new System.Drawing.Point(161, 76);
+            this.txtAdopterSearchName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAdopterSearchName.MaxLength = 32767;
-            this.txtAdopterSearchName.MinimumSize = new System.Drawing.Size(196, 22);
+            this.txtAdopterSearchName.MinimumSize = new System.Drawing.Size(220, 28);
             this.txtAdopterSearchName.Modified = false;
             this.txtAdopterSearchName.Multiline = false;
             this.txtAdopterSearchName.Name = "txtAdopterSearchName";
-            stateProperties9.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtAdopterSearchName.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.Empty;
-            stateProperties10.FillColor = System.Drawing.Color.White;
-            stateProperties10.ForeColor = System.Drawing.Color.Empty;
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtAdopterSearchName.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.Maroon;
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtAdopterSearchName.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtAdopterSearchName.OnIdleState = stateProperties12;
+            stateProperties21.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties21.FillColor = System.Drawing.Color.Empty;
+            stateProperties21.ForeColor = System.Drawing.Color.Empty;
+            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAdopterSearchName.OnActiveState = stateProperties21;
+            stateProperties22.BorderColor = System.Drawing.Color.Empty;
+            stateProperties22.FillColor = System.Drawing.Color.White;
+            stateProperties22.ForeColor = System.Drawing.Color.Empty;
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtAdopterSearchName.OnDisabledState = stateProperties22;
+            stateProperties23.BorderColor = System.Drawing.Color.Maroon;
+            stateProperties23.FillColor = System.Drawing.Color.Empty;
+            stateProperties23.ForeColor = System.Drawing.Color.Empty;
+            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAdopterSearchName.OnHoverState = stateProperties23;
+            stateProperties24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            stateProperties24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
+            stateProperties24.ForeColor = System.Drawing.Color.Empty;
+            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAdopterSearchName.OnIdleState = stateProperties24;
             this.txtAdopterSearchName.PasswordChar = '\0';
             this.txtAdopterSearchName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAdopterSearchName.PlaceholderText = "";
@@ -560,7 +560,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterSearchName.SelectionLength = 0;
             this.txtAdopterSearchName.SelectionStart = 0;
             this.txtAdopterSearchName.ShortcutsEnabled = true;
-            this.txtAdopterSearchName.Size = new System.Drawing.Size(196, 48);
+            this.txtAdopterSearchName.Size = new System.Drawing.Size(220, 54);
             this.txtAdopterSearchName.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtAdopterSearchName.TabIndex = 22;
             this.txtAdopterSearchName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -575,10 +575,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.cbIsInBlacklist.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbIsInBlacklist.AutoSize = true;
-            this.cbIsInBlacklist.Location = new System.Drawing.Point(143, 191);
+            this.cbIsInBlacklist.Location = new System.Drawing.Point(160, 238);
             this.cbIsInBlacklist.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.cbIsInBlacklist.Name = "cbIsInBlacklist";
-            this.cbIsInBlacklist.Size = new System.Drawing.Size(18, 17);
+            this.cbIsInBlacklist.Size = new System.Drawing.Size(22, 21);
             this.cbIsInBlacklist.TabIndex = 23;
             this.cbIsInBlacklist.UseVisualStyleBackColor = true;
             // 
@@ -586,10 +586,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.cbAdopterStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbAdopterStatus.AutoSize = true;
-            this.cbAdopterStatus.Location = new System.Drawing.Point(143, 249);
+            this.cbAdopterStatus.Checked = true;
+            this.cbAdopterStatus.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAdopterStatus.Location = new System.Drawing.Point(160, 311);
             this.cbAdopterStatus.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.cbAdopterStatus.Name = "cbAdopterStatus";
-            this.cbAdopterStatus.Size = new System.Drawing.Size(18, 17);
+            this.cbAdopterStatus.Size = new System.Drawing.Size(22, 21);
             this.cbAdopterStatus.TabIndex = 25;
             this.cbAdopterStatus.UseVisualStyleBackColor = true;
             // 
@@ -599,10 +601,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnSearchAdopter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.btnSearchAdopter.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchAdopter.ForeColor = System.Drawing.Color.White;
-            this.btnSearchAdopter.Location = new System.Drawing.Point(161, 348);
+            this.btnSearchAdopter.Location = new System.Drawing.Point(181, 435);
             this.btnSearchAdopter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchAdopter.Name = "btnSearchAdopter";
-            this.btnSearchAdopter.Size = new System.Drawing.Size(113, 33);
+            this.btnSearchAdopter.Size = new System.Drawing.Size(127, 41);
             this.btnSearchAdopter.TabIndex = 2;
             this.btnSearchAdopter.Text = "Search";
             this.btnSearchAdopter.UseVisualStyleBackColor = false;
@@ -612,10 +614,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(3, 460);
+            this.btnBack.Location = new System.Drawing.Point(3, 575);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(63, 55);
+            this.btnBack.Size = new System.Drawing.Size(71, 69);
             this.btnBack.TabIndex = 6;
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -626,9 +628,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(196, 17);
+            this.label10.Location = new System.Drawing.Point(220, 21);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 32);
+            this.label10.Size = new System.Drawing.Size(147, 38);
             this.label10.TabIndex = 6;
             this.label10.Text = "Search by:";
             // 
@@ -639,15 +641,15 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmAdmin1.Location = new System.Drawing.Point(-1, 0);
             this.frmAdmin1.Margin = new System.Windows.Forms.Padding(1);
             this.frmAdmin1.Name = "frmAdmin1";
-            this.frmAdmin1.Size = new System.Drawing.Size(1069, 33);
+            this.frmAdmin1.Size = new System.Drawing.Size(1203, 41);
             this.frmAdmin1.TabIndex = 0;
             // 
             // AdoptersManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(1067, 599);
+            this.ClientSize = new System.Drawing.Size(1200, 749);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.frmAdmin1);
@@ -689,7 +691,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtPetIdSearch;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtPhone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
