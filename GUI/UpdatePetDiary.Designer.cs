@@ -30,12 +30,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdatePetDiary));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdatePetDiary));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -48,14 +49,14 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetDiaryDetail = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboPetSearchCategory = new System.Windows.Forms.ComboBox();
+            this.cboPetName = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.frmAdopterPanel1 = new CenterOfPetAnimalProtectionsManagement.GUI.frmAdopterPanel();
             this.frmAdopterPanel2 = new CenterOfPetAnimalProtectionsManagement.GUI.frmAdopterPanel();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,7 +65,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -73,9 +73,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.ForeColor = System.Drawing.Color.Maroon;
-            label2.Location = new System.Drawing.Point(397, 14);
+            label2.Location = new System.Drawing.Point(359, 11);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(489, 38);
+            label2.Size = new System.Drawing.Size(422, 32);
             label2.TabIndex = 0;
             label2.Text = "U P D AT E   Y O U R   P E T  D I A R Y";
             // 
@@ -86,13 +86,25 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93F));
             this.tableLayoutPanel1.Controls.Add(label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnBack, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 35);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 28);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 65);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 52);
             this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(3, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(67, 50);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -101,12 +113,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.17172F));
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupBox3, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(29, 35);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(26, 28);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1114, 598);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(990, 478);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // panel1
@@ -116,7 +128,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(471, 594);
+            this.panel1.Size = new System.Drawing.Size(417, 474);
             this.panel1.TabIndex = 4;
             // 
             // groupBox2
@@ -124,10 +136,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.groupBox2.Controls.Add(this.flpPetDiaryUpdateImage);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(471, 594);
+            this.groupBox2.Size = new System.Drawing.Size(417, 474);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Image";
@@ -137,18 +147,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.flpPetDiaryUpdateImage.Controls.Add(this.pbPetImg);
             this.flpPetDiaryUpdateImage.Controls.Add(this.btnChooseImg);
             this.flpPetDiaryUpdateImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpPetDiaryUpdateImage.Location = new System.Drawing.Point(3, 23);
+            this.flpPetDiaryUpdateImage.Location = new System.Drawing.Point(3, 18);
             this.flpPetDiaryUpdateImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpPetDiaryUpdateImage.Name = "flpPetDiaryUpdateImage";
-            this.flpPetDiaryUpdateImage.Size = new System.Drawing.Size(465, 567);
+            this.flpPetDiaryUpdateImage.Size = new System.Drawing.Size(411, 453);
             this.flpPetDiaryUpdateImage.TabIndex = 0;
             // 
             // pbPetImg
             // 
-            this.pbPetImg.Location = new System.Drawing.Point(3, 4);
-            this.pbPetImg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbPetImg.Location = new System.Drawing.Point(3, 3);
             this.pbPetImg.Name = "pbPetImg";
-            this.pbPetImg.Size = new System.Drawing.Size(459, 491);
+            this.pbPetImg.Size = new System.Drawing.Size(408, 393);
             this.pbPetImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPetImg.TabIndex = 0;
             this.pbPetImg.TabStop = false;
@@ -158,10 +167,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnChooseImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.btnChooseImg.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseImg.ForeColor = System.Drawing.Color.White;
-            this.btnChooseImg.Location = new System.Drawing.Point(3, 501);
+            this.btnChooseImg.Location = new System.Drawing.Point(3, 401);
             this.btnChooseImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChooseImg.Name = "btnChooseImg";
-            this.btnChooseImg.Size = new System.Drawing.Size(456, 61);
+            this.btnChooseImg.Size = new System.Drawing.Size(405, 49);
             this.btnChooseImg.TabIndex = 48;
             this.btnChooseImg.Text = "Choose images";
             this.btnChooseImg.UseVisualStyleBackColor = false;
@@ -171,11 +180,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.groupBox3.Controls.Add(this.tableLayoutPanel2);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(480, 4);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Location = new System.Drawing.Point(426, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(631, 590);
+            this.groupBox3.Size = new System.Drawing.Size(561, 472);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Information";
@@ -189,18 +196,18 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.Controls.Add(this.txtPetDiaryDetail, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cboPetSearchCategory, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cboPetName, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 23);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(625, 563);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(555, 451);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // btnSave
@@ -210,10 +217,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(3, 494);
+            this.btnSave.Location = new System.Drawing.Point(3, 396);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(619, 67);
+            this.btnSave.Size = new System.Drawing.Size(549, 53);
             this.btnSave.TabIndex = 43;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -247,10 +254,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetDiaryDetail.IconRight = null;
             this.txtPetDiaryDetail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPetDiaryDetail.Lines = new string[0];
-            this.txtPetDiaryDetail.Location = new System.Drawing.Point(222, 75);
-            this.txtPetDiaryDetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPetDiaryDetail.Location = new System.Drawing.Point(198, 60);
+            this.txtPetDiaryDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPetDiaryDetail.MaxLength = 32767;
-            this.txtPetDiaryDetail.MinimumSize = new System.Drawing.Size(220, 28);
+            this.txtPetDiaryDetail.MinimumSize = new System.Drawing.Size(196, 22);
             this.txtPetDiaryDetail.Modified = false;
             this.txtPetDiaryDetail.Multiline = true;
             this.txtPetDiaryDetail.Name = "txtPetDiaryDetail";
@@ -283,7 +290,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetDiaryDetail.SelectionLength = 0;
             this.txtPetDiaryDetail.SelectionStart = 0;
             this.txtPetDiaryDetail.ShortcutsEnabled = true;
-            this.txtPetDiaryDetail.Size = new System.Drawing.Size(397, 321);
+            this.txtPetDiaryDetail.Size = new System.Drawing.Size(353, 257);
             this.txtPetDiaryDetail.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.txtPetDiaryDetail.TabIndex = 32;
             this.txtPetDiaryDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -299,9 +306,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(3, 70);
+            this.label5.Location = new System.Drawing.Point(3, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 25);
+            this.label5.Size = new System.Drawing.Size(92, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Diary detail:";
             // 
@@ -311,31 +318,28 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(3, 22);
+            this.label3.Location = new System.Drawing.Point(3, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.Size = new System.Drawing.Size(98, 20);
             this.label3.TabIndex = 44;
             this.label3.Text = "Name of pet:";
             // 
-            // cboPetSearchCategory
+            // cboPetName
             // 
-            this.cboPetSearchCategory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cboPetSearchCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
-            this.cboPetSearchCategory.FormattingEnabled = true;
-            this.cboPetSearchCategory.Location = new System.Drawing.Point(221, 21);
-            this.cboPetSearchCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboPetSearchCategory.Name = "cboPetSearchCategory";
-            this.cboPetSearchCategory.Size = new System.Drawing.Size(295, 28);
-            this.cboPetSearchCategory.TabIndex = 48;
+            this.cboPetName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboPetName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
+            this.cboPetName.FormattingEnabled = true;
+            this.cboPetName.Location = new System.Drawing.Point(197, 16);
+            this.cboPetName.Name = "cboPetName";
+            this.cboPetName.Size = new System.Drawing.Size(263, 24);
+            this.cboPetName.TabIndex = 48;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox1.Location = new System.Drawing.Point(14, 106);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 85);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1173, 641);
+            this.groupBox1.Size = new System.Drawing.Size(1043, 513);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pet Diary";
@@ -350,35 +354,24 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmAdopterPanel1.Location = new System.Drawing.Point(-1, -1);
             this.frmAdopterPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.frmAdopterPanel1.Name = "frmAdopterPanel1";
-            this.frmAdopterPanel1.Size = new System.Drawing.Size(1203, 42);
+            this.frmAdopterPanel1.Size = new System.Drawing.Size(1069, 34);
             this.frmAdopterPanel1.TabIndex = 0;
             // 
             // frmAdopterPanel2
             // 
             this.frmAdopterPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.frmAdopterPanel2.Location = new System.Drawing.Point(0, 0);
+            this.frmAdopterPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.frmAdopterPanel2.Name = "frmAdopterPanel2";
-            this.frmAdopterPanel2.Size = new System.Drawing.Size(1200, 42);
+            this.frmAdopterPanel2.Size = new System.Drawing.Size(1067, 34);
             this.frmAdopterPanel2.TabIndex = 11;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(3, 2);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 63);
-            this.btnBack.TabIndex = 10;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // UpdatePetDiary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.ClientSize = new System.Drawing.Size(1067, 600);
             this.Controls.Add(this.frmAdopterPanel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -391,6 +384,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Text = "UpdatePetDiary";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -400,7 +394,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,7 +415,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pbPetImg;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.ComboBox cboPetSearchCategory;
+        private System.Windows.Forms.ComboBox cboPetName;
         private System.Windows.Forms.Button btnChooseImg;
         private frmAdopterPanel frmAdopterPanel2;
         private System.Windows.Forms.PictureBox btnBack;

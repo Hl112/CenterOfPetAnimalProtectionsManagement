@@ -1,4 +1,6 @@
-﻿using DataProvider;
+﻿using BussinessObject.DataAccess;
+using DataProvider;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -22,11 +24,48 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private void InitData() {
             openFileDialog.Filter = "Image files (*.jpg, *.png) | *.jpg; *.png";
             openFileDialog.Multiselect = false;
-            /*pbPetImg.BackgroundImage = ;*/
+
+            //load pet's name cbo
+            var pets = TblPetDAO.Instance.GetPetsByAdopterUsername(adopter.username);
+            cboPetName.DataSource = pets;
+            cboPetName.DisplayMember = "name";
+            cboPetName.ValueMember = "id";
+            cboPetName.SelectedIndex = -1;
         }
 
+
         private void btnSave_Click(object sender, System.EventArgs e) {
-            MessageBox.Show(Validation(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            string error = Validation();
+            if (!string.IsNullOrEmpty(error)) {
+                MessageBox.Show(error, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string fileName = DateTime.Now.Ticks.ToString() + "_" + openFileDialog.SafeFileName;
+
+            tblPetDiary diary = new tblPetDiary {
+                adopter = adopter.username,
+                petId = (int)cboPetName.SelectedValue,
+                diaryDetail = txtPetDiaryDetail.Text.Trim(),
+                diaryImages = fileName,
+                createDate = DateTime.Now,
+                isRead = false
+            };
+
+            bool result = TblPetDiaryDAO.Instance.CreatePetDiary(diary);
+            if (result) {
+                FileDAO.CopyImage(openFileDialog.FileName, fileName);
+                MessageBox.Show("Save successfully!", "Notification");
+                RefreshScreen();
+            }
+        }
+
+        private void RefreshScreen() {
+            openFileDialog.FileName = "";
+            pbPetImg.Image = null;
+            cboPetName.SelectedIndex = -1;
+            txtPetDiaryDetail.Clear();
+
         }
 
         private void btnChooseImg_Click(object sender, System.EventArgs e) {
@@ -38,23 +77,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         #region Validation
         private string Validation() {
-            /*StringBuilder errors = new StringBuilder("");
-            if(cboPetSearchCategory.SelectedIndex == -1) {
-                if(errors.Length != 0) {
-                    errors.AppendLine();
-                }
-                errors.Append("Please choose Pet");
-            }
-            if (string.IsNullOrWhiteSpace(txtPetDiaryDetail.Text)) {
-                if (errors.Length != 0) {
-                    errors.AppendLine();
-                }
-                errors.Append("Please enter content");
-            }*/
-
-            /*return errors.ToString();*/
-            if (cboPetSearchCategory.SelectedIndex == -1) {
-                cboPetSearchCategory.Focus();
+            if (cboPetName.SelectedIndex == -1) {
+                cboPetName.Focus();
                 return "Please choose Pet.";
             }
             if (string.IsNullOrWhiteSpace(txtPetDiaryDetail.Text)) {

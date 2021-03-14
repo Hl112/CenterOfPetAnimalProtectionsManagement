@@ -57,6 +57,7 @@
     <Compile Include="DataAccess\TblAccountDAO.cs" />
     <Compile Include="DataAccess\TblPetCategoryDAO.cs" />
     <Compile Include="DataAccess\TblPetDAO.cs" />
+    <Compile Include="DataAccess\TblPetDiaryDAO.cs" />
     <Compile Include="DataAccess\TblPetTypeDAO.cs" />
     <Compile Include="DataAccess\TblRoleDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
