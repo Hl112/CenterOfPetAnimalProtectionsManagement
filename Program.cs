@@ -15,7 +15,7 @@ namespace CenterOfPetAnimalProtectionsManagement
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new AdoptersManagement()); 
+            Application.Run(new ViewNotification()); 
         }
     }
 }
