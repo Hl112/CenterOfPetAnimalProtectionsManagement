@@ -2,6 +2,7 @@
 using System.Data.Entity.Core;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using BussinessObject.DataAccess;
 using DataProvider;
@@ -73,20 +74,6 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 
             };
             return account;
-        }
-
-        private void SetData(tblAccount account)
-        {
-            txtAdopterUsername.Text = account.username;
-            txtAdopterFullname.Text = account.fullname;
-            txtAdopterPhone.Text = account.phone;
-            txtAdopterAddress.Text = account.address;
-            rdoBlackListYes.Checked = account.isInBlackList;
-            txtAdopterReasonBlacklist.Text = account.reasonBlackList;
-            if (account.tblPet.Count != 0)
-            {
-                 //lvListPetsOfAdopter.Items = ;
-            }
         }
 
         private void picAdopterAva_Click(object sender, System.EventArgs e)
@@ -187,6 +174,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 foreach (var pet in listPets)
                 {
                     ListViewItem item = new ListViewItem(pet.id.ToString());
+                    item.Tag = pet;
                     item.SubItems.Add(pet.name);
                     item.SubItems.Add(pet.age);
                     item.SubItems.Add(pet.dateAdopted.ToString());
@@ -236,6 +224,18 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+        }
+
+        private void lvListPetsOfAdopter_DoubleClick(object sender, EventArgs e)
+        {
+            tblPet pet = lvListPetsOfAdopter.SelectedItems[0].Tag as tblPet;
+            if (pet != null)
+            {
+                this.Hide();
+                PetDetail newF = new PetDetail(false, pet);
+                newF.ShowDialog();
+                this.Show();
             }
         }
     }
