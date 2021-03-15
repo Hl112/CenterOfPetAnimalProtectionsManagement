@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DataProvider;
 using System.Data.Entity;
@@ -51,9 +52,13 @@ namespace BussinessObject.DataAccess
 
         public bool UpdateAdopter(tblAccount adopter)
         {
-            var update = (from a in _db.tblAccount 
-                    where a.username == adopter.username 
-                    select a)
+            Console.WriteLine(adopter.username);
+            Console.WriteLine(adopter.password);
+            Console.WriteLine(adopter.fullname);
+            Console.WriteLine(adopter.address);
+            var update = (from a in _db.tblAccount
+                          where a.username == adopter.username
+                          select a)
                 .SingleOrDefault();
             if (update != null)
             {
