@@ -29,6 +29,22 @@ namespace BussinessObject.DataAccess {
             }
             return false;
         }
+
+        //this function will return list pet diaries of the specific pet
+        public List<tblPetDiary> GetPetDiariesByPetID(int petID) {
+            var petDiaries = (from diary in DBProvider.Instance.Db.tblPetDiary
+                             where diary.petId == petID
+                             select diary).ToList();
+            return petDiaries;
+        }
+
+        //this function will return list pet diaries of the specific adopter
+        public List<tblPetDiary> GetPetDiariesByAopter(string username) {
+            var petDiaries = (from diary in DBProvider.Instance.Db.tblPetDiary
+                              where diary.adopter == username
+                              select diary).ToList();
+            return petDiaries;
+        }
         #endregion
     }
 }

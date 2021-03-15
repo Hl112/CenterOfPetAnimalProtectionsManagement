@@ -42,7 +42,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     SetData(pet);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Connection Error!", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -61,7 +61,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             bool adopted = rdoPetAdoptedYes.Checked;
             txtPetAdopter.Enabled = adopted;
             dtmPetDateAdopted.Enabled = adopted;
-            if (isCreate) btnDeletePet.Enabled = false;
+            if (isCreate) {
+                btnDeletePet.Enabled = false;
+                btnViewPetDiary.Enabled = false;
+            }
         }
 
         private void cboPetCategory_SelectedValueChanged(object sender, EventArgs e)
@@ -288,7 +291,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private void btnViewPetDiary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ViewNotification newForm = new ViewNotification();
+            ViewNotification newForm = new ViewNotification(p.id);
             newForm.ShowDialog();
             this.Show();
         }

@@ -21,7 +21,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             {
                 LoadNoti();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Conection Error.");
                 this.Close();
@@ -35,8 +35,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 //Load list pet diary
+                List<tblPetDiary> petDiaries = TblPetDiaryDAO.Instance.GetPetDiariesByPetID(petID);
+                LoadNoti(petDiaries);
+
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Conection Error.");
                 this.Close();
@@ -51,14 +54,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             {
                 isForAdopter = true;
                 //Load list pet diary
+                List<tblPetDiary> petDiaries = TblPetDiaryDAO.Instance.GetPetDiariesByAopter(adopter.username);
+                LoadNoti(petDiaries);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Conection Error.");
                 this.Close();
             }
         }
 
+        #region Load Notification
         public void LoadNoti()
         {
             List<tblPetDiary> list = NotificationDAO.Instance.GetNotification();
@@ -74,7 +80,19 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 lvNotification.Items.Add(item);
             }
         }
+        public void LoadNoti(List<tblPetDiary> petDiaries) {
+            
+            foreach (tblPetDiary diary in petDiaries) {
+                ListViewItem item = new ListViewItem(new[] { diary.adopter, diary.petId.ToString(), diary.tblPet.name });
+                item.Tag = diary;
+                if (!diary.isRead) {
+                    item.ForeColor = Color.Red;
 
+                }
+                lvNotification.Items.Add(item);
+            }
+        }
+        #endregion
         private void btnBack_Click(object sender, System.EventArgs e)
         {
             this.Close();

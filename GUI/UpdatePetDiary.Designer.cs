@@ -255,7 +255,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetDiaryDetail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPetDiaryDetail.Lines = new string[0];
             this.txtPetDiaryDetail.Location = new System.Drawing.Point(198, 60);
-            this.txtPetDiaryDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPetDiaryDetail.Margin = new System.Windows.Forms.Padding(4);
             this.txtPetDiaryDetail.MaxLength = 32767;
             this.txtPetDiaryDetail.MinimumSize = new System.Drawing.Size(196, 22);
             this.txtPetDiaryDetail.Modified = false;
@@ -329,7 +329,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.cboPetName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboPetName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.cboPetName.FormattingEnabled = true;
-            this.cboPetName.Location = new System.Drawing.Point(197, 16);
+            this.cboPetName.Location = new System.Drawing.Point(197, 15);
             this.cboPetName.Name = "cboPetName";
             this.cboPetName.Size = new System.Drawing.Size(263, 24);
             this.cboPetName.TabIndex = 48;

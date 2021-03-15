@@ -1,6 +1,8 @@
 ﻿using BussinessObject.DataAccess;
 using DataProvider;
 using System;
+using System.Collections.Generic;
+using System.Data.Entity.Core;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -26,7 +28,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             openFileDialog.Multiselect = false;
 
             //load pet's name cbo
-            var pets = TblPetDAO.Instance.GetPetsByAdopterUsername(adopter.username);
+            List<tblPet> pets;
+            try {
+                pets = TblPetDAO.Instance.GetPetsByAdopterUsername(adopter.username);
+            } catch (EntityException) {
+                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             cboPetName.DataSource = pets;
             cboPetName.DisplayMember = "name";
             cboPetName.ValueMember = "id";
