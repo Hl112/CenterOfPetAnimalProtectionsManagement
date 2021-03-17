@@ -20,6 +20,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             {
                 MyInit();
                 errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+                btnViewPetDiary.Visible = false;
+                btnDeletePet.Visible = false;
             }
             catch (Exception)
             {
@@ -37,15 +39,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 MyInit();
+               
                 if (pet != null)
                 {
                     SetData(pet);
+                    p = pet;
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Connection Error!", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }
 
         }
@@ -61,10 +65,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             bool adopted = rdoPetAdoptedYes.Checked;
             txtPetAdopter.Enabled = adopted;
             dtmPetDateAdopted.Enabled = adopted;
-            if (isCreate) {
-                btnDeletePet.Enabled = false;
-                btnViewPetDiary.Enabled = false;
-            }
+            if (isCreate) btnDeletePet.Enabled = false;
         }
 
         private void cboPetCategory_SelectedValueChanged(object sender, EventArgs e)
@@ -74,11 +75,14 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             if (cbPetCategory != null && cbPetCategory.SelectedItem != null)
             {
                 tblPetCategory selectedCategory = cbPetCategory.SelectedItem as tblPetCategory;
-                var listType = TblPetTypeDAO.Instance.GetTypesById(selectedCategory.id);
-                if (listType != null)
+                if (selectedCategory != null)
                 {
-                    cboPetType.DataSource = listType;
-                    cboPetType.DisplayMember = "name";
+                    var listType = TblPetTypeDAO.Instance.GetTypesById(selectedCategory.id);
+                    if (listType != null)
+                    {
+                        cboPetType.DataSource = listType;
+                        cboPetType.DisplayMember = "name";
+                    }
                 }
             }
 
@@ -88,8 +92,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             tblPet pet;
             string error = "";
-            int categoryId = (cboPetCategory.SelectedItem as tblPetCategory).id;
-            int typeId = (cboPetType.SelectedItem as tblPetType).id;
+            int typeId = ((tblPetType) cboPetType.SelectedItem).id;
             int petId;
             string name = txtPetName.Text;
             string gender = txtPetGender.Text;
@@ -174,12 +177,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             txtPetAge.Text = pet.age;
             txtPetFurcolor.Text = pet.furColor;
             dtmPetCreateDate.Value = pet.createdDate;
-            rdoPetSterilizedYes.Checked = (bool)pet.isSterilized;
+            if (pet.isSterilized != null) rdoPetSterilizedYes.Checked = (bool) pet.isSterilized;
             rdoPetAdoptedYes.Checked = pet.adopter == null ? false : true;
             if (rdoPetAdoptedYes.Checked)
             {
                 txtPetAdopter.Text = pet.adopter;
-                dtmPetDateAdopted.Value = (DateTime)pet.dateAdopted;
+                if (pet.dateAdopted != null) dtmPetDateAdopted.Value = (DateTime) pet.dateAdopted;
             }
 
             txtPetDescription.Text = pet.description;
@@ -196,7 +199,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 tblPet pet = GetData();
-                bool result = false;
+                bool result;
                 if (pet == null) return;
                 if (isCreate)
                 {
@@ -214,6 +217,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                         FileDAO.CopyImage(openFileImage.FileName, openFileImage.SafeFileName);
                     }
                     MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Close();
                 }
                 else
                 {
@@ -255,12 +259,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             errorProvider.SetError(c, (c as BunifuTextBox)?.Text == String.Empty ? message : null);
         }
-        private void txtPetName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        private void txtPetName_Validating(object sender, CancelEventArgs e)
         {
             ValidEmpty(txtPetName,"Name is not empty!");
         }
 
-        private void txtPetGender_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        private void txtPetGender_Validating(object sender, CancelEventArgs e)
         {
             ValidEmpty(txtPetGender,"Gender is not empty");
         }
@@ -284,7 +288,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 }
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }
         }
 

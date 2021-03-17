@@ -41,22 +41,24 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.txtAppName.AutoSize = true;
             this.txtAppName.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAppName.Location = new System.Drawing.Point(248, 13);
+            this.txtAppName.Location = new System.Drawing.Point(165, 8);
+            this.txtAppName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtAppName.Name = "txtAppName";
-            this.txtAppName.Size = new System.Drawing.Size(685, 28);
+            this.txtAppName.Size = new System.Drawing.Size(488, 19);
             this.txtAppName.TabIndex = 13;
             this.txtAppName.Text = "MANAGEMENT APPLICATION FOR CENTER OF PET ANIMAL PROTECTIONS";
             this.txtAppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAppName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtAppName_MouseDown);
+            this.txtAppName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAppName_MouseMove);
             // 
             // btnMinimize
             // 
             this.btnMinimize.AutoSize = true;
             this.btnMinimize.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Location = new System.Drawing.Point(1126, 14);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(751, 9);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(24, 27);
+            this.btnMinimize.Size = new System.Drawing.Size(17, 20);
             this.btnMinimize.TabIndex = 15;
             this.btnMinimize.Text = "_";
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
@@ -66,10 +68,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnClose.AutoSize = true;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(1158, 14);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btnClose.Location = new System.Drawing.Point(772, 9);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(26, 27);
+            this.btnClose.Size = new System.Drawing.Size(18, 20);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -78,16 +79,17 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             // 
             this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(1091, 15);
+            this.btnLogout.Location = new System.Drawing.Point(727, 10);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(28, 26);
+            this.btnLogout.Size = new System.Drawing.Size(19, 17);
             this.btnLogout.TabIndex = 16;
             this.btnLogout.TabStop = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmNormalControlPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.Controls.Add(this.btnLogout);
@@ -95,8 +97,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtAppName);
             this.ForeColor = System.Drawing.Color.Transparent;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmNormalControlPanel";
-            this.Size = new System.Drawing.Size(1200, 50);
+            this.Size = new System.Drawing.Size(800, 32);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmNormalControlPanel_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmNormalControlPanel_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

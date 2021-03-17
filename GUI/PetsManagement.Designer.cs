@@ -189,7 +189,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnClearFilter.FadeWhenInactive = false;
             this.btnClearFilter.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.btnClearFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnClearFilter.Image")));
-            this.btnClearFilter.ImageActive = null;
+           // this.btnClearFilter.ImageActive = null;
             this.btnClearFilter.ImageLocation = null;
             this.btnClearFilter.ImageMargin = 5;
             this.btnClearFilter.ImageSize = new System.Drawing.Size(57, 56);
@@ -207,7 +207,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.btnClearFilter.TabIndex = 7;
             this.btnClearFilter.ToolTipText = "";
             this.btnClearFilter.WaitOnLoad = false;
-            this.btnClearFilter.Zoom = 5;
+           // this.btnClearFilter.Zoom = 5;
             this.btnClearFilter.ZoomSpeed = 10;
             this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
             // 

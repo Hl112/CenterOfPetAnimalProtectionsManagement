@@ -76,5 +76,15 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 this.ParentForm.Close();
             }
         }
+
+        private void txtAppName_MouseDown(object sender, MouseEventArgs e)
+        {
+            menuStrip1_MouseDown(sender,e);
+        }
+
+        private void txtAppName_MouseMove(object sender, MouseEventArgs e)
+        {
+            menuStrip1_MouseMove(sender,e);
+        }
     }
 }

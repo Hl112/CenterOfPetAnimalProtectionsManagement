@@ -42,7 +42,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 cboPetSearchCategory.SelectedIndex = -1;
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }  
         }
 
@@ -75,7 +75,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
             catch (Exception)
             {
+                // ignored
             }
+
             // Thread t = new Thread(new ThreadStart(ShowCreatePet));
             // t.Start();
             // this.Close();
@@ -93,13 +95,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void cboPetSearchCategory_SelectedIndexChanged(object sender, EventArgs e) {
             if (cboPetSearchCategory.SelectedIndex != -1) {
-                int cateID = 0;
+                int cateId = 0;
                 try {
-                    cateID = int.Parse(cboPetSearchCategory.SelectedValue.ToString());
+                    cateId = int.Parse(cboPetSearchCategory.SelectedValue.ToString());
                 } catch (FormatException) {
 
                 }
-                var petTypes = TblPetTypeDAO.Instance.GetTypesById(cateID);
+                var petTypes = TblPetTypeDAO.Instance.GetTypesById(cateId);
                 cboPetSearchType.DataSource = petTypes;
                 cboPetSearchType.DisplayMember = "name";
                 cboPetSearchType.ValueMember = "id";
@@ -129,7 +131,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 LoadListView(l);
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }
         }
 

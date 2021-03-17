@@ -2,7 +2,6 @@
 using System.Data.Entity.Core;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using BussinessObject.DataAccess;
 using DataProvider;
@@ -33,7 +32,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private tblAccount GetData()
         {
-            tblAccount account = null;
+            tblAccount account;
             string id = txtAdopterUsername.Text;
             string fullname = txtAdopterFullname.Text;
             string phone = txtAdopterPhone.Text;
@@ -76,7 +75,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             return account;
         }
 
-        private void picAdopterAva_Click(object sender, System.EventArgs e)
+        private void picAdopterAva_Click(object sender, EventArgs e)
         {
             if (openFile.ShowDialog() == DialogResult.OK)
             {
@@ -84,11 +83,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
-        private void btnUpdateAdopter_Click(object sender, System.EventArgs e)
+        private void btnUpdateAdopter_Click(object sender, EventArgs e)
         {
             try{
             tblAccount account = GetData();
-            bool result = false;
+            bool result;
             if(account == null) return;
             if (_isCreate)
             {
@@ -106,6 +105,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     FileDAO.CopyImage(openFile.FileName, openFile.SafeFileName);
                 }
                 MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
@@ -223,7 +225,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             catch (EntityException)
             {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }
         }
 

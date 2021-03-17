@@ -120,7 +120,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 27);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel3
             // 
@@ -147,7 +147,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 415);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel4
             // 
@@ -164,7 +164,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(267, 60);
-            this.tableLayoutPanel4.TabIndex = 4;
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // btnBack
             // 
@@ -243,7 +243,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.lvListPetsOfAdopter.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.lvListPetsOfAdopter.Name = "lvListPetsOfAdopter";
             this.lvListPetsOfAdopter.Size = new System.Drawing.Size(450, 113);
-            this.lvListPetsOfAdopter.TabIndex = 40;
+            this.lvListPetsOfAdopter.TabIndex = 0;
             this.lvListPetsOfAdopter.UseCompatibleStateImageBehavior = false;
             this.lvListPetsOfAdopter.View = System.Windows.Forms.View.Details;
             this.lvListPetsOfAdopter.DoubleClick += new System.EventHandler(this.lvListPetsOfAdopter_DoubleClick);
@@ -375,7 +375,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterReasonBlacklist.ShortcutsEnabled = true;
             this.txtAdopterReasonBlacklist.Size = new System.Drawing.Size(233, 27);
             this.txtAdopterReasonBlacklist.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtAdopterReasonBlacklist.TabIndex = 35;
+            this.txtAdopterReasonBlacklist.TabIndex = 5;
             this.txtAdopterReasonBlacklist.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAdopterReasonBlacklist.TextMarginBottom = 0;
             this.txtAdopterReasonBlacklist.TextMarginLeft = 5;
@@ -474,7 +474,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterUsername.ShortcutsEnabled = true;
             this.txtAdopterUsername.Size = new System.Drawing.Size(233, 21);
             this.txtAdopterUsername.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtAdopterUsername.TabIndex = 39;
+            this.txtAdopterUsername.TabIndex = 1;
             this.txtAdopterUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAdopterUsername.TextMarginBottom = 0;
             this.txtAdopterUsername.TextMarginLeft = 5;
@@ -547,7 +547,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterFullname.ShortcutsEnabled = true;
             this.txtAdopterFullname.Size = new System.Drawing.Size(233, 21);
             this.txtAdopterFullname.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtAdopterFullname.TabIndex = 32;
+            this.txtAdopterFullname.TabIndex = 2;
             this.txtAdopterFullname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAdopterFullname.TextMarginBottom = 0;
             this.txtAdopterFullname.TextMarginLeft = 5;
@@ -620,7 +620,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterPhone.ShortcutsEnabled = true;
             this.txtAdopterPhone.Size = new System.Drawing.Size(233, 21);
             this.txtAdopterPhone.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtAdopterPhone.TabIndex = 33;
+            this.txtAdopterPhone.TabIndex = 3;
             this.txtAdopterPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAdopterPhone.TextMarginBottom = 0;
             this.txtAdopterPhone.TextMarginLeft = 5;
@@ -693,7 +693,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopterAddress.ShortcutsEnabled = true;
             this.txtAdopterAddress.Size = new System.Drawing.Size(233, 21);
             this.txtAdopterAddress.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
-            this.txtAdopterAddress.TabIndex = 34;
+            this.txtAdopterAddress.TabIndex = 4;
             this.txtAdopterAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAdopterAddress.TextMarginBottom = 0;
             this.txtAdopterAddress.TextMarginLeft = 5;
@@ -774,7 +774,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdoBlackListYes.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rdoBlackListYes.Name = "rdoBlackListYes";
             this.rdoBlackListYes.Size = new System.Drawing.Size(43, 17);
-            this.rdoBlackListYes.TabIndex = 1;
+            this.rdoBlackListYes.TabIndex = 0;
             this.rdoBlackListYes.Text = "Yes";
             this.rdoBlackListYes.UseVisualStyleBackColor = true;
             this.rdoBlackListYes.Click += new System.EventHandler(this.rdoBlackListYes_Click);
@@ -789,7 +789,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.rdoBlackListNo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rdoBlackListNo.Name = "rdoBlackListNo";
             this.rdoBlackListNo.Size = new System.Drawing.Size(39, 17);
-            this.rdoBlackListNo.TabIndex = 0;
+            this.rdoBlackListNo.TabIndex = 1;
             this.rdoBlackListNo.TabStop = true;
             this.rdoBlackListNo.Text = "No";
             this.rdoBlackListNo.UseVisualStyleBackColor = true;
@@ -803,7 +803,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmAdmin1.Margin = new System.Windows.Forms.Padding(1);
             this.frmAdmin1.Name = "frmAdmin1";
             this.frmAdmin1.Size = new System.Drawing.Size(800, 27);
-            this.frmAdmin1.TabIndex = 0;
+            this.frmAdmin1.TabIndex = 1;
             // 
             // AdopterDetail
             // 
