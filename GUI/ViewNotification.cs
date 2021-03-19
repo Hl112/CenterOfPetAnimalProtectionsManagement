@@ -85,7 +85,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             foreach (tblPetDiary diary in petDiaries) {
                 ListViewItem item = new ListViewItem(new[] { diary.adopter, diary.petId.ToString(), diary.tblPet.name });
                 item.Tag = diary;
-                if (!diary.isRead) {
+                if (!diary.isRead && !isForAdopter) {
                     item.ForeColor = Color.Red;
 
                 }
@@ -111,7 +111,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     txtAdopter.Text = noti.adopter;
                     txtPetDiaryDetail.Text = noti.diaryDetail;
                     imgPath = FileDAO.Folder + "/" + noti.diaryImages;
-                   if(!noti.isRead)  NotificationDAO.Instance.MakeRead(noti.id);
+                   if(!noti.isRead && !isForAdopter)  NotificationDAO.Instance.MakeRead(noti.id);
                     item.ForeColor = Color.Black;
                 }
             }

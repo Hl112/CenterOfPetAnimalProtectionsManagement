@@ -24,7 +24,7 @@ namespace BussinessObject.DataAccess
         public List<tblPetDiary> GetNotification()
         {
             var list = (from tblPetDiary in DBProvider.Instance.Db.tblPetDiary
-                orderby tblPetDiary.isRead ascending 
+                orderby tblPetDiary.createDate descending 
                 select tblPetDiary).ToList();
             return list;
         }

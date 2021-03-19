@@ -34,6 +34,7 @@ namespace BussinessObject.DataAccess {
         public List<tblPetDiary> GetPetDiariesByPetID(int petID) {
             var petDiaries = (from diary in DBProvider.Instance.Db.tblPetDiary
                              where diary.petId == petID
+                             orderby diary.createDate descending
                              select diary).ToList();
             return petDiaries;
         }
@@ -42,6 +43,7 @@ namespace BussinessObject.DataAccess {
         public List<tblPetDiary> GetPetDiariesByAopter(string username) {
             var petDiaries = (from diary in DBProvider.Instance.Db.tblPetDiary
                               where diary.adopter == username
+                              orderby diary.createDate descending
                               select diary).ToList();
             return petDiaries;
         }
