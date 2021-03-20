@@ -39,7 +39,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.adoptersManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.notificationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAppName = new System.Windows.Forms.Label();
@@ -78,8 +78,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 32);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
@@ -93,14 +93,14 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.toolStripSeparator2,
             this.adoptersManagementToolStripMenuItem,
             this.toolStripSeparator3,
-            this.logoutToolStripMenuItem1,
+            this.notificationToolStripMenuItem1,
             this.toolStripSeparator4,
             this.logoutToolStripMenuItem});
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.menuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("menuToolStripMenuItem.Image")));
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(36, 28);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(40, 28);
             // 
             // toolStripSeparator1
             // 
@@ -141,13 +141,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(220, 6);
             // 
-            // logoutToolStripMenuItem1
+            // notificationToolStripMenuItem1
             // 
             this.logoutToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.logoutToolStripMenuItem1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(223, 24);
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(329, 36);
             this.logoutToolStripMenuItem1.Text = "Notification";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
@@ -212,7 +212,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label txtAppName;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem notificationToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
