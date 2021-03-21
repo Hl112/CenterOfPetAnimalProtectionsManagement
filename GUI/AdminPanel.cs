@@ -66,7 +66,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
-        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void notificationToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (!(this.ParentForm is ViewNotification))
             {

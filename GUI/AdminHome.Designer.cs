@@ -32,7 +32,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHome));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtWelcome = new System.Windows.Forms.Label();
+            this.lbWelcome = new System.Windows.Forms.Label();
             this.picPetsManagement = new System.Windows.Forms.PictureBox();
             this.picAdoptersManagement = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,16 +65,16 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // txtWelcome
+            // lbWelcome
             // 
-            this.txtWelcome.AutoSize = true;
-            this.txtWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWelcome.ForeColor = System.Drawing.Color.Maroon;
-            this.txtWelcome.Location = new System.Drawing.Point(664, 51);
-            this.txtWelcome.Name = "txtWelcome";
-            this.txtWelcome.Size = new System.Drawing.Size(92, 20);
-            this.txtWelcome.TabIndex = 6;
-            this.txtWelcome.Text = "Welcome, ";
+            this.lbWelcome.AutoSize = true;
+            this.lbWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWelcome.ForeColor = System.Drawing.Color.Maroon;
+            this.lbWelcome.Location = new System.Drawing.Point(664, 51);
+            this.lbWelcome.Name = "lbWelcome";
+            this.lbWelcome.Size = new System.Drawing.Size(92, 20);
+            this.lbWelcome.TabIndex = 6;
+            this.lbWelcome.Text = "Welcome, ";
             // 
             // picPetsManagement
             // 
@@ -182,7 +182,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.frmNormalControlPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(155)))), ((int)(((byte)(147)))));
             this.frmNormalControlPanel2.ForeColor = System.Drawing.Color.Transparent;
             this.frmNormalControlPanel2.Location = new System.Drawing.Point(-2, -2);
-            this.frmNormalControlPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.frmNormalControlPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.frmNormalControlPanel2.Name = "frmNormalControlPanel2";
             this.frmNormalControlPanel2.Size = new System.Drawing.Size(1206, 49);
             this.frmNormalControlPanel2.TabIndex = 12;
@@ -209,7 +209,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtWelcome);
+            this.Controls.Add(this.lbWelcome);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -235,7 +235,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private frmNormalControlPanel frmNormalControlPanel1;
-        private System.Windows.Forms.Label txtWelcome;
+        private System.Windows.Forms.Label lbWelcome;
         private System.Windows.Forms.PictureBox picPetsManagement;
         private System.Windows.Forms.PictureBox picAdoptersManagement;
         private System.Windows.Forms.Panel panel1;

@@ -10,7 +10,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public AdminHome(tblAccount user)
         {
             InitializeComponent();
-            txtWelcome.Text = "Welcome " + user.fullname;
+            lbWelcome.Text = "Welcome " + user.fullname;
             this.admin = user;
         }
 

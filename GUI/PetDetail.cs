@@ -299,5 +299,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             newForm.ShowDialog();
             this.Show();
         }
+
+        private void btnSearchAdopter_Click(object sender, EventArgs e)
+        {
+            ListAdopters newF = new ListAdopters();
+            this.Hide();
+            newF.ShowDialog();
+            this.Show();
+        }
     }
 }

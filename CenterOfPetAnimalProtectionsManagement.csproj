@@ -147,6 +147,12 @@
     <Compile Include="GUI\AdoptersManagement.Designer.cs">
       <DependentUpon>AdoptersManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ListAdopters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ListAdopters.Designer.cs">
+      <DependentUpon>ListAdopters.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AdoptersManagement.resx">
       <DependentUpon>AdoptersManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ListAdopters.resx">
+      <DependentUpon>ListAdopters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
