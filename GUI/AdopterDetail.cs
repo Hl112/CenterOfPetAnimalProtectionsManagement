@@ -36,7 +36,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public AdopterDetail(tblAccount adopter) : this() {
             this._adopter = adopter;
             btnUpdateAdopter.Visible = false;
-            btnDeletePet.Visible = false;
+            btnDeleteAdopter.Visible = false;
             LoadData(adopter);
         }
 
@@ -212,7 +212,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             txtAdopterReasonBlacklist.Visible = false;
         }
 
-        private void btnDeletePet_Click(object sender, EventArgs e)
+        private void btnDeleteAdopter_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("Do you want to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             try

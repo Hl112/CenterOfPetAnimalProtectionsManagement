@@ -81,7 +81,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 32);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
@@ -102,7 +102,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.menuToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.menuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("menuToolStripMenuItem.Image")));
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(40, 30);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(40, 28);
             // 
             // toolStripSeparator1
             // 

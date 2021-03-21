@@ -121,6 +121,46 @@
     <value>False</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtAdopterReasonBlacklist.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAV4AAAApCAYAAAB9e0HXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABrSURBVHhe7dSxEQAQEADBL1UpavAZRdIBDUiJdmeuhQsA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4Z/ZW5sgqSfpT
+        rJFbkvSvuN1YkvSqrAd7f2d2DSkGCwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txtAdopterUsername.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAV4AAAAgCAYAAABadBAfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABgSURBVHhe7dQxEQAhDADBSEUKGkj3iAQHYIAWvtmdOQsX
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/Gh8rYyeVZL0ppg9lyTpXXG6sSTp
+        Vlk3Sj5ndiivTCAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="txtAdopterFullname.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAV4AAAAgCAYAAABadBAfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABgSURBVHhe7dQxEQAhDADBSEUKGkj3iAQHYIAWvtmdOQsX
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/Gh8rYyeVZL0ppg9lyTpXXG6sSTp
+        Vlk3Sj5ndiivTCAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="txtAdopterPhone.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAV4AAAAgCAYAAABadBAfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABgSURBVHhe7dQxEQAhDADBSEUKGkj3iAQHYIAWvtmdOQsX
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/Gh8rYyeVZL0ppg9lyTpXXG6sSTp
+        Vlk3Sj5ndiivTCAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="txtAdopterAddress.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAV4AAAAgCAYAAABadBAfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABgSURBVHhe7dQxEQAhDADBSEUKGkj3iAQHYIAWvtmdOQsX
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/Gh8rYyeVZL0ppg9lyTpXXG6sSTp
+        Vlk3Sj5ndiivTCAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABl1JREFUaEPt
@@ -154,7 +194,7 @@
         7h+iFACVDNa+2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnDeletePet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteAdopter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAB2VJREFUaEPt
         WftTVGUYtnt/QM1I/dRtppl+aUb7LRFrKnUsuQq4YHIpFa+AiICKOlOmomaZY+UlL2BuCgsrSrgKmWgq
@@ -249,46 +289,6 @@
         fWUz29TO3f7QFBm6nzXMfPtYqlBbARKzV6PaVruzmd5nUKqpcf7sk958OYaq44s2lmP18UX6224tS4Kc
         7UCUs8mT2sPVuvpuEDO08YsLgl5C8BIWk/ymnV13+2it3C+WfazuminLsewkrur6Rel+WsT28Ahr+msM
         rj/Vdx/roXfOmM4Y53psMgQAAAAAAAAAAAAAAAAAAAAAAAAfXC5/ADlSNGGry0PbAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="txtAdopterReasonBlacklist.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAATcAAAAhCAYAAAC82uwAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABcSURBVHhe7dRBDQAhDADBSkUKGujvEAkOwAAGrplJ1sIG
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABADesbbc3sklSp2DOPJFUrXseTpH+X/QJU
-        VCIm7qrP9gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtAdopterUsername.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAATcAAAAaCAYAAADSZxtuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABTSURBVHhe7dRBEcAgEMDAk4oUNHC/IhIcgAEMQHdnYiEB
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPze+VkbPKkkvFbPnkqTXitPxJOnusm4ySSImnrzJIQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtAdopterFullname.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAATcAAAAaCAYAAADSZxtuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABTSURBVHhe7dRBEcAgEMDAk4oUNHC/IhIcgAEMQHdnYiEB
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPze+VkbPKkkvFbPnkqTXitPxJOnusm4ySSImnrzJIQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtAdopterPhone.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAATcAAAAaCAYAAADSZxtuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABTSURBVHhe7dRBEcAgEMDAk4oUNHC/IhIcgAEMQHdnYiEB
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPze+VkbPKkkvFbPnkqTXitPxJOnusm4ySSImnrzJIQAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="txtAdopterAddress.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAATcAAAAaCAYAAADSZxtuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABTSURBVHhe7dRBEcAgEMDAk4oUNHC/IhIcgAEMQHdnYiEB
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPze+VkbPKkkvFbPnkqTXitPxJOnusm4ySSImnrzJIQAA
-        AABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="openFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
