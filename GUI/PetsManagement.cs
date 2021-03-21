@@ -152,7 +152,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             dt.Columns.Add("Adopted", typeof(bool));
             if (listPet.Count != 0) {
                 foreach (var pet in listPet) {
-                    dt.Rows.Add(pet.id, pet.name, pet.status);
+                    dt.Rows.Add(pet.id, pet.name, !string.IsNullOrEmpty(pet.adopter));
                 }
             }
             dgvPets.DataSource = dt;
