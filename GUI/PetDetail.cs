@@ -13,6 +13,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
     public partial class PetDetail : Form
     {
         private bool isCreate = true;
+        private bool _isAction = false;
+        public bool IsAction { get => _isAction; set => IsAction = _isAction; }
         public PetDetail()
         {
             InitializeComponent();
@@ -204,10 +206,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 if (isCreate)
                 {
                     result = TblPetDAO.Instance.CreatePet(pet);
+                    _isAction = true;
                 }
                 else
                 {
                     result = TblPetDAO.Instance.UpdatePet(pet);
+                    _isAction = true;
                 }
 
                 if (result)
@@ -284,8 +288,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             DialogResult r = MessageBox.Show("Do you want to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             try {
                 if (r == DialogResult.Yes && p != null) {
-                    TblPetDAO.Instance.DeletePet(p.id);
+                    if (TblPetDAO.Instance.DeletePet(p.id)) {
+                        MessageBox.Show("Deleted successfully", "Action");
+                    }
                     this.Close();
+                    _isAction = true;
                 }
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

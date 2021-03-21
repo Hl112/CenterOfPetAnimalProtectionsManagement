@@ -27,6 +27,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 this._isCreate = false;
                 this._adopter = adopter;
                 LoadData(adopter);
+            } else {
+                lbReason.Visible = false;
+                txtAdopterReasonBlacklist.Visible = false;
             }
         }
 

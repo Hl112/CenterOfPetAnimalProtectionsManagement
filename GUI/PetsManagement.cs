@@ -12,6 +12,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
     public partial class PetsManagement : Form
     {
         tblAccount admin;
+        private string _action = "Show All";
         public PetsManagement(tblAccount user)
         {
             InitializeComponent();
@@ -72,6 +73,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 PetDetail newForm = new PetDetail();
                 newForm.ShowDialog();
                 this.Show();
+                if (newForm.IsAction) {
+                    RefreshDgv();
+                }
             }
             catch (Exception)
             {
@@ -127,8 +131,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnShowAllPets_Click(object sender, EventArgs e) {
             try {
-                var l = TblPetDAO.Instance.GetAllPets();
-                LoadListView(l);
+                ShowAllPets();
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
@@ -142,6 +145,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             PetDetail frm = new PetDetail(false, pet);
             frm.ShowDialog();
             this.Show();
+            if (frm.IsAction) {
+                RefreshDgv();
+            }
         }
 
         //This function will load data from list to ListView
@@ -168,6 +174,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         private void btnSearchPet_Click(object sender, EventArgs e) {
+            SearchPets();
+        }
+
+        private void SearchPets() {
             //get search information
             string searchCate = cboPetSearchCategory.SelectedIndex == -1 ? "" : cboPetSearchCategory.SelectedValue.ToString();
             string searchType = cboPetSearchType.SelectedIndex != -1 ? cboPetSearchType.SelectedValue.ToString() : "";
@@ -181,11 +191,25 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 var list = TblPetDAO.Instance.SearchPets(searchCate, searchType, searchID,
                 searchFurColor, searchStatus, isAdopted, searchAdoptedDateFrom, searchAdoptedDateTo);
                 LoadListView(list);
+                _action = "Search";
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-    
+        }
+
+        private void ShowAllPets() {
+            var l = TblPetDAO.Instance.GetAllPets();
+            LoadListView(l);
+            _action = "Show All";
+        }
+
+        private void RefreshDgv() {
+            if(_action.Equals("Show All")) {
+                ShowAllPets();
+            } else {
+                SearchPets();
+            }
         }
     }
 }

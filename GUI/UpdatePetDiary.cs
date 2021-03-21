@@ -49,22 +49,25 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 return;
             }
 
-            string fileName = DateTime.Now.Ticks.ToString() + "_" + openFileDialog.SafeFileName;
+            DialogResult r = MessageBox.Show("Do you want to save?", "Confirmation", MessageBoxButtons.YesNo);
+            if(r == DialogResult.Yes) {
+                string fileName = DateTime.Now.Ticks.ToString() + "_" + openFileDialog.SafeFileName;
 
-            tblPetDiary diary = new tblPetDiary {
-                adopter = adopter.username,
-                petId = (int)cboPetName.SelectedValue,
-                diaryDetail = txtPetDiaryDetail.Text.Trim(),
-                diaryImages = fileName,
-                createDate = DateTime.Now,
-                isRead = false
-            };
+                tblPetDiary diary = new tblPetDiary {
+                    adopter = adopter.username,
+                    petId = (int)cboPetName.SelectedValue,
+                    diaryDetail = txtPetDiaryDetail.Text.Trim(),
+                    diaryImages = fileName,
+                    createDate = DateTime.Now,
+                    isRead = false
+                };
 
-            bool result = TblPetDiaryDAO.Instance.CreatePetDiary(diary);
-            if (result) {
-                FileDAO.CopyImage(openFileDialog.FileName, fileName);
-                MessageBox.Show("Save successfully!", "Notification");
-                RefreshScreen();
+                bool result = TblPetDiaryDAO.Instance.CreatePetDiary(diary);
+                if (result) {
+                    FileDAO.CopyImage(openFileDialog.FileName, fileName);
+                    MessageBox.Show("Saved successfully!", "Notification");
+                    RefreshScreen();
+                }
             }
         }
 
