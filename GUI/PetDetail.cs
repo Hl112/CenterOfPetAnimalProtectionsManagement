@@ -235,7 +235,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private void rdoPetAdoptedYes_CheckedChanged(object sender, EventArgs e)
         {
             bool adopted = (rdoPetAdoptedYes).Checked;
-            txtPetAdopter.Enabled = adopted;
+            btnChooseAdopter.Visible = adopted;
+            btnChooseAdopter.Enabled = adopted;
             dtmPetDateAdopted.Enabled = adopted;
         }
         #endregion
@@ -300,12 +301,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Show();
         }
 
-        private void btnSearchAdopter_Click(object sender, EventArgs e)
-        {
-            ListAdopters newF = new ListAdopters();
+        private void btnChooseAdopter_Click(object sender, EventArgs e) {
+            ListAdopters newF = new ListAdopters(txtPetAdopter.Text);
             this.Hide();
             newF.ShowDialog();
             this.Show();
+            txtPetAdopter.Text = newF.SelectedAdopter;
         }
     }
 }

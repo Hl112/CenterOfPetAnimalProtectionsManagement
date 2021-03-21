@@ -30,6 +30,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             }
         }
 
+        public AdopterDetail(tblAccount adopter) : this() {
+            this._adopter = adopter;
+            btnUpdateAdopter.Visible = false;
+            btnDeletePet.Visible = false;
+            LoadData(adopter);
+        }
+
         private tblAccount GetData()
         {
             tblAccount account;

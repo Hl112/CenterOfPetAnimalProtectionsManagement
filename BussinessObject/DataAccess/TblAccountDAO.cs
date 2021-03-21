@@ -40,8 +40,9 @@ namespace BussinessObject.DataAccess
         public List<tblAccount> GetAllAdopters()
         {
             var listAdopters = (from a in _db.tblAccount
-                where a.roleID == 2 && a.status == true
-                select a).ToList();
+                                where a.roleID == 2 && a.status == true 
+                                      && a.isInBlackList == false
+                                select a).ToList();
             return listAdopters;
         }
 
