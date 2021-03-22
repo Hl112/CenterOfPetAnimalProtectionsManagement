@@ -12,6 +12,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             InitializeComponent();
             lbWelcome.Text = "Welcome " + user.fullname;
             this.admin = user;
+            this.Text = "Admin Home";
         }
 
         public void ShowPetManagement()

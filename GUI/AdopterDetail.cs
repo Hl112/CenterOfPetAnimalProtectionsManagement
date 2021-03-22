@@ -17,6 +17,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public AdopterDetail()
         {
             InitializeComponent();
+            this.Text = "Adopter Details";
         }
 
         public AdopterDetail(bool isCreate, tblAccount adopter)

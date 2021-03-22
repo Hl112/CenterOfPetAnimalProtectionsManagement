@@ -18,8 +18,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             InitializeComponent();
             this.admin = user;
             InitializeData();
-            
+            this.Text = "Pets Management";
         }
+
 
         public PetsManagement() {
             InitializeComponent();

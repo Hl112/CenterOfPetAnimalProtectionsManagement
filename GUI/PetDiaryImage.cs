@@ -8,6 +8,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public PetDiaryImage()
         {
             InitializeComponent();
+            this.Text = "Pet Diary Image";
         }
 
         public PetDiaryImage(string path)

@@ -12,6 +12,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             InitializeComponent();
             txtWelcome.Text = "Welcome " + adopter.fullname;
             this.adopter = adopter;
+            this.Text = "Adopter Home";
         }
 
         private void picUpdatePetDiary_Click(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public ListAdopters()
         {
             InitializeComponent();
+            this.Text = "Choose a adopter";
         }
 
         public ListAdopters(string currentUser) : this()

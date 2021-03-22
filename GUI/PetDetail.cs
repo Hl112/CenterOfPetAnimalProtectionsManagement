@@ -21,6 +21,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 MyInit();
+                this.Text = "Pet Details";
                 errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
                 btnViewPetDiary.Visible = false;
                 btnDeletePet.Visible = false;

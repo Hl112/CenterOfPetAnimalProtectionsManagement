@@ -12,6 +12,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         public AdoptersManagement()
         {
             InitializeComponent();
+            this.Text = "Adopter Management";
         }
 
         private void LoadAdoptersListView(List<tblAccount> listAdopters)

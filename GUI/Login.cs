@@ -11,6 +11,7 @@ namespace CenterOfPetAnimalProtectionsManagement
         public Login()
         {
             InitializeComponent();
+            this.Text = "Login";
 
         }
 

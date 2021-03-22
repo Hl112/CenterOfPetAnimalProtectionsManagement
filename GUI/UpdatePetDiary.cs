@@ -16,11 +16,13 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             InitializeComponent();
             this.adopter = user;
             InitData();
+            this.Text = "Update Pet Diary";
         }
 
         public UpdatePetDiary() {
             InitializeComponent();
             InitData();
+            this.Text = "Update Pet Diary";
         }
 
         private void InitData() {

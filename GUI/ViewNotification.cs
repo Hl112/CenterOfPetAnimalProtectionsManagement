@@ -20,6 +20,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 LoadNoti();
+                this.Text = "Notification";
             }
             catch (Exception)
             {
@@ -37,7 +38,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 //Load list pet diary
                 List<tblPetDiary> petDiaries = TblPetDiaryDAO.Instance.GetPetDiariesByPetID(petID);
                 LoadNoti(petDiaries);
-
+                this.Text = "Pet Diary By Pet";
             }
             catch (Exception)
             {
@@ -56,6 +57,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 //Load list pet diary
                 List<tblPetDiary> petDiaries = TblPetDiaryDAO.Instance.GetPetDiariesByAopter(adopter.username);
                 LoadNoti(petDiaries);
+                this.Text = "Pet Diary By Adopter";
             }
             catch (Exception)
             {
