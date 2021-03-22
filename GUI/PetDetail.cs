@@ -242,6 +242,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             btnChooseAdopter.Visible = adopted;
             btnChooseAdopter.Enabled = adopted;
             dtmPetDateAdopted.Enabled = adopted;
+            if (!adopted)
+            {
+                txtPetAdopter.Clear();
+            }
         }
         #endregion
         #region Event
@@ -314,6 +318,16 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             newF.ShowDialog();
             this.Show();
             txtPetAdopter.Text = newF.SelectedAdopter;
+        }
+
+        private void cboPetCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cboPetType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cboPetCategory_KeyPress(sender,e);
         }
     }
 }

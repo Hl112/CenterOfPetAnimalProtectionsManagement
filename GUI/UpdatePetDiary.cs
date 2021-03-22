@@ -109,5 +109,10 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         {
             this.Close();
         }
+
+        private void cboPetName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

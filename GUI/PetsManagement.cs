@@ -139,15 +139,21 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         private void dgvPets_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            int pID = (int)dgvPets.CurrentRow.Cells[0].Value;
-            tblPet pet = TblPetDAO.Instance.GetPetByID(pID);
-            this.Hide();
-            PetDetail frm = new PetDetail(false, pet);
-            frm.ShowDialog();
-            this.Show();
-            if (frm.IsAction) {
-                RefreshDgv();
+           
+                if (e.RowIndex != -1)
+                {
+                    int pID = (int)dgvPets.CurrentRow.Cells[0].Value;
+                    tblPet pet = TblPetDAO.Instance.GetPetByID(pID);
+                    this.Hide();
+                    PetDetail frm = new PetDetail(false, pet);
+                    frm.ShowDialog();
+                    this.Show();
+                    if (frm.IsAction) {
+                        RefreshDgv();
+                    }
+                
             }
+           
         }
 
         //This function will load data from list to ListView
@@ -194,7 +200,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 _action = "Search";
             } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
             }
         }
 
@@ -210,6 +216,16 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             } else {
                 SearchPets();
             }
+        }
+
+        private void cboPetSearchCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cboPetSearchType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

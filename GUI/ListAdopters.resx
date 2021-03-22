@@ -123,10 +123,9 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtSearchValue.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAQsAAAAeCAYAAAA7OTvOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABUSURBVHhe7dRBDcAgEADBk1opaOB+RSQ4gHeTBv5kJlkL
-        GwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMD1+luf3rJI0q4YLacknYq/g0jStywL5HCzFDcCtgkA
-        AAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAMgAAAAYCAYAAAC/ZrKxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABGSURBVHhe7dMxDQAhEADBk4oUNHDdIxIcQKih+nomWQkb
+        AAAAAAAAAAAAAAAAAAAAAPwwvlZGzyrpLmbPJeldvK6RdMq6ATOphDEPRDF7AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
