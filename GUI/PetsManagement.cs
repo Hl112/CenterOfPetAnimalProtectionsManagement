@@ -207,8 +207,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         private void ShowAllPets() {
-            var l = TblPetDAO.Instance.GetAllPets();
-            LoadListView(l);
+            var list = TblPetDAO.Instance.GetAllPets();
+            LoadListView(list);
             _action = "Show All";
         }
 
