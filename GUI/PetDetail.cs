@@ -42,7 +42,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             try
             {
                 MyInit();
-               
+
                 if (pet != null)
                 {
                     SetData(pet);
@@ -91,11 +91,25 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         }
 
+        private void Clear()
+        {
+            txtPetName.Clear();
+            txtPetId.Clear();
+            txtPetAdopter.Clear();
+            txtPetAge.Clear();
+            txtPetDescription.Clear();
+            txtPetFurcolor.Clear();
+            txtPetGender.Clear();
+            rdoPetAdoptedNo.Checked = true;
+            rdoPetSterilizedNo.Checked = true;
+            picPetAva.Image = picPetAva.BackgroundImage;
+            openFileImage.Reset();
+        }
         private tblPet GetData()
         {
             tblPet pet;
             string error = "";
-            int typeId = ((tblPetType) cboPetType.SelectedItem).id;
+            int typeId = ((tblPetType)cboPetType.SelectedItem).id;
             int petId;
             string name = txtPetName.Text;
             string gender = txtPetGender.Text;
@@ -107,7 +121,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             string description = txtPetDescription.Text;
             DateTime dateCreate = dtmPetCreateDate.Value;
             DateTime? dateAdopted = dtmPetDateAdopted.Value;
-            string image = openFileImage.SafeFileName;
+            string image = DateTime.Now.Ticks.ToString() + "_" + openFileImage.SafeFileName;
+
             if (name.Trim().Length == 0)
             {
                 error += "Name is not empty!\n";
@@ -180,12 +195,12 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             txtPetAge.Text = pet.age;
             txtPetFurcolor.Text = pet.furColor;
             dtmPetCreateDate.Value = pet.createdDate;
-            if (pet.isSterilized != null) rdoPetSterilizedYes.Checked = (bool) pet.isSterilized;
+            if (pet.isSterilized != null) rdoPetSterilizedYes.Checked = (bool)pet.isSterilized;
             rdoPetAdoptedYes.Checked = pet.adopter == null ? false : true;
             if (rdoPetAdoptedYes.Checked)
             {
                 txtPetAdopter.Text = pet.adopter;
-                if (pet.dateAdopted != null) dtmPetDateAdopted.Value = (DateTime) pet.dateAdopted;
+                if (pet.dateAdopted != null) dtmPetDateAdopted.Value = (DateTime)pet.dateAdopted;
             }
 
             txtPetDescription.Text = pet.description;
@@ -208,6 +223,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 {
                     result = TblPetDAO.Instance.CreatePet(pet);
                     _isAction = true;
+                    
                 }
                 else
                 {
@@ -219,20 +235,20 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 {
                     if (openFileImage.FileName != "")
                     {
-                        FileDAO.CopyImage(openFileImage.FileName, openFileImage.SafeFileName);
+                        FileDAO.CopyImage(openFileImage.FileName, pet.image);
                     }
                     MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    this.Close();
+                    if(isCreate) Clear();
                 }
                 else
                 {
                     MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                Console.WriteLine(exception.Message);
-                throw;
+                MessageBox.Show("Error");
+                this.Close();
             }
 
         }
@@ -271,35 +287,41 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
         private void txtPetName_Validating(object sender, CancelEventArgs e)
         {
-            ValidEmpty(txtPetName,"Name is not empty!");
+            ValidEmpty(txtPetName, "Name is not empty!");
         }
 
         private void txtPetGender_Validating(object sender, CancelEventArgs e)
         {
-            ValidEmpty(txtPetGender,"Gender is not empty");
+            ValidEmpty(txtPetGender, "Gender is not empty");
         }
         private void txtPetAge_Validating(object sender, CancelEventArgs e)
         {
-            ValidEmpty(txtPetAge,"Age is not empty");
+            ValidEmpty(txtPetAge, "Age is not empty");
         }
 
         private void txtPetFurcolor_Validating(object sender, CancelEventArgs e)
         {
-            ValidEmpty(txtPetFurcolor,"Furcolor is not empty");
+            ValidEmpty(txtPetFurcolor, "Furcolor is not empty");
         }
         #endregion
 
-        private void btnDeletePet_Click(object sender, EventArgs e) {
+        private void btnDeletePet_Click(object sender, EventArgs e)
+        {
             DialogResult r = MessageBox.Show("Do you want to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            try {
-                if (r == DialogResult.Yes && p != null) {
-                    if (TblPetDAO.Instance.DeletePet(p.id)) {
+            try
+            {
+                if (r == DialogResult.Yes && p != null)
+                {
+                    if (TblPetDAO.Instance.DeletePet(p.id))
+                    {
                         MessageBox.Show("Deleted successfully", "Action");
                     }
                     this.Close();
                     _isAction = true;
                 }
-            } catch (EntityException) {
+            }
+            catch (EntityException)
+            {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
@@ -313,7 +335,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Show();
         }
 
-        private void btnChooseAdopter_Click(object sender, EventArgs e) {
+        private void btnChooseAdopter_Click(object sender, EventArgs e)
+        {
             ListAdopters newF = new ListAdopters(txtPetAdopter.Text);
             this.Hide();
             newF.ShowDialog();
@@ -328,7 +351,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void cboPetType_KeyPress(object sender, KeyPressEventArgs e)
         {
-            cboPetCategory_KeyPress(sender,e);
+            cboPetCategory_KeyPress(sender, e);
         }
     }
 }

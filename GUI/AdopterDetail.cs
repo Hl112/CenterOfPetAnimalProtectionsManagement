@@ -53,7 +53,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             if (isBlack) reason = txtAdopterReasonBlacklist.Text;
             string image = null;
             if (openFile.SafeFileName != "")
-                image = openFile.SafeFileName;
+                image = DateTime.Now.Ticks.ToString() + "_"+ openFile.SafeFileName;
             string valid = "";
             if (string.IsNullOrWhiteSpace(id)) valid += "ID is not empty\n";
             if (string.IsNullOrWhiteSpace(fullname)) valid += "Fullname is not empty\n";
@@ -113,7 +113,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             {
                 if (openFile.FileName != "")
                 {
-                    FileDAO.CopyImage(openFile.FileName, openFile.SafeFileName);
+                    FileDAO.CopyImage(openFile.FileName, account.image);
                 }
                 MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
 
