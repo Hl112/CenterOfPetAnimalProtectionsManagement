@@ -138,7 +138,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 //2601: insert error occurs when you try to put duplicate index values into a column or columns with a unique index.
                 if (innerException != null && innerException.Number == 2627 
                     || innerException.Number == 2601) {
-                    MessageBox.Show(innerException.Message, "Error!",
+                    MessageBox.Show("This username had already existed", "Error!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtAdopterUsername.Focus();
                 } else {

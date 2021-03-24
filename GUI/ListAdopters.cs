@@ -43,10 +43,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             cboPetSearchCategory.Items.Add("Username");
             cboPetSearchCategory.Items.Add("Phone");
             cboPetSearchCategory.SelectedIndex = 0;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListAdopters));
 
             //load dgv
             adopters = null;
-            Image viewImage = Image.FromFile(VIEW_ICON); ;
+            Image viewImage = (Image) resources.GetObject("icons8-eye-20-maroon"); 
             try
             {
                 adopters = TblAccountDAO.Instance.GetAllAdopters();

@@ -305,6 +305,7 @@
   <ItemGroup>
     <Content Include="animal_shelter_100px.ico" />
     <Content Include="icons8_cat_profile.ico" />
+    <None Include="icon\icons8-eye-20-maroon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
