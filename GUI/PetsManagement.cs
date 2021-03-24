@@ -140,10 +140,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         private void dgvPets_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-           
-                if (e.RowIndex != -1)
-                {
-                    int pID = (int)dgvPets.CurrentRow.Cells[0].Value;
+            if (e.RowIndex != -1) {
+                int pID = (int)dgvPets.CurrentRow.Cells[0].Value;
+                try {
                     tblPet pet = TblPetDAO.Instance.GetPetByID(pID);
                     this.Hide();
                     PetDetail frm = new PetDetail(false, pet);
@@ -152,7 +151,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     if (frm.IsAction) {
                         RefreshDgv();
                     }
-                
+                } catch (Exception) {
+
+                }
             }
            
         }
@@ -206,8 +207,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         }
 
         private void ShowAllPets() {
-            var l = TblPetDAO.Instance.GetAllPets();
-            LoadListView(l);
+            var list = TblPetDAO.Instance.GetAllPets();
+            LoadListView(list);
             _action = "Show All";
         }
 

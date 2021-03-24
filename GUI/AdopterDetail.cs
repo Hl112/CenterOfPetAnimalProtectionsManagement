@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Core;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -14,6 +16,8 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
         private const int RoleId = 2;//Adopter
         private bool _isCreate = true;
         private tblAccount _adopter;
+        private bool _isAction = false;
+        public bool IsAction { get => _isAction; set => IsAction = _isAction; }
         public AdopterDetail()
         {
             InitializeComponent();
@@ -27,7 +31,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             {
                 this._isCreate = false;
                 this._adopter = adopter;
+                txtAdopterUsername.ReadOnly = true;
                 LoadData(adopter);
+
             } else {
                 lbReason.Visible = false;
                 txtAdopterReasonBlacklist.Visible = false;
@@ -96,44 +102,54 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnUpdateAdopter_Click(object sender, EventArgs e)
         {
-            try{
             tblAccount account = GetData();
-            bool result;
-            if(account == null) return;
-            if (_isCreate)
-            {
-               result = TblAccountDAO.Instance.CreateAdopter(account);
-            }
-            else
-            {
-               result = TblAccountDAO.Instance.UpdateAdopter(account);
-            }
+            try {
 
-            if (result)
-            {
-                if (openFile.FileName != "")
+                bool result = false;
+                if(account == null) return;
+                if (_isCreate)
                 {
-                    FileDAO.CopyImage(openFile.FileName, account.image);
+                    result = TblAccountDAO.Instance.CreateAdopter(account);
+                    _isAction = true;
                 }
-                MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+                else
+                {
+                   result = TblAccountDAO.Instance.UpdateAdopter(account);
+                   _isAction = true;
+                }
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                if (result)
+                {
+                    if (openFile.FileName != "")
+                    {
+                        FileDAO.CopyImage(openFile.FileName, account.image);
+                    }
+                    MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    if (_isCreate) {
+                        ClearAllFields();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } catch (DbUpdateException ex) {
+                SqlException innerException = ex.InnerException.InnerException as SqlException;
+                //2627: violation of unique constraint (including primary key)
+                //2601: insert error occurs when you try to put duplicate index values into a column or columns with a unique index.
+                if (innerException != null && innerException.Number == 2627 
+                    || innerException.Number == 2601) {
+                    MessageBox.Show(innerException.Message, "Error!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtAdopterUsername.Focus();
+                } else {
+                    throw;
+                }
+            } catch (Exception exception) {
+                Console.WriteLine(exception.Message);
+                throw;
             }
-            else
-            {
-                MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-        catch (Exception exception)
-        {
-            Console.WriteLine(exception.Message);
-            throw;
-        }
-
-        }
-
-    
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -203,14 +219,20 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void rdoBlackListYes_Click(object sender, EventArgs e)
         {
-            lbReason.Visible = true;
-            txtAdopterReasonBlacklist.Visible = true;
+            /*lbReason.Visible = true;
+            txtAdopterReasonBlacklist.Visible = true;*/
         }
 
         private void rdoBlackListNo_Click(object sender, EventArgs e)
         {
-            lbReason.Visible = false;
-            txtAdopterReasonBlacklist.Visible = false;
+            /*lbReason.Visible = false;
+            txtAdopterReasonBlacklist.Visible = false;*/
+        }
+
+        private void rdoBlackListYes_CheckedChanged(object sender, EventArgs e) {
+            bool isInBlacklist = rdoBlackListYes.Checked;
+            lbReason.Visible = isInBlacklist;
+            txtAdopterReasonBlacklist.Visible = isInBlacklist;
         }
 
         private void btnDeleteAdopter_Click(object sender, EventArgs e)
@@ -224,6 +246,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     if (result)
                     {
                         MessageBox.Show("Successfuly", "Action", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        _isAction = true;
                         this.Close();
                     }
                     else
@@ -250,6 +273,19 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                 newF.ShowDialog();
                 this.Show();
             }
+        }
+
+        private void ClearAllFields() {
+            txtAdopterUsername.Focus();
+            txtAdopterUsername.Clear();
+            txtAdopterFullname.Clear();
+            txtAdopterAddress.Clear();
+            txtAdopterPhone.Clear();
+            txtAdopterReasonBlacklist.Clear();
+            rdoBlackListNo.Checked = true;
+            openFile.FileName = "";
+            picAdopterAva.Image = picAdopterAva.BackgroundImage;
+            lvListPetsOfAdopter = null;
         }
     }
 }

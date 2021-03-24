@@ -228,7 +228,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopter.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAdopter.Lines = new string[0];
             this.txtAdopter.Location = new System.Drawing.Point(204, 107);
-            this.txtAdopter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdopter.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdopter.MaxLength = 32767;
             this.txtAdopter.MinimumSize = new System.Drawing.Size(196, 22);
             this.txtAdopter.Modified = false;
@@ -257,7 +257,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtAdopter.PasswordChar = '\0';
             this.txtAdopter.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAdopter.PlaceholderText = "";
-            this.txtAdopter.ReadOnly = false;
+            this.txtAdopter.ReadOnly = true;
             this.txtAdopter.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAdopter.SelectedText = "";
             this.txtAdopter.SelectionLength = 0;
@@ -327,7 +327,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tbDate.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbDate.Lines = new string[0];
             this.tbDate.Location = new System.Drawing.Point(204, 11);
-            this.tbDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbDate.Margin = new System.Windows.Forms.Padding(4);
             this.tbDate.MaxLength = 32767;
             this.tbDate.MinimumSize = new System.Drawing.Size(196, 22);
             this.tbDate.Modified = false;
@@ -356,7 +356,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.tbDate.PasswordChar = '\0';
             this.tbDate.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbDate.PlaceholderText = "";
-            this.tbDate.ReadOnly = false;
+            this.tbDate.ReadOnly = true;
             this.tbDate.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbDate.SelectedText = "";
             this.tbDate.SelectionLength = 0;
@@ -402,7 +402,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Lines = new string[0];
             this.txtName.Location = new System.Drawing.Point(204, 59);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.MaxLength = 32767;
             this.txtName.MinimumSize = new System.Drawing.Size(196, 22);
             this.txtName.Modified = false;
@@ -431,7 +431,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtName.PlaceholderText = "";
-            this.txtName.ReadOnly = false;
+            this.txtName.ReadOnly = true;
             this.txtName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtName.SelectedText = "";
             this.txtName.SelectionLength = 0;
@@ -527,7 +527,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetDiaryDetail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPetDiaryDetail.Lines = new string[0];
             this.txtPetDiaryDetail.Location = new System.Drawing.Point(1, 14);
-            this.txtPetDiaryDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPetDiaryDetail.Margin = new System.Windows.Forms.Padding(4);
             this.txtPetDiaryDetail.MaxLength = 32767;
             this.txtPetDiaryDetail.MinimumSize = new System.Drawing.Size(196, 22);
             this.txtPetDiaryDetail.Modified = false;
@@ -556,7 +556,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.txtPetDiaryDetail.PasswordChar = '\0';
             this.txtPetDiaryDetail.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPetDiaryDetail.PlaceholderText = "";
-            this.txtPetDiaryDetail.ReadOnly = false;
+            this.txtPetDiaryDetail.ReadOnly = true;
             this.txtPetDiaryDetail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPetDiaryDetail.SelectedText = "";
             this.txtPetDiaryDetail.SelectionLength = 0;

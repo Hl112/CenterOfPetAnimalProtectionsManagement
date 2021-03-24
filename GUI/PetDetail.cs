@@ -315,9 +315,11 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
                     if (TblPetDAO.Instance.DeletePet(p.id))
                     {
                         MessageBox.Show("Deleted successfully", "Action");
+                        _isAction = true;
+                        this.Close();
+                    } else {
+                        MessageBox.Show("Fail", "Action", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    this.Close();
-                    _isAction = true;
                 }
             }
             catch (EntityException)

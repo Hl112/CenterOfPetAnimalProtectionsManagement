@@ -9,6 +9,7 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 {
     public partial class AdoptersManagement : Form
     {
+        private string _action = "Show All";
         public AdoptersManagement()
         {
             InitializeComponent();
@@ -43,13 +44,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
 
         private void btnShowAllAdopters_Click(object sender, System.EventArgs e)
         {
-            try
-            {
-                var listAdopters = TblAccountDAO.Instance.GetAllAdopters();
-                LoadAdoptersListView(listAdopters);
-            }
-            catch (EntityException)
-            {
+            try {
+                ShowAllAdopters();
+            } catch (EntityException) {
                 MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -60,27 +57,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Close();
         }
 
-
-
         private void btnSearchAdopter_Click(object sender, EventArgs e)
         {
-            String usernameSearch = txtUsername.Text.Trim();
-            String nameSearch = txtAdopterSearchName.Text.Trim();
-            String phoneSearch = txtPhone.Text.Trim();
-            bool isInBlacklist = cbIsInBlacklist.Checked;
-            bool status = cbAdopterStatus.Checked;
-
-            try
-            {
-                var listSearchResult = TblAccountDAO.Instance.SearchAdopters(usernameSearch, nameSearch, phoneSearch, isInBlacklist, status);
-                LoadAdoptersListView(listSearchResult);
-            }
-            catch (EntityException)
-            {
-                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+            SearchAdopters();
         }
 
         private void lvListAdopters_DoubleClick(object sender, EventArgs e)
@@ -91,6 +70,9 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             AdopterDetail form = new AdopterDetail(false,adopter);
             form.ShowDialog();
             this.Show();
+            if (form.IsAction) {
+                RefreshAdopterList();
+            }
         }
 
         private void btnCreateAdopter_Click(object sender, EventArgs e)
@@ -99,6 +81,40 @@ namespace CenterOfPetAnimalProtectionsManagement.GUI
             this.Hide();
             newF.ShowDialog();
             this.Show();
+            if (newF.IsAction) {
+                RefreshAdopterList();
+            }
+        }
+
+        private void ShowAllAdopters() {
+            var listAdopters = TblAccountDAO.Instance.GetAllAdopters();
+            LoadAdoptersListView(listAdopters);
+            _action = "Show All";
+        }
+
+        private void SearchAdopters() {
+            String usernameSearch = txtUsername.Text.Trim();
+            String nameSearch = txtAdopterSearchName.Text.Trim();
+            String phoneSearch = txtPhone.Text.Trim();
+            bool isInBlacklist = cbIsInBlacklist.Checked;
+            bool status = cbAdopterStatus.Checked;
+
+            try {
+                var listSearchResult = TblAccountDAO.Instance.SearchAdopters(usernameSearch, nameSearch, phoneSearch, isInBlacklist, status);
+                LoadAdoptersListView(listSearchResult);
+                _action = "Search";
+            } catch (EntityException) {
+                MessageBox.Show("Connection Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void RefreshAdopterList() {
+            if(_action.Equals("Show All")) {
+                ShowAllAdopters();
+            } else {
+                SearchAdopters();
+            }
         }
     }
 }

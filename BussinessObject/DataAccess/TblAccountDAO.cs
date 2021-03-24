@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DataProvider;
 using System.Data.Entity;
-using System.Data.Entity.Core.Common.CommandTrees;
+using System.Data.Entity.Infrastructure;
 
 namespace BussinessObject.DataAccess
 {
@@ -114,11 +114,16 @@ namespace BussinessObject.DataAccess
 
         public bool CreateAdopter(tblAccount adopter)
         {
-            adopter.tblRole = TblRoleDAO.Instance.GetRoleById(adopter.roleID);
-            tblAccount result = DBProvider.Instance.Db.tblAccount.Add(adopter);
-            if (result != null) DBProvider.Instance.Db.SaveChanges();
-            return result != null;
-        }
+            try {
+                adopter.tblRole = TblRoleDAO.Instance.GetRoleById(adopter.roleID);
+                tblAccount result = DBProvider.Instance.Db.tblAccount.Add(adopter);
+                if (result != null) DBProvider.Instance.Db.SaveChanges();
+                return result != null;
+             } catch (DbUpdateException) {
+                DBProvider.Instance.Db.tblAccount.Remove(adopter);
+                throw;
+            }
+}
 
         #endregion
     }
