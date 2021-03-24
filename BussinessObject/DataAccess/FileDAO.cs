@@ -11,12 +11,9 @@ namespace BussinessObject.DataAccess
             try
             {
                 bool exists = Directory.Exists(Folder);
-                if (exists)
-                    File.Copy(pathSource, Folder + "/" + pathDestination, true);
-                else
-                {
+                if (!exists)
                     Directory.CreateDirectory(Folder);
-                }
+                File.Copy(pathSource, Folder + "/" + pathDestination, true);
             }
             catch (Exception e)
             {
