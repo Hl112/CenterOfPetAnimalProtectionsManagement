@@ -1,5 +1,4 @@
-# [PRN292]-[.NET and C#]-[FPT University]- 
-[Project](https://github.com/nbt-here9/HanaShop.git)
+# [PRN292]-[.NET and C#]-[FPT University]-[PROJECT ASSIGNMENT](https://github.com/nbt-here9/CenterOfPetAnimalProtectionsManagement.git)
 ## Manage Application for Center Of Pet Animal Protections
 
 
